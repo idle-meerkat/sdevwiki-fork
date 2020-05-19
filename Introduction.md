@@ -1,5 +1,0 @@
-This site is part of our native support for hardware switches through Linux Kernel. 
-The current PP SDK has been created at the Linux user-space level. Note that interrupts, packets and configuration are handled without the Linux kernel. While this approach has its advantages – its main drawback is that is does not support the use of standard Linux routines using official (or partly official) Linux OS to provide PP functionality.
-To ease the integration of PP drivers into the Linux Kernel, an infrastructure was built into the Kernel called switchDev – this layer, along with Linux NetDev modules, acts a basis for interaction between the upper Linux modules and the underlying PP driver that implements the switchDev / Netdev operations & notify them of various hardware events.
-The following figure shows the different layers involved in these two methods:
- 
