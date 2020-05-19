@@ -1,4 +1,4 @@
-[Introduction](../introduction.md)  
+[Introduction](introduction.md)  
 Build and Installation  
 - Compilation  
 - Installation  
