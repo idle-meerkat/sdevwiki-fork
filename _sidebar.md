@@ -1,4 +1,4 @@
-[Introduction](topics/introduction.md)  
+[Introduction](../introduction.md)  
 Build and Installation  
 - Compilation  
 - Installation  
@@ -13,7 +13,7 @@ System Configurations
 
 Network Configurations
 - Switch Port Configuration  
-- [Layer 2](topics/layer-2.md)  
+- [Layer 2](../layer-2.md)  
   - Bridge and VLAN  
   - FDB
   - Link Aggregation (LAG)
