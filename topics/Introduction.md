@@ -1,7 +1,7 @@
 # Introduction
 This site is part of our native support for hardware switches, through a Linux Kernel.  
-The current PP SDK has been created at the Linux user-space level. 
-Note that interrupts, packets and configuration are handled without the Linux kernel. While this approach has its advantages – its main drawback is that it does not support the use of standard Linux routines using an official (or partly official) Linux OS to provide PP functionality.  
+The current PP SDK was created at the Linux user-space level. 
+Note that interrupts, packets and configuration are offloaded to the hardware, as opposed to handling this traffic by the Linux kernel. While this approach has its advantages – its main drawback is that it does not support the use of standard Linux routines using an official (or partly official) Linux OS to provide PP functionality.  
 
 The following figure shows the different layers involved in these two methods:
 ![Traffic Handling](images/traffic_handling.png)
