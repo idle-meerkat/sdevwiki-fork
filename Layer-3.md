@@ -7,9 +7,9 @@ For each address and its broadcast and network addresses, traps are configured i
 
 For example:
 
-`$ sudo ip addr add 192.168.1.1/24 sw1p1`
-`$ sudo ip link set dev sw1p1 up`
-`$ sudo ip addr add 192.168.2.1/24 sw1p2`
+`$ sudo ip addr add 192.168.1.1/24 sw1p1`/>
+`$ sudo ip link set dev sw1p1 up`/>
+`$ sudo ip addr add 192.168.2.1/24 sw1p2`/>
 `$ sudo ip link set dev sw1p1 up`
 
 NOTE: A configuration is applied only after the interface is set to admin UP 
