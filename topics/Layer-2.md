@@ -18,7 +18,7 @@ Linux Bridge supports 2 types of bridges defined by 1EEE 802.1Q standard
 `$ ip link del dev sw0p1.5`
 
 ## Bridge Membership Configuration
-* Adding a net device port to the bridge``
+* Adding a net device port to the bridge
 `$ ip link set dev sw0p1 master br`
 * Removing a net device port from the bridge  
 `$ ip link set dev sw0p1 nomaster`
