@@ -21,7 +21,7 @@ Linux bridge is forwarding packets based on FDB data. To display bridge FDB:
 01:80:c2:00:00:0e dev eth0 self permanent
 33:33:00:00:00:01 dev br0 self permanent
 01:00:5e:00:00:01 dev br0 self permanent
-33:33:ff:12:35:01 dev br0 self permanent
+33:33:ff:12:35:01 dev br0 self permanent`
 
 
 Entries with `offload` flag are externally learned entries (hardware FDB)
