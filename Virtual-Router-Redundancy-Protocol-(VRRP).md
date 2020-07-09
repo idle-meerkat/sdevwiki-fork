@@ -16,4 +16,5 @@ In Linux, VRRP is usually implemented by configuring a MAC VLAN with the virtual
 The Switchdev open source implements VRRP using the keepalived service.  
 
 ## Generic VRRP Network Topology
-![VRRP Network Topology](images/vrrp_network_topology.jpg) 
+![VRRP Network Topology](images/vrrp_network_topology.jpg)  
+![Traffic Handling](images/traffic_handling.png)
