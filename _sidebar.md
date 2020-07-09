@@ -18,7 +18,7 @@ Network Configurations
   - FDB
   - Link Aggregation (LAG)
   - STP  
-- [Layer 3](layer-3) 
+- Layer 3 
   - L3 Interface
   - [Static Route](static-route)
   - [Virtual Router Interface (VRF)](virtual-router-interface-(vrf))
