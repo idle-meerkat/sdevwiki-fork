@@ -6,11 +6,11 @@ The Linux bonding driver provides a method for aggregating multiple network inte
 `$ ip link add name bond1 type bond`  
 * To remove a LAG bond device:  
 `$ ip link del dev bond1`  
-* To set operational mode  
+* To set operational mode:  
 In general, the bond device can support different operational modes. The operational mode can be set using following command:  
 `$ ip link set dev bond1 type bond`  
 **NOTE**: LACP (802.3ad) is the only supported mode.  
-* To add a member to a LAG  
+* To add a member to a LAG:  
 `$ ip link set dev sw1p1 master bond1`  
 * To remove a member from a LAG:  
 `$ ip link set dev sw1p1 nomaster`  
