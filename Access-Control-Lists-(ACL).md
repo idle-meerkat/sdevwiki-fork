@@ -15,7 +15,7 @@
 * src_port
 * dst_port
 * vlan_id
-### Supported TC Flower Fules and Actions
+### Supported TC Flower Rules and Actions
 The following list of ACL rules (TC flower matches) are supported:
 * indev DEV-NAME (useful when using qdisc blocks, which is described in next major section)
 * protocol PROTO (tc filter option, not flower filter type)
@@ -27,6 +27,10 @@ The following list of ACL rules (TC flower matches) are supported:
 * dst_port {NUMBER | MIN_VALUE-MAX_VALUE} (ip_proto tcp|udp)
 * src_port {NUMBER | MIN_VALUE-MAX_VALUE} (ip_proto tcp|udp)
 * vlan_id
+The following ACL actions (TC flower actions) are supported:
+* drop (shot word also can be used to specify drop action)
+* pass (ok word also can be used to specify pass action)
+* trap
 
 ## ACL Configuration  
 To offload Linux ACL configuration to netdevs, which represent Marvell switch ports, the TC flower filter [6] tool is used. Starting from Linux kernel v5.3  Netfilter [7] can also be used to offload ACL configuration to the netdevs, since it uses a common kernel API to do ACL offload configuration.  
