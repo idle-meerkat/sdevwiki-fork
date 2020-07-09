@@ -1,4 +1,4 @@
-# Bridge and VLAN
+
 Linux Bridge supports 2 types of bridges defined by 1EEE 802.1Q standard  
 - VLAN Unaware Bridge : Bridge that does not recognize VLAN Tagged Packets. This is the default.
 - VLAN Aware Bridge : Bridge that recognizes packets with VLAN Tag and Insert or Remove Tag Headers.
