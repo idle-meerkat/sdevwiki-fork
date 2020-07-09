@@ -21,7 +21,7 @@ Network Configurations
 - [Layer 3](layer-3) 
   - L3 Interface
   - [Static Route](static-route)
-  - Virtual Router Interface (VRF) 
+  - [Virtual Router Interface (VRF)](virtual-router-interface-(vrf))
   - VRRF  
 - L2/L3 Multicast  
   - VLAN & Interface Configuration
