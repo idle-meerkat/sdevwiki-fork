@@ -42,3 +42,12 @@ Example configuration of keepalived:
 `  192.168.1.1`  
 `}`  
 
+Where:   
+`interface <interface name>`		# interface to bind  
+`virtual_router_id <id>`	# id of Virtual Router   
+`priority <prio>`			# priority of current instance  
+`version <ver>`				# version of VRRP protocol  
+`advert_int <interval>`		# VRRP Advert interval  
+`use_vmac`				# Use VRRP Virtual MAC  
+`virtual_ipaddress {VIP}`		# Virtual IP addresses  
+
