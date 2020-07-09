@@ -13,8 +13,8 @@ System Configurations
 
 Network Configurations
 - Switch Port Configuration  
-- [Layer 2](layer-2)  
-  - Bridge and VLAN  
+- Layer 2  
+  - [Bridge and VLAN](bridge-and-vlan)
   - FDB
   - Link Aggregation (LAG)
   - STP  
