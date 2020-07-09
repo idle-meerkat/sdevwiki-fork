@@ -17,7 +17,7 @@ Network Configurations
   - [Bridge and VLAN](bridge-and-vlan)
   - [Bridge FDB](bridge-fdb)
   - [Link Aggregation (LAG)](link-aggregation-(lag))
-  - STP  
+  - [STP (802.1D) Configuration](stp-(802.1d)-configuration)
 - Layer 3 
   - L3 Interface
   - [Static Route](static-route)
