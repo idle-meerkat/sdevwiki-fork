@@ -15,7 +15,7 @@
 * src_port
 * dst_port
 * vlan_id
-### Supported TC Flower Fules and Fctions
+### Supported TC Flower Fules and Actions
 The following list of ACL rules (TC flower matches) are supported:
 * indev DEV-NAME (useful when using qdisc blocks, which is described in next major section)
 * protocol PROTO (tc filter option, not flower filter type)
