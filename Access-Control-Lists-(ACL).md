@@ -95,4 +95,17 @@ See [Supported Actions, Keys and Rules](#supported-actions-keys-and-rules) for t
 
 **NOTE**: some TC command keys supports different naming (alias) for some attributes. For example, `pref` Key can be used as `prio`.
 
+### Delete ACL Rules
+TC flower rule (ACL rules) is deleted based on delete criteria provided by user.  
+For example, to delete all rules with given priority, use the following command: 
+`$ tc filter del dev sw1p1 root prio 1`  
+If there are multiple rules in qdisc with the same priority, then the specific rule can be deleted by handle qdisc-id.  
+For example, delete rule with priority 1 and handle 0x2:
+`$ sudo tc filter del dev sw1p1 root prio 1 handle 0x2 flower`  
+**NOTE**: Use `tc filter show dev sw1p1 root` command to determine which handle to use.  
 
+To delete all rules from a specific qdisk, use the following command:
+`$ sudo tc filter del dev sw1p1 root`  
+
+If an ACL is not going to be used anymore on the switchdev interface, use the following command to destroy the qdisc with all rules attached to it:
+`$ sudo tc qdisc del dev sw1p1 parent ffff:`  
