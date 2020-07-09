@@ -22,7 +22,7 @@ Network Configurations
   - L3 Interface
   - [Static Route](static-route)
   - [Virtual Router Interface (VRF)](virtual-router-interface-(vrf))
-  - VRRF  
+  - [Virtual Router Redundancy Protocol (VRRP)](virtual-router-redundancy-protocol-(vrrp))  
 - L2/L3 Multicast  
   - VLAN & Interface Configuration
   - L2 Multicast
