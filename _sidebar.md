@@ -20,7 +20,7 @@ Network Configurations
   - STP  
 - [Layer 3](layer-3) 
   - L3 Interface
-  - Static Route 
+  - [Static Route](static-route)
   - Virtual Router Interface (VRF) 
   - VRRF  
 - L2/L3 Multicast  
