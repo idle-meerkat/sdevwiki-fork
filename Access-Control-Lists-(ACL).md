@@ -24,20 +24,20 @@ Before configuring match rules on switch ports, you must first create the queuin
 `$ sudo tc qdisc add dev DEV-NAME {ingress|clsact}`  
 Where `DEV-NAME` is the switchdev interface name, e.g.: sw1p1.  
 
-* To create ingress queueing disciplines (qdiscs):
+* To create ingress queueing disciplines (qdiscs):  
 `$ sudo tc qdisc add dev sw1p1 ingress`  
-* To create the clsact qdisc:
+* To create the clsact qdisc:  
 `$ sudo tc qdisc add dev sw1p10 clsact`  
 **NOTE**: there are no functional differences between these two types
-* To list the existing qdiscs:
+* To list the existing qdiscs:  
 `$ tc qdisc show`  
 Output example of the show command:
 `qdisc ingress ffff: dev sw1p1 parent ffff:fff1 -------------`  
 `qdisc clsact ffff: dev sw1p10 parent ffff:fff1` 
 
 The rest of the examples in this document uses clsact qdisc and generic commands for ACL rule configuration. 
-ACL rule configuration uses the following format:
-`    tc [ OPTIONS ] qdisc [ add|show|delete ] dev DEV [ ingress|root ] [ handle qdisc-id ] [ protocol PROTO ] [ { prio|pref } PRIORITY ] flower [ flower specific parameters ]`
-Where:
-    `ingress`  is used for clsact qdisc.
-    `root  is used for ingress qdisc.
+ACL rule configuration uses the following format:  
+`tc [ OPTIONS ] qdisc [ add|show|delete ] dev DEV [ ingress|root ] [ handle qdisc-id ] [ protocol PROTO ] [ { prio|pref } PRIORITY ] flower [ flower specific parameters ]`  
+Where:  
+    `ingress`  is used for clsact qdisc.  
+    `root`  is used for ingress qdisc.  
