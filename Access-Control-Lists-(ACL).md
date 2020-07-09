@@ -82,7 +82,7 @@ Similar commands can be used to pass the packet or trap the packet to CPU. For e
 * To observe statistics related to packets, bytes transmitted, or last time used, which are maintained on a per rule basis, add the -s flag:  
 `$ tc -s filter show dev sw1p1 ingress`  
 
-Following are several examples showing how to use TC with other supported ACL keys (tc flower match):   
+See [Supported Actions, Keys and Rules](#supported-actions-keys-and-rules) for the full list of supported rules. Following are several examples showing how to use TC with other supported ACL keys (tc flower match):   
 `$ sudo tc filter add dev sw1p1 ingress pref 25 protocol 0x8FF flower skip_sw action pass`
 
 `$ sudo tc filter add dev sw1p1 ingress prio 24 flower skip_sw src_mac 00:11:22:33:44:88 action drop`
