@@ -8,8 +8,8 @@ or
 `$ ip link add name br0 type bridge`  
 
 Linux bridge is forwarding packets based on FDB data. To display bridge FDB:  
-`$ bridge fdb`  
-52:54:00:12:35:01 dev sw1p1 master br0 permanent  
+`$ bridge fdb`
+52:54:00:12:35:01 dev sw1p1 master br0 permanent`
 00:02:00:00:02:00 dev sw1p1 master br0 offload  
 00:02:00:00:02:00 dev sw1p1 self  
 52:54:00:12:35:02 dev sw1p2 master br0 permanent  
