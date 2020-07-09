@@ -3,7 +3,7 @@ The MAC VLAN can be thought of as a reverse VLAN under Linux. Instead of taking 
 
 macvlan's Rx handler re-injects packets with destination MAC addresses as the MAC VLANs to the Rx path so that they are picked up by the IPvX protocol handlers, and undergo an L3 lookup. Note that the driver prevents the MAC VLANs from being enslaved to other devices, to ensure that the packets are picked up by the protocol handler and not by another Rx handler. 
 
-* To create a MAC VLAN device:
+* To create a MAC VLAN device:  
 `$ sudo ip link add link sw1p1 type macvlan`  
 `$ sudo ip link add link sw1p1 mac1 address 00:11:22:33:44:55 type macvlan`  
 
