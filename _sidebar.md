@@ -29,8 +29,8 @@ Network Configurations
   - L3 Multicast Routing 
 - [Access-Control-Lists-(ACL)](Access-Control-Lists-(ACL))
   - [Supported Actions, Keys and Rules](supported-actions-keys-and-rules)
-  - ACL Configuration
-  - Shared Block Support
+  - [ACL Configuration](acl-configuration)
+  - [Shared Block Support](shared-block-support)
 - QoS 
 - Tunnel & Overlay
   - VxLAN  
