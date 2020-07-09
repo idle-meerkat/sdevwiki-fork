@@ -16,7 +16,7 @@ You can use `brctl` to configure the following spanning tree protocol parameters
 For an explanation of these parameters, see the IEEE 802.1d specification.
 See [brctl man](https://linux.die.net/man/8/brctl) for details on bridge stp configurations.  
 
-## RSTP (802.1w) configuration
+## RSTP (802.1w) Configuration
 RSTP support requires user-level daemon mstpd, running in RSTP mode. The mstpd daemon is an open source project (https://github.com/mstpd/mstpd). 
 The mstpctl utility provided by the mstpd service configures STP.  
 
