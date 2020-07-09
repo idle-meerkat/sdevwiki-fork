@@ -17,4 +17,3 @@ The Switchdev open source implements VRRP using the keepalived service.
 
 ## Generic VRRP Network Topology
 ![VRRP Network Topology](images/vrrp_network_topology.jpg)  
-![Traffic Handling](images/traffic_handling.png)
