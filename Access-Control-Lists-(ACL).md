@@ -1,5 +1,5 @@
 # Access Control Lists (ACL) 
-## Supported Actions and Keys
+## Supported Actions and Keys [ACL-actions-keys]
 ### ACL supported actions [3]
 * drop
 * trap
@@ -31,6 +31,7 @@ Where `DEV-NAME` is the switchdev interface name, e.g.: sw1p1.
 **NOTE**: there are no functional differences between these two types
 * To list the existing qdiscs:  
 `$ tc qdisc show`  
+
 Output example of the show command:
 `qdisc ingress ffff: dev sw1p1 parent ffff:fff1 -------------`  
 `qdisc clsact ffff: dev sw1p10 parent ffff:fff1` 
@@ -40,4 +41,6 @@ ACL rule configuration uses the following format:
 `tc [ OPTIONS ] qdisc [ add|show|delete ] dev DEV [ ingress|root ] [ handle qdisc-id ] [ protocol PROTO ] [ { prio|pref } PRIORITY ] flower [ flower specific parameters ]`  
 Where:  
     `ingress`  is used for clsact qdisc.  
-    `root`  is used for ingress qdisc.  
+    `root`  is used for ingress qdisc.   
+For more information on flower specific parameters, see the man tc-flower page.  
+**NOTE**: The driver does not support all parameters. See “Detailed requirement analysis” section in this document to know what exactly parameters are 
