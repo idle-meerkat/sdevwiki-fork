@@ -16,7 +16,7 @@ Network Configurations
 - Layer 2  
   - [Bridge and VLAN](bridge-and-vlan)
   - [Bridge FDB](bridge-fdb)
-  - Link Aggregation (LAG)
+  - [Link Aggregation (LAG)](link-aggregation-(lag))
   - STP  
 - Layer 3 
   - L3 Interface
