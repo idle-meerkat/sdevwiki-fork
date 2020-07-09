@@ -7,14 +7,14 @@ To show the current `stp_state` value, run the following command can be used:
 `$ ip -d link show dev br0 | grep stp_state`    
 In addition, to show extended STP configuration on the bridge (bridge stp state, port stp state, …), you can use `brctl` utility.  
 `$ brctl showstp br0`  
-You can use `brctl` to configure the following spanning tree protocol parameters:   
+You can use `brctl` to configure the following spanning tree protocol parameters. For more information on these parameters, see the IEEE 802.1d specification.  
+See [brctl man](https://linux.die.net/man/8/brctl) for details on bridge stp configurations. :   
 * Bridge priority
 * Path priority and cost
 * Forwarding delay
 * Hello time
 * Max age  
-For an explanation of these parameters, see the IEEE 802.1d specification.
-See [brctl man](https://linux.die.net/man/8/brctl) for details on bridge stp configurations.  
+ 
 
 ## RSTP (802.1w) Configuration
 RSTP support requires user-level daemon mstpd, running in RSTP mode. The mstpd daemon is an open source project (https://github.com/mstpd/mstpd). 
