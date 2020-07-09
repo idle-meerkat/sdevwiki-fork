@@ -44,3 +44,12 @@ Where:
     `root`  is used for ingress qdisc.   
 For more information on flower specific parameters, see the man tc-flower page.  
 **NOTE**: The driver does not support all parameters. See [Supported Actions and Keys](#supported-actions-and-keys) for the full list of supported actions and keys.   
+
+### Add flower (ACL) rules  
+Once the qdisc is created, you can add flower rules which are bound to a specific qdisc/switchdev interface.   
+For example, to create a flower rule which drops an IP packet with source address 192.168.1.1, use the following command:  
+`$ sudo tc filter add dev sw1p1 ingress protocol ip pref 10 flower skip_swrc_ip 192.168.1.1 action drop`  
+This adds a rule with priority (`pref`) 10, matching and dropping every IP packet with the source address 192.168.1.1.  
+**NOTE**: the parameter `skip_sw` instructs TC to skip the insertion of the rule to the kernel's datapath. If this keyword is omitted, the rule is inserted in both the kernel and hardware. 
+To add the rule to kernel, e.g. filter CPU traffic, use the `skip_hw` key instead.  
+TC rules (filters) are put by order of priority (`pref`). If the priority is omitted, the TC will generate priority automatically based on flower rule/actions provided by user. For rules with the same priority, but different match/action value, the rule is added to the end of all rules with this priority. The rule with lowest `pref` number (high priority) is executed first.
