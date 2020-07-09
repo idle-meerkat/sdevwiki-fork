@@ -18,3 +18,27 @@ The Switchdev open source implements VRRP using the keepalived service.
 ## Generic VRRP Network Topology
 The following image shows two redundant VRRP-enabled routers are sharing the same L2 domain with the host.
 ![VRRP Network Topology](images/vrrp_network_topology.jpg)  
+
+## Virtual IP and Virtual MAC
+A virtual router must use 00-00-5E-00-01-XX as its MAC address. The last byte of the address (XX) is the Virtual Router IDentifier (VRID), which is different for each virtual router in the network. This address is used by only one physical router at a time, and it will reply with this MAC address when an ARP request is sent for the virtual router's IP address.  
+Physical routers within the virtual router must communicate within themselves using packets with multicast IP address 224.0.0.18 and IP protocol number 112.  
+Routers have a priority of between 1 and 254 and the router with the highest priority will become the master. The default priority is 100. [7]  
+
+## Keepalived Configuration  
+Example configuration of keepalived:  
+`global_defs {`  
+` vrrp_garp_master_refresh 60`  
+`}`  
+
+`vrrp_instance vrrp_test {`  
+` state BACKUP`  
+` interface br0`  
+` virtual_router_id 10`  
+` priority 150`  
+` version 3`  
+` advert_int 0.1`  
+` use_vmac`  
+` virtual_ipaddress {`  
+`  192.168.1.1`  
+`}`  
+
