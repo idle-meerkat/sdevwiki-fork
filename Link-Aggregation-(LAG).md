@@ -34,11 +34,11 @@ The MAC address of LAG interface is the address of first member of this LAG.
 In order to change it, run the following command:  
 `$ ip link set [bond1] address [XX:XX:XX:XX:XX:XX]`  
 
-** MTU Setting on a LAG Interface  
+## MTU Setting on a LAG Interface  
 In order to set MTU on the LAG interface, run the following command:  
 `$ ip link set [bond1] mtu [XX]`  
 
-** Speed and Auto-Negotiation Setting on a LAG Interface  
+## Speed and Auto-Negotiation Setting on a LAG Interface  
 The speed and auto-negotiation setting are not supported for bond interface.  
 In order to configure the speed or auto-negotiation, complete the following actions:  
 * Disable LAG interface (ip link set [bond1] down)
@@ -47,23 +47,23 @@ In order to configure the speed or auto-negotiation, complete the following acti
 * Enable LAG members(ip link set [sw1pX] up)
 * Enable LAG interface (ip link set [bond1] up)
 
-** Adding a LAG Interface to a Bridge  
+## Adding a LAG Interface to a Bridge  
 To add a LAG interface to a bridge, run the following command:  
 `$ ip link set [bond1] master br0`  
 
-** Adding a LAG Interface to VLAN
+## Adding a LAG Interface to VLAN
 To configure a VLAN on the LAG interface, run the following command:  
 `$ bridge vlan add vid [XX] pvid dev [bond1]`  
 
-** Setting Bridge LAG Interface Attributes  
+## Setting Bridge LAG Interface Attributes  
 To configure an bridge port attributes for a LAG, run the following command:  
 `$ bridge link set dev [bond1] learning off flood off`  
 
-** Add IP address to a LAG
+## Add IP address to a LAG
 To configure an IP address can be configured for a LAG, run the following command:  
 `$ ip addr add [192.168.1.2/24] dev [bond1]`  
 
-** VRF  
+## VRF  
 To set a bond interface as a part of virtual router:  
 `$ ip link set dev [bond1] master [vrf_name]`  
 
