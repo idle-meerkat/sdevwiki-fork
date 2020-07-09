@@ -120,7 +120,7 @@ To share blocks, you need to request the share from the kernel at the qdisc crea
 These two commands add ingress qdiscs to both netdevices. Note the ingress_block option that indicates that both qdiscs should share the same block identified by index 1. It is up to the user to choose the block index.
 If you list the existing qdiscs, you see the block sharing information in the output:  
 `$ tc qdisc`  
-Example output:
+Example output:  
 `qdisc clsact ffff: dev sw1p2 parent ffff:fff1 ingress_block 1`  
 `qdisc clsact ffff: dev sw1p3 parent ffff:fff1 ingress_block 1`  
 
