@@ -19,13 +19,11 @@ See [brctl man](https://linux.die.net/man/8/brctl) for details on bridge stp con
 ## RSTP (802.1w) Configuration
 RSTP support requires user-level daemon mstpd, running in RSTP mode. The mstpd daemon is an open source project (https://github.com/mstpd/mstpd). 
 The mstpctl utility provided by the mstpd service configures STP.  
-
-After the bridge is created and STP is enabled (described above) additional configuration step needed to switch from STP to RSTP mode. 
-
-Switch the bridge mode from stp to rstp using the `mstpctl` application:  
+After the bridge is created and STP is enabled (described above), you can switch the bridge mode from STP to RSTP using the `mstpctl` application. See [mstpctl man](https://github.com/mstpd/mstpd/blob/master/utils/mstpctl.8) for more information. 
+* To switch the bridge mode from STP to RSTP:  
 `$ mstpctl setforcevers br0 rstp`  
-To show information about the bridge:  
-`$ mstpctl setforcevers br0 rstp`  
-To show port information:  
+* To show information about the bridge:  
+`$ mstpctl showbridge`  
+* To show port information:  
 `$ mstpctl showport br0 sw1p5`  
-See [mstpctl man](https://github.com/mstpd/mstpd/blob/master/utils/mstpctl.8) for more information.  
+  
