@@ -55,7 +55,7 @@ Where:
     `ingress`  is used for clsact qdisc.  
     `root`  is used for ingress qdisc.   
 For more information on flower specific parameters, see the man tc-flower page.  
-**NOTE**: The driver does not support all parameters. See [Supported Actions and Keys](#supported-actions-and-keys) for the full list of supported actions and keys.   
+**NOTE**: The driver does not support all parameters. See [Supported Actions, Keys and Rules](#supported-actions-keys-and-rules) for the full list of supported actions and keys.   
 
 ### Add flower (ACL) rules  
 Once the qdisc is created, you can add flower rules which are bound to a specific qdisc/switchdev interface.   
