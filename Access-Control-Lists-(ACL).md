@@ -1,5 +1,5 @@
 # Access Control Lists (ACL) 
-## Supported Actions and Keys [ACL-actions-keys]
+## Supported Actions and Keys 
 ### ACL supported actions [3]
 * drop
 * trap
@@ -43,4 +43,4 @@ Where:
     `ingress`  is used for clsact qdisc.  
     `root`  is used for ingress qdisc.   
 For more information on flower specific parameters, see the man tc-flower page.  
-**NOTE**: The driver does not support all parameters. See “Detailed requirement analysis” section in this document to know what exactly parameters are 
+**NOTE**: The driver does not support all parameters. See [Supported Actions and Keys][] section in this document to know what exactly parameters are 
