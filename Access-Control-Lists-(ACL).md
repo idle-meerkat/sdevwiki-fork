@@ -36,11 +36,11 @@ The following ACL actions (TC flower actions) are supported:
 To offload Linux ACL configuration to netdevs, which represent Marvell switch ports, the TC flower filter [6] tool is used. Starting from Linux kernel v5.3  Netfilter [7] can also be used to offload ACL configuration to the netdevs, since it uses a common kernel API to do ACL offload configuration.  
 
 ## Create/Add ACL Rules  
-Before configuring match rules on switch ports, you must first create the queuing disciplines (qdiscs) to which the flower classifier is attached. In order to prepare for the addition of flower rules, either add the ingress qdisc or clsact qdisc to the port by tc command:  
+Before configuring match rules on switch ports, you must first create the queuing disciplines (qdiscs) to which the flower classifier is attached. In order to prepare for the addition of flower rules, either add the `ingress` qdisc or `clsact` qdisc to the port by TC command:  
 `$ sudo tc qdisc add dev DEV-NAME {ingress|clsact}`  
 Where `DEV-NAME` is the switchdev interface name, e.g.: sw1p1.  
 
-* To create ingress queueing disciplines (qdiscs):  
+* To create ingress queuing disciplines (qdiscs):  
 `$ sudo tc qdisc add dev sw1p1 ingress`  
 * To create the clsact qdisc:  
 `$ sudo tc qdisc add dev sw1p10 clsact`  
@@ -52,7 +52,7 @@ Output example of the show command:
 `qdisc ingress ffff: dev sw1p1 parent ffff:fff1 -------------`  
 `qdisc clsact ffff: dev sw1p10 parent ffff:fff1` 
 
-The rest of the examples in this document uses clsact qdisc and generic commands for ACL rule configuration. 
+The rest of the examples in this document uses clsact qdisc and generic commands for ACL rule configuration.  
 ACL rule configuration uses the following format:  
 `tc [ OPTIONS ] qdisc [ add|show|delete ] dev DEV [ ingress|root ] [ handle qdisc-id ] [ protocol PROTO ] [ { prio|pref } PRIORITY ] flower [ flower specific parameters ]`  
 Where:  
@@ -68,7 +68,7 @@ For example, to create a flower rule which drops an IP packet with source addres
 `$ sudo tc filter add dev sw1p1 ingress protocol ip pref 10 flower skip_swrc_ip 192.168.1.1 action drop`  
  
 This adds a rule with priority (`pref`) 10, matching and dropping every IP packet with the source address 192.168.1.1.  
-**NOTE**: the parameter `skip_sw` instructs TC to skip the insertion of the rule to the kernel's datapath. If this keyword is omitted, the rule is inserted in both the kernel and hardware. 
+**NOTE**: the parameter `skip_sw` instructs TC to skip the insertion of the rule to the kernel's datapath. If this keyword is omitted, the rule is inserted in both the kernel and hardware.  
 To add the rule to kernel, e.g. filter CPU traffic, use the `skip_hw` key instead.  
 TC rules (filters) are put by order of priority (`pref`). If the priority is omitted, the TC will generate priority automatically based on flower rule/actions provided by user. For rules with the same priority, but different match/action value, the rule is added to the end of all rules with this priority. The rule with lowest `pref` number (high priority) is executed first.  
 
@@ -82,7 +82,7 @@ Similar commands can be used to pass the packet or trap the packet to CPU. For e
 * To observe statistics related to packets, bytes transmitted, or last time used, which are maintained on a per rule basis, add the -s flag:  
 `$ tc -s filter show dev sw1p1 ingress`  
 
-Following are several examples showing how to use TC with other supported ACL keys (tc flower match):  
+Following are several examples showing how to use TC with other supported ACL keys (tc flower match):   
 `$ sudo tc filter add dev sw1p1 ingress pref 25 protocol 0x8FF flower skip_sw action pass`
 
 `$ sudo tc filter add dev sw1p1 ingress prio 24 flower skip_sw src_mac 00:11:22:33:44:88 action drop`
