@@ -1,7 +1,7 @@
 The following options are available in the prestera driver for LAG configuration:  
 * Bonding method
 The Linux bonding driver provides a method for aggregating multiple network interfaces into a single logical "bonded" interface. The current version of the bonding driver is available in the “drivers/net/bonding” subdirectory of the most recent kernel source. It is recommended to configure bonding via `iproute2` (netlink) or `sysfs`, the old ifenslave control utility is obsolete.  
-## Bonding method
+## Bonding Method
 * To create a LAG bond device:  
 `$ ip link add name bond1 type bond`  
 To remove a LAG bond device:  
