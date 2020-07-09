@@ -1,5 +1,5 @@
 # Access Control Lists (ACL) 
-## Supported Actions and Keys 
+## Supported Actions, Keys and Rules
 ### ACL supported actions [3]
 * drop
 * trap
@@ -14,6 +14,18 @@
 * ip_proto (Tcp/Udp)
 * src_port
 * dst_port
+* vlan_id
+### Supported TC Flower Fules and Fctions
+The following list of ACL rules (TC flower matches) are supported:
+* indev DEV-NAME (useful when using qdisc blocks, which is described in next major section)
+* protocol PROTO (tc filter option, not flower filter type)
+* dst_mac MASKED-LLADDR
+* src_mac MASKED-LLADDR
+* ip_proto [tcp | udp] (protocol ip)
+* dst_ip PREFIX (protocol ip)
+* src_ip PREFIX (protocol ip)
+* dst_port {NUMBER | MIN_VALUE-MAX_VALUE} (ip_proto tcp|udp)
+* src_port {NUMBER | MIN_VALUE-MAX_VALUE} (ip_proto tcp|udp)
 * vlan_id
 
 ## ACL Configuration  
@@ -66,7 +78,7 @@ Similar commands can be used to pass the packet or trap the packet to CPU. For e
 * To observe statistics related to packets, bytes transmitted, or last time used, which are maintained on a per rule basis, add the -s flag:  
 `$ tc -s filter show dev sw1p1 ingress`  
 
-Following are several examples showing how to use TC with other supported ACL keys (tc flower match):
+Following are several examples showing how to use TC with other supported ACL keys (tc flower match):  
 `$ sudo tc filter add dev sw1p1 ingress pref 25 protocol 0x8FF flower skip_sw action pass`
 
 `$ sudo tc filter add dev sw1p1 ingress prio 24 flower skip_sw src_mac 00:11:22:33:44:88 action drop`
@@ -75,6 +87,8 @@ Following are several examples showing how to use TC with other supported ACL ke
 
 `$ sudo tc filter add dev sw1p1 ingress preference 43 protocol ip flower skip_sw ip_proto tcp src_port 39 action trap`
 
-`$ sudo tc filter add dev sw1p1 ingress protocol all flower skip_sw action drop`
+`$ sudo tc filter add dev sw1p1 ingress protocol all flower skip_sw action drop`  
+
+**NOTE**: some TC command keys supports different naming (alias) for some attributes. For example, `pref` Key can be used as `prio`.
 
 
