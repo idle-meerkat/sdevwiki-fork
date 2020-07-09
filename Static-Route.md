@@ -1,4 +1,3 @@
-# Static Route
 When an IP address in assigned to a Switchdev interface or its master bridge - a routing interface is created.  
 For each address and its broadcast and network addresses, traps are configured in PP to make sure that appropriate packets are delivered to the kernel.  
 For example:  
