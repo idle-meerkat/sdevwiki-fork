@@ -12,6 +12,7 @@ Network Configurations
 - Layer 2  
   - [Bridge and VLAN](bridge-and-vlan)
   - [Bridge FDB](bridge-fdb)
+  - [Link Layer Discovery Protocol (LLDP)](link-layer-discovery-protocol-(lldp))  
   - [Link Aggregation (LAG)](link-aggregation-(lag))
   - [STP Configuration](stp-configuration)
 - Layer 3 
