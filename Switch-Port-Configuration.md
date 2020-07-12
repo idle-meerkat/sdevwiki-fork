@@ -9,14 +9,15 @@ To view the port status and configuration, use the `ifconfig`, `ip link show` an
 ## ip link show sw1pX
 The `ifconfig` and `ip link show` commands provide information about administrative and operational status, MTU and MAC address. `ifconfig` also provides some basic port counters.  
 
-`amzgo-host# ip link show sw1p1`  
-`7: sw1p1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000`  
-`    link/ether 00:00:00:00:00:01 brd ff:ff:ff:ff:ff:ff`  
+```amzgo-host# ip link show sw1p1
+7: sw1p1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 00:00:00:00:00:01 brd ff:ff:ff:ff:ff:ff
+```  
 
 ## ethtool sw1pX
 The `ethtool` command provides information about current speed and duplex, autoneg status, supported and advertised link modes, connector type and statistic.  
 The output is shown in the example below:
-* **Low speed port**
+* **Low speed port**  
 `amzgo-host# ethtool sw1p1`  
 `Settings for sw1p1:`  
 `# Supported media type, link modes and FEC taken from PHY/MPD`  
