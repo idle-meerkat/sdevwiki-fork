@@ -20,7 +20,7 @@ Network Configurations
   - [STP Configuration](stp-configuration)
 - Layer 3 
   - L3 Interface
-  - [Equal Cost Multi Path (ECMP)](equal_cost_multi_path_(ecmp))
+  - [Equal Cost Multi Path (ECMP)](equal-cost-multi-path-(ecmp))
   - [Static Route](static-route)
   - [Virtual Router Interface (VRF)](virtual-router-interface-(vrf))
   - [Virtual Router Redundancy Protocol (VRRP)](virtual-router-redundancy-protocol-(vrrp))  
