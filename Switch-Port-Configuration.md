@@ -19,45 +19,50 @@ amzgo-host# ip link show sw1p1
 The `ethtool` command provides information about current speed and duplex, autoneg status, supported and advertised link modes, connector type and statistic.  
 The output is shown in the example below:
 * **Low speed port**  
-`amzgo-host# ethtool sw1p1`  
-`Settings for sw1p1:`  
-`# Supported media type, link modes and FEC taken from PHY/MPD`  
-`        Supported ports: [ TP ] `  
-`        Supported link modes:   10baseT/Half 10baseT/Full `  
-`                                100baseT/Half 100baseT/Full`   
-`                                 1000baseT/Full `  
-`         Supported pause frame use: No`  
-`        Supports auto-negotiation: Yes`  
-`        Supported FEC modes: None`
-`# Advertised link modes and FEC, section should display actual modes if the port is administratively UP and autoneg is ON, ‘not reported’ otherwise
-        Advertised link modes:  10baseT/Half 10baseT/Full `  
-`                                100baseT/Half 100baseT/Full `  
-`                                1000baseT/Full `  
-`        Advertised pause frame use: No`  
-`# section always displays “Yes” as PHY is advertising at least one mode`
-`        Advertised auto-negotiation: Yes`  
-`        Advertised FEC modes: None`  
-`# link partner capability, section should be displayed with actual capability if the link is established, hidden otherwise`  
-`        Link partner advertised link modes:  10baseT/Half 10baseT/Full `  
-`                                             100baseT/Half 100baseT/Full `  
-`                                             1000baseT/Full `  
-`        Link partner advertised pause frame use: No`  
-`        Link partner advertised auto-negotiation: Yes`  
-`        Link partner advertised FEC modes: Not reported`  
-`# section should display actual speed and duplex if the link is established, “Unknown” otherwise`  
-`        Speed: 1000Mb/s`  
-`        Duplex: Full`  
-`# section should display the actual port media type`  
-`        Port: Twisted Pair`  
-`# PHYAD and Transceiver sections are not supported, default values from Linux are displayed`  
-`        PHYAD: 0`  
-`        Transceiver: internal`  
-`# section should display the actual status of auto negotiation `  
-`        Auto-negotiation: on`  
-`# section should display the actual MDI/MDI-X mode`  
-`        MDI-X: off`  
-`# section should display the actual port operational status`  
-`        Link detected: yes`  
+```
+amzgo-host# ethtool sw1p1
+Settings for sw1p1:
+# Supported media type, link modes and FEC taken from PHY/MPD
+        Supported ports: [ TP ] 
+        Supported link modes:   10baseT/Half 10baseT/Full 
+                                100baseT/Half 100baseT/Full 
+                                1000baseT/Full 
+        Supported pause frame use: No
+        Supports auto-negotiation: Yes
+        Supported FEC modes: None
+# Advertised link modes and FEC, section should display actual modes if the port is administratively UP and autoneg is ON, ‘not reported’ otherwise
+        Advertised link modes:  10baseT/Half 10baseT/Full 
+                                100baseT/Half 100baseT/Full 
+                                1000baseT/Full 
+        Advertised pause frame use: No
+# section always displays “Yes” as PHY is advertising at least one mode
+        Advertised auto-negotiation: Yes
+        Advertised FEC modes: None
+# link partner capability, section should be displayed with actual capability if the link is established, hidden otherwise
+        Link partner advertised link modes:  10baseT/Half 10baseT/Full 
+                                             100baseT/Half 100baseT/Full 
+                                             1000baseT/Full 
+        Link partner advertised pause frame use: No
+        Link partner advertised auto-negotiation: Yes
+        Link partner advertised FEC modes: Not reported
+# section should display actual speed and duplex if the link is established, “Unknown” otherwise
+        Speed: 1000Mb/s
+        Duplex: Full
+# section should display the actual port media type
+        Port: Twisted Pair
+# PHYAD and Transceiver sections are not supported, default values from Linux are displayed
+        PHYAD: 0
+        Transceiver: internal
+# section should display the actual status of auto negotiation 
+        Auto-negotiation: on
+# section should display the actual MDI/MDI-X mode
+        MDI-X: off
+# section should display the actual port operational status
+        Link detected: yes
+```
+
+
+
 * **High speed port**
 `# Supported media type`  
 `        Supported ports: [ TP FIBRE ]`  
