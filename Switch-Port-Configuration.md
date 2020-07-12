@@ -60,12 +60,10 @@ Settings for sw1p1:
 # section should display the actual port operational status
         Link detected: yes
 ```
-
-
-
-* **High speed port**
-`# Supported media type`  
-`        Supported ports: [ TP FIBRE ]`  
+* **High speed port**  
+```
+# Supported media type
+        Supported ports: [ TP FIBRE ]  
 # Section is dynamically changing and displays the supported link modes for current port media type
         Supported link modes:   1000baseT/Full 
                                 1000baseKX/Full 
@@ -95,4 +93,4 @@ Settings for sw1p1:
         MDI-X: Unknown
 # section should display the actual port operational status
      Link detected: yes
-
+```
