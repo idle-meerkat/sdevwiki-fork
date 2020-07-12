@@ -1,6 +1,6 @@
 The Linux networking stack supports Equal Cost Multi Path (ECMP) by adding multiple next-hops to the route. 
 # ECMP Routes  
-To install route with multiple nexthops:  
+To install a route with multiple nexthops:  
 ` ip route add 192.168.2.0/24 nexthop via 192.168.0.2 dev sw1p1 weight 1 nexthop via 192.168.1.1 dev sw1p1 weight 1`  
 To edit an existing nexthop configuration, you need to delete the entire ECMP route and then re-add it with a modified nexthop configuration.  
 
