@@ -83,10 +83,10 @@ This information is not supported by the agent. However, the this TLV informatio
 ## TLV Information Values  
 The following table describes TLV values that LLDPd will advertise in case of default configuration.  
 
-TLV name | Value description
----- | ---
-Mandatory TLV information
-End of LLDPDU | End of TLV information
+|TLV name | Value description |
+|---- | ---|
+|Mandatory TLV information|
+|End of LLDPDU | End of TLV information|
 Chassis ID TLV | Mac address of management interface
 Port ID TLV | Switchdev port MAC address
 Time to Live TLV | TTL
