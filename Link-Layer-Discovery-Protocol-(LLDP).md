@@ -32,7 +32,7 @@ Once the LLDP protocol is enabled on a switchdev port, the mandatory TLV informa
 
 ## Configure Optional TLV  
 The following table below describes the TLV names (including mandatory) that can be used by the agent to configure required TLV values:
-TLV name	|	TLV descripton
+TLV Name	|	TLV Descripton
 --- | ---
 chassisID	|	Chassis ID TLV
 portID	|	Port ID TLV
