@@ -111,7 +111,7 @@ The port MTU can be set using one of the following commands:
 The port MAC address can be set using one of the following commands:  
 ip link set dev sw1p1 address 00:00:00:00:00:02  
 
-# Port speed
+# Port Speed
 The port speed can be set using following commands (The value of speed should be in Mb/s.):  
 `ethtool -s sw1p1 speed 1000`   
 **NOTE:** The speed can only be set if autoneg is disabled. If you pass speed parameter when autoneg is enabled, it will be ignored.  
