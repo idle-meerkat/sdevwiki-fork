@@ -6,10 +6,6 @@ Build and Installation
 System Configurations  
 - Kernel Install & Upgrade  
 - Firmware Upgrade  
-- Plaform  
-  - Temperature and Fan  
-  - LED
-  - Board Configuration
 
 Network Configurations
 - Switch Port Configuration  
@@ -27,9 +23,6 @@ Network Configurations
   - [Supported Actions, Keys and Rules](supported-actions,-keys-and-rules)
   - [ACL Configuration](acl-configuration)
   - [Shared Block Support](shared-block-support)
-- QoS 
-- Tunnel & Overlay
-  - VxLAN  
 
 Debugging Tooland and Methods  
 Resources and Releases  
