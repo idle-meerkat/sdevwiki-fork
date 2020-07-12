@@ -23,7 +23,7 @@ The output is shown in the example below:
 `        Supported ports: [ TP ] `  
 `        Supported link modes:   10baseT/Half 10baseT/Full `  
 `                                100baseT/Half 100baseT/Full`   
-                                 1000baseT/Full `  
+`                                 1000baseT/Full `  
 `         Supported pause frame use: No`  
 `        Supports auto-negotiation: Yes`  
 `        Supported FEC modes: None`
