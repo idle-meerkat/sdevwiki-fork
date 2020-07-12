@@ -93,7 +93,7 @@ Time to Live TLV | TTL
 Optional TLVs information
 Port Description TLV | Switchdev port name
 System Name TLV	| Hostname (hostname tool)
-System Description TLV | OS system description in format: <OS release name> <kernel name> <kernel release> <kernel version> <machine hardware name>. Can be obtained via Linux tools like: `sed -ne 's/PRETTY_NAME="\(.*\)"/\1/p' /etc/os-release; uname -s; uname -r; uname -v; uname -m`
+System Description TLV | OS system description in format: <OS release name> <kernel name> <kernel release> <kernel version> <machine hardware name>. Can be obtained via Linux tools like:  `sed -ne 's/PRETTY_NAME="\(.*\)"/\1/p' /etc/os-release; uname -s; uname -r; uname -v; uname -m`
 System Capabilities TLV	 | System capabilities, like bridge, router
 Management Address TLV | IP of management interface
 IEEE 802.3 Organizationally Specific TLV information (not supported by LLDPd automatically, TLV value can be configured via custom TLV configuration)
