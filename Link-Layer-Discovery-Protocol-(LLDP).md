@@ -15,7 +15,7 @@ By default, the LLDP agent does not enable LLDP protocol on switchdev interfaces
 * To enable transmitting a specific TLV value:  
 `lldptool -T -I <SW-PORT> -V <TLV-NAME> enableTx=yes`  
 
-To get local value of all enabled TLVs:  
+* To get local the value of all enabled TLVs:  
 `lldptool -t -i <SW-PORT>`  
 
 * To query LLDP statistics on port:  
@@ -31,4 +31,17 @@ To get local value of all enabled TLVs:
 Once the LLDP protocol is enabled on a switchdev port, the mandatory TLV information is enabled automatically. The mandatory TLV cannot be disabled by user.  
 
 ## Configure Optional TLV  
-The table below describes the TLV names (including mandatory) that can be used by the agent to configure required TLV values:
+The following table below describes the TLV names (including mandatory) that can be used by the agent to configure required TLV values:
+TLV name	|	TLV descripton
+--- | ---
+chassisID	|	Chassis ID TLV
+portID	|	Port ID TLV
+TTL	|	Time to Live TLV
+portDesc	|	Port Description TLV
+sysName	|	System Name TLV 
+sysDesc	|	System Description TLV
+sysCap	|	System Capabilities TLV
+mngAddr	|	Management Address TLV
+macPhyCfg	|	MAC/PHY Configuration Status TLV
+linkAgg	|	Link Aggregation TLV
+MTU	|	Maximum Frame Size TLV
