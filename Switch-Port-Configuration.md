@@ -94,3 +94,30 @@ Settings for sw1p1:
 # section should display the actual port operational status
      Link detected: yes
 ```
+# Port State  
+The port administrative status can be set using one of the following commands:
+```
+ip link set sw1p1 [up | down]
+ifconfig sw1p1 [up | down]
+ifup2 sw1p1
+ifdown2 sw1p1
+```
+# Port MTU  
+The port MTU can be set using one of the following commands:  
+`ip link set dev sw1p1 mtu 1500`  
+**NOTE** The driver supports maximum 3 different MTU settings.
+
+# Port MAC Address  
+The port MAC address can be set using one of the following commands:  
+ip link set dev sw1p1 address 00:00:00:00:00:02  
+
+# Port speed
+The port speed can be set using following commands (The value of speed should be in Mb/s.):  
+`ethtool -s sw1p1 speed 1000`   
+**NOTE:** The speed can only be set if autoneg is disabled. If you pass speed parameter when autoneg is enabled, it will be ignored.  
+
+# Port Auto-Negotiation
+The port autoneg can be enabled/disabled using following command:  
+`ethtool -s sw1p1 autoneg [on | off]`  
+Linux defines following interface modes which user can advertise to the remote side:
+
