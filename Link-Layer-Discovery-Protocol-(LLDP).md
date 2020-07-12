@@ -21,7 +21,7 @@ By default, the LLDP agent does not enable LLDP protocol on switchdev interfaces
 * To query LLDP statistics on port:  
 `lldptool -S -i <SW-PORT>`  
 
-* To query TLV information from the switch about a connected neighbor:
+* To query TLV information from the switch about a connected neighbor:  
 `lldptool -t -n -i <SW-PORT>`  
 
 * To get a specific TLV value:  
