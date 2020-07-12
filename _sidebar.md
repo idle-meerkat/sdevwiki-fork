@@ -19,9 +19,8 @@ Network Configurations
   - [Link Aggregation (LAG)](link-aggregation-(lag))
   - [STP Configuration](stp-configuration)
 - Layer 3 
-  - L3 Interface
-  - [Equal Cost Multi Path (ECMP)](equal-cost-multi-path-(ecmp))
   - [Static Route](static-route)
+  - [Equal Cost Multi Path (ECMP)](equal-cost-multi-path-(ecmp))
   - [Virtual Router Interface (VRF)](virtual-router-interface-(vrf))
   - [Virtual Router Redundancy Protocol (VRRP)](virtual-router-redundancy-protocol-(vrrp))  
 - L2/L3 Multicast  
