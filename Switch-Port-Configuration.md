@@ -120,4 +120,6 @@ The port speed can be set using following commands (The value of speed should be
 The port autoneg can be enabled/disabled using following command:  
 `ethtool -s sw1p1 autoneg [on | off]`  
 Linux defines following interface modes which user can advertise to the remote side:
-
+| Mask | Mode |
+|---- |---- |
+|0x001| 10baseT Half |
