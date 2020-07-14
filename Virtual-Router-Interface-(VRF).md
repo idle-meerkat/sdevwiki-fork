@@ -1,5 +1,6 @@
 
-The VRF device, combined with IP rules, provides the ability to create virtual routing and forwarding domains (a.k.a. VRFs, VRF-lite) in the Linux network stack. Packets are received on an enslaved device and are switched to the VRF device in the IPv4 and IPv6 processing stacks, giving the impression that packets flow through the VRF device. Similarly, on egress routing rules are used to send packets to the VRF device driver before being sent out the actual interface.  
+The VRF device, combined with IP rules, provides the ability to create virtual routing and forwarding domains (a.k.a. VRFs, VRF-lite) in the Linux network stack. Packets are received on an enslaved device and are switched to the VRF device in the IPv4 and IPv6 processing stacks, giving the impression that packets flow through the VRF device. Similarly, on egress, routing rules are used to send packets to the VRF device driver before being sent out the actual interface.  
+
 To create a VRF device:  
 `$ sudo ip link add vrf-blue type vrf table 10`  
 `$ sudo ip link set dev vrf-blue up`  
