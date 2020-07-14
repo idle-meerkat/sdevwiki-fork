@@ -4,7 +4,7 @@ The Linux bridge code implements a subset of the ANSI/IEEE 802.1d standard. [1].
 ## Linux Commands
 A bridge is created by running:  
 `$ ip link add name br0 type bridge`  
-or  
+Or:  
 `$ ip link add name br0 type bridge`  
 
 Linux bridge is forwarding packets based on FDB data. To display bridge FDB:  
