@@ -5,7 +5,7 @@ This section describes how to configure Link Layer Discovery Protocol (LLDP) on 
 # Open-LLDP
 This section describes how to configure LLDP protocol using an Open-LLDP agent.  
 ## Default Behavior
-By default, the LLDP agent does not enable LLDP protocol on switchdev interfaces on the system. This configuration should be done manually (e.g. enable protocol, configure TLVs etc). After restarting the agent, the configuration is preserved, the LLDP agent configuration is stored automatically in /var/lib/lldpad/lldpad.conf file.  
+By default, the LLDP agent does not enable LLDP protocol on switchDev interfaces on the system. This configuration should be done manually (e.g. enable protocol, configure TLVs etc). After restarting the agent, the configuration is preserved, the LLDP agent configuration is stored automatically in /var/lib/lldpad/lldpad.conf file.  
 
 ## Agent Configuration
 * To enable LLDP (receive & transmit TLV information) on a specific port, use the following command:  
