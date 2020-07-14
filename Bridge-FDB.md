@@ -26,14 +26,15 @@ A Linux bridge forwards packets based on FDB data. To display bridge FDB data:
 Entries with `offload` flag are externally learned entries (hardware FDB)
 
 ## Static and Sticky FDB Entries
-Recently new entry type “sticky” was introduced in Linux bridge. In Linux, static FDB can be roamed to a different port via learning. Sticky FDB entries cannot be moved. 
-Because of the current infrastructure of switchdev FDB notification chain there is no indication which type of entry was added. Thus, all entries are treated as static.  Once first upstream patch is published a request with changes to switchdev fdb notification the chain will add support for the entry type.
+Recently, a new entry type “sticky” was introduced in Linux bridge. In Linux, a static FDB can be roamed to a different port via learning. Sticky FDB entries cannot be moved. 
+Because of the current infrastructure of the switchdev FDB notification chain, there is no indication which type of entry was added. Thus, all entries are treated as static.  Once the first upstream patch is published, a request with changes to switchdev fdb notification the chain will add support for the entry type.
 
 * To add a static FDB entry:
 `3.1.1	Static and Sticky FDB entries
 
 Recently new entry type “sticky” was introduced in Linux bridge. In Linux static FDB can be roamed to a different port via learning. Sticky FDB entries cannot be moved. 
-Because of the current infrastructure of switchdev fdb notification chain there is no indication which type of entry was added. Thus, all entries are treated as static.  Once first upstream patch will be published a request with changes to switchdev fdb notification chin ill add support for entry type.
+Because of the current infrastructure of switchdev fdb notification chain there is no indication which type of entry was added. Thus, all entries are treated as static.  
+Once first upstream patch is published, a request with changes to switchdev fdb notification chain will add support for the entry type. 
 
 * To add a static FDB entry:  
 `$ bridge fdb add ADDR dev DEV master static [vlan VID]`  
