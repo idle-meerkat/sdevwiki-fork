@@ -12,7 +12,7 @@ Network Configurations
   - [Switch Port Configuration](switch-port-configuration)  
   - [Port Information](port-information)  
   - [Port Auto-Negotiation](port-auto-negotiation)  
-  - Port Statistics
+  - [Port Statistics](port-statistics)  
 - Layer 2  
   - [Bridge and VLAN](bridge-and-vlan)
   - [Bridge FDB](bridge-fdb)
