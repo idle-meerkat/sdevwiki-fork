@@ -1,5 +1,5 @@
 ## STP (802.1D) Configuration
-To enable STP on a bridge by run the following command:  
+To enable STP on a bridge, run the following command:  
 `$ ip link set dev br0 type bridge stp_state 1`  
 By default, STP is disabled.  
 To disable STP on the bridge set `stp_state` to “0”. 
