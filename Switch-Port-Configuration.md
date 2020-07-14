@@ -19,7 +19,7 @@ The port MTU can be set using one of the following commands:
 
 # Port MAC Address  
 The port MAC address can be set using one of the following commands:  
-ip link set dev sw1p1 address 00:00:00:00:00:02  
+`ip link set dev sw1p1 address 00:00:00:00:00:02`  
 
 # Port Speed
 The port speed can be set using following commands (The value of speed should be in Mb/s.):  
