@@ -28,7 +28,7 @@ Where:
 For more information on flower specific parameters, see the man tc-flower page.  
 **NOTE**: The driver does not support all parameters. See [Supported Actions, Keys and Rules](supported-actions,-keys-and-rules) for the full list of supported actions and keys.   
 
-### Add flower (ACL) rules  
+### Add Flower (ACL) Rules  
 Once the qdisc is created, you can add flower rules which are bound to a specific qdisc/switchdev interface.   
 For example, to create a flower rule which drops an IP packet with source address 192.168.1.1, use the following command:  
 
