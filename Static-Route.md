@@ -11,13 +11,15 @@ For example:
 To create router interfaces on top of bridge netdev, an IP address has to be assigned.  
 For .1Q bridge, a router interface can be created for each of its upper VLAN devices.  
 For .1D a router interface can be created to bridge itself only.  
-### .1D Bridge example:  
+
+### .1D Bridge Example:  
 `$ ip link add name br0 type bridge`  
 `$ ip link set sw1p3 master br0`   
 `$ ip link set sw1p3 up`  
 `$ ip addr add 192.168.3.1/24 dev br0`  
 `$ ip link set br0 up`  
-### .1Q Bridge example:  
+
+### .1Q Bridge Example:  
 `$ ip link add name br1 type bridge vlan filtering 1`  
 `$ ip link set sw1p4 master br0`  
 `$ ip link set sw1p4 up`  
