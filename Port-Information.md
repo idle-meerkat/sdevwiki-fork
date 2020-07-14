@@ -1,0 +1,91 @@
+To view the port status and configuration, use the `ifconfig`, `ip link show` and `ethtool` commands.  
+
+# ip link show sw1pX
+The `ifconfig` and `ip link show` commands provide information about administrative and operational status, MTU and MAC address. `ifconfig` also provides some basic port counters.  
+
+```
+amzgo-host# ip link show sw1p1
+7: sw1p1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 00:00:00:00:00:01 brd ff:ff:ff:ff:ff:ff
+```  
+
+# ethtool sw1pX
+The `ethtool` command provides information about current speed and duplex, autoneg status, supported and advertised link modes, connector type and statistic.  
+The output is shown in the example below:
+
+##Low speed port  
+```
+amzgo-host# ethtool sw1p1
+Settings for sw1p1:
+# Supported media type, link modes and FEC taken from PHY/MPD
+        Supported ports: [ TP ] 
+        Supported link modes:   10baseT/Half 10baseT/Full 
+                                100baseT/Half 100baseT/Full 
+                                1000baseT/Full 
+        Supported pause frame use: No
+        Supports auto-negotiation: Yes
+        Supported FEC modes: None
+# Advertised link modes and FEC, section should display actual modes if the port is administratively UP and autoneg is ON, ‘not reported’ otherwise
+        Advertised link modes:  10baseT/Half 10baseT/Full 
+                                100baseT/Half 100baseT/Full 
+                                1000baseT/Full 
+        Advertised pause frame use: No
+# section always displays “Yes” as PHY is advertising at least one mode
+        Advertised auto-negotiation: Yes
+        Advertised FEC modes: None
+# link partner capability, section should be displayed with actual capability if the link is established, hidden otherwise
+        Link partner advertised link modes:  10baseT/Half 10baseT/Full 
+                                             100baseT/Half 100baseT/Full 
+                                             1000baseT/Full 
+        Link partner advertised pause frame use: No
+        Link partner advertised auto-negotiation: Yes
+        Link partner advertised FEC modes: Not reported
+# section should display actual speed and duplex if the link is established, “Unknown” otherwise
+        Speed: 1000Mb/s
+        Duplex: Full
+# section should display the actual port media type
+        Port: Twisted Pair
+# PHYAD and Transceiver sections are not supported, default values from Linux are displayed
+        PHYAD: 0
+        Transceiver: internal
+# section should display the actual status of auto negotiation 
+        Auto-negotiation: on
+# section should display the actual MDI/MDI-X mode
+        MDI-X: off
+# section should display the actual port operational status
+        Link detected: yes
+```
+##High speed port  
+```
+# Supported media type
+        Supported ports: [ TP FIBRE ]  
+# Section is dynamically changing and displays the supported link modes for current port media type
+        Supported link modes:   1000baseT/Full 
+                                1000baseKX/Full 
+                                10000baseKR/Full 
+        Supported pause frame use: No
+# Supported auto negotiation should be “Yes” only for TP port, “No” for Fiber 
+        Supports auto-negotiation: Yes
+# Section is dynamically changing and displays the supported FEC modes for current port media type
+        Supported FEC modes: None BaseR
+# Section should display actual advertising link modes for TP port type, “Not reported” for Fiber
+        Advertised link modes:  Not reported
+        Advertised pause frame use: No
+        Advertised auto-negotiation: No
+        Advertised FEC modes: Not reported
+# link partner capability section should not be displayed for SFP ports
+# Section should display actual speed and duplex if the link is established, “Unknown” otherwise
+        Speed: 10000Mb/s
+        Duplex: Full
+# section should display the actual port media type
+        Port: Twisted Pair
+# PHYAD and Transceiver sections are not supported, default values from Linux are displayed
+        PHYAD: 0
+        Transceiver: internal
+# section should display the actual status of auto negotiation for TP port type, always “off” for Fiber
+        Auto-negotiation: off
+# section is always displayed as Unknown, not supported for SFP ports
+        MDI-X: Unknown
+# section should display the actual port operational status
+     Link detected: yes
+```
