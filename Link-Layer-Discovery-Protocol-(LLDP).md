@@ -90,7 +90,7 @@ The table shows the mandatory TLV information.
 
 |TLV name | Value description |
 |---- | ---|
-|End of LLDPDU | End of TLV information|
+|End of LLDPDU  OS system description in format: \<OS release name\> \<kernel name\> \<kernel release\> \<kernel version\> \<machine hardware name\>. | End of TLV information|
 |Chassis ID TLV | Mac address of management interface|
 |Port ID TLV | Switchdev port MAC address|
 |Time to Live TLV | TTL|
