@@ -31,10 +31,10 @@ By default, the LLDP agent does not enable LLDP protocol on switchDev interfaces
 `lldptool -t -n -V portID -i <SW-PORT>`   
 
 ## Configure Mandatory TLV  
-Once the LLDP protocol is enabled on a switchdev port, the mandatory TLV information is enabled automatically. The mandatory TLV cannot be disabled by user.  
+Once the LLDP protocol is enabled on a switchDev port, the mandatory TLV information is enabled automatically. The mandatory TLV cannot be disabled by user.  
 
 ## Configure Optional TLV  
-The following table below describes the TLV names (including mandatory) that can be used by the agent to configure required TLV values:
+The following table describes the TLV names (including mandatory) that can be used by the agent to configure required TLV values:
 TLV Name	|	TLV Descripton
 --- | ---
 chassisID	|	Chassis ID TLV
@@ -49,13 +49,13 @@ macPhyCfg	|	MAC/PHY Configuration Status TLV
 linkAgg	|	Link Aggregation TLV
 MTU	|	Maximum Frame Size TLV
 
-**NOTE**: The agent does not on a physical port if it belongs to a LAG.  
+**NOTE**: The agent does not work on a physical port if it belongs to a LAG.  
 
 # LLDPd
 This section describes how to configure the LLDP protocol using an LLDPd agent.
 
 ## Default Behavior
-By default, the LLDP agent enables LLDP protocol on all available physical interfaces. To limit the agent to listen only on switchdev interfaces, you need to provide a configuration file.
+By default, the LLDP agent enables LLDP protocol on all available physical interfaces. To limit the agent to listen only on switchDev interfaces, you need to provide a configuration file.
 
 ## Agent Configuration
 
