@@ -65,7 +65,7 @@ By default, the LLDP agent enables LLDP protocol on all available physical inter
 * To enable/disable LLDP on a specific interface:  
 `lldpcli configure ports sw1p1 lldp status rx-and-tx`  
 
-*To query LLDP statistics on port:  
+* To query LLDP statistics on port:  
 `lldpcli show statistics ports sw1p1`  
 
 * To query TLV information from switch about connected neighbor:  
