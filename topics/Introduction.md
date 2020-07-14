@@ -5,7 +5,7 @@ Note that interrupts, packets and configuration are offloaded to the hardware, a
 
 The following figure shows the different layers involved in these two methods:
 ![Traffic Handling](images/traffic_handling.png)
-To ease the integration of PP drivers into the Linux Kernel, an infrastructure was built into the Kernel called switchDev – this layer, along with Linux NetDev modules, acts a basis for interaction between the upper Linux modules and the underlying PP driver that implements the switchDev / Netdev operations & notifies them of various hardware events.
+To ease the integration of PP drivers into the Linux Kernel, an infrastructure was built into the Kernel, called switchDev. This layer, along with Linux NetDev modules, acts a basis for interaction between the upper Linux modules and the underlying PP driver that implements the switchDev / NetDev operations & notifies them of various hardware events.
 
 The following image shows the Switch driver in the kernel:
 ![Switch Driver in the Kernel](images/linux_in-kernel_switchdev.JPG)
