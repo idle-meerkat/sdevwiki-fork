@@ -59,11 +59,11 @@ See [Supported Actions, Keys and Rules](#supported-actions-keys-and-rules) for t
 `$ sudo tc filter add dev sw1p1 ingress preference 43 protocol ip flower skip_sw ip_proto tcp src_port 39 action trap`  
 `$ sudo tc filter add dev sw1p1 ingress protocol all flower skip_sw action drop`  
 
-**NOTE**: some TC command keys supports different naming (alias) for some attributes. For example, `pref` Key can be used as `prio`.
+**NOTE**: some TC command keys support different naming (alias) for some attributes. For example, `pref` Key can be used as `prio`.
 
 ### Delete ACL Rules
-TC flower rule (ACL rules) is deleted based on delete criteria provided by user.  
-For example, to delete all rules with given priority, use the following command:  
+A TC flower rule (ACL rule) is deleted based on delete criteria provided by user.  
+For example, to delete all rules with a given priority, use the following command:  
 `$ tc filter del dev sw1p1 root prio 1`  
 
 If there are multiple rules in qdisc with the same priority, then the specific rule can be deleted by handle qdisc-id.  
