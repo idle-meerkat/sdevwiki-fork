@@ -10,7 +10,7 @@ System Configurations
 Network Configurations
 - Switch Port 
   - [Switch Port Configuration](switch-port-configuration)
-  - Port Information
+  - [Port Information](port-information)
   - Port Auto-Negotiation
   - Port Statistics
 - Layer 2  
