@@ -1,5 +1,6 @@
-  
-To offload Linux ACL configuration to netdevs, which represent Marvell switch ports, the TC flower filter [6] tool is used. Starting from Linux kernel v5.3  Netfilter [7] can also be used to offload ACL configuration to the netdevs, since it uses a common kernel API to do ACL offload configuration.  
+To offload Linux ACL configuration to netdevs, which represent Marvell switch ports, you can use one of the following:
+* TC flower filter [6] tool 
+* Netfilter [7], for Linux kernel v5.3 and higher, since it uses a common kernel API to do ACL offload configuration.  
 
 ## Create/Add ACL Rules  
 Before configuring match rules on switch ports, you must first create the queuing disciplines (qdiscs) to which the flower classifier is attached. In order to prepare for the addition of flower rules, either add the `ingress` qdisc or `clsact` qdisc to the port by TC command:  
