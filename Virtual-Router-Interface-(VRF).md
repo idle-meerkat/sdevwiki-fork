@@ -8,7 +8,8 @@ To create a VRF device:
 ## Enslaving Devices by VRF  
 In order to bind a device to a VRF, the device must be enslaved by the specified VRF device. For example:  
 `$ sudo ip link set dev DEV-NAME master vrf-blue`  
-   Where DEV-NAME is the switchdev interface name, e.g.: sw1p1 or its upper device like bridge or vlan interface.  
+   Where `DEV-NAME` is the switchDev interface name, e.g.: sw1p1 or its upper device like bridge or vlan interface.  
+
 When the device is enslaved, locally connected routes for it are automatically moved to the table associated with VRF device. Any additional routes depending on the enslaved device are dropped and will need to be reinserted to the VRF FIB table following the enslavement.  
 Set a default route in each table to prevent lookup from leaking into other tables:  
 `$ sudo ip route add table 10 unreachable default`
