@@ -5,12 +5,12 @@ For example:
 `$ sudo ip link set dev sw1p1 up`  
 `$ sudo ip addr add 192.168.2.1/24 sw1p2`  
 `$ sudo ip link set dev sw1p1 up`  
-NOTE: A configuration is applied only after the interface is set to admin UP  
+**NOTE**: A configuration is applied only after the interface is set to admin UP  
 
 ## Bridge Routing Interface
 To create router interfaces on top of bridge netdev, an IP address has to be assigned.  
-For .1Q bridge, a router interface can be created for each of its upper VLAN device.  
-For .1D to bridge itself only.  
+For .1Q bridge, a router interface can be created for each of its upper VLAN devices.  
+For .1D a router interface can be created to bridge itself only.  
 .1D Bridge example:  
 `$ ip link add name br0 type bridge`  
 `$ ip link set sw1p3 master br0`   
