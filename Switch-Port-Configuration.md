@@ -5,12 +5,11 @@ In order to specify the corresponding switch port name in Linux, use the followi
 
 # Port State  
 The port administrative status can be set using one of the following commands:
-```
-ip link set sw1p1 [up | down]
-ifconfig sw1p1 [up | down]
-ifup2 sw1p1
-ifdown2 sw1p1
-```
+
+`ip link set sw1p1 [up | down]`  
+`ifconfig sw1p1 [up | down]`  
+`ifup2 sw1p1`  
+`ifdown2 sw1p1`  
 # Port MTU  
 The port MTU can be set using one of the following commands:  
 `ip link set dev sw1p1 mtu 1500`  
@@ -22,15 +21,15 @@ The port MAC address can be set using one of the following commands:
 `ip link set dev sw1p1 address 00:00:00:00:00:02`  
 
 # Port Speed
-The port speed can be set using following commands (The value of speed should be in Mb/s.):  
+The port speed can be set using following commands (the speed value is in Mb/s.):  
 `ethtool -s sw1p1 speed 1000`   
 
-**NOTE:** The speed can only be set if autoneg is disabled. If you pass speed parameter when autoneg is enabled, it will be ignored.  
+**NOTE:** The speed can only be set if auto-negotiation is disabled. If you pass speed parameter when auto-neogtiation is enabled, it is ignored.  
 
 # Port Duplex Mode
 The port duplex mode can be set using following commands:
 `ethtool -s sw1p1 duplex [half|full]`  
 
-**NOTE**: duplex can only be set if autoneg is disabled. If you pass duplex parameter when autoneg is enabled, it is ignored.  
+**NOTE**: duplex can only be set if auto-neogtiation is disabled. If you pass duplex parameter when auto-neogtiation is enabled, it is ignored.  
 
 
