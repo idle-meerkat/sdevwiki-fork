@@ -63,7 +63,7 @@ Linux defines following interface modes which user can advertise to the remote s
 0x20000000000000000	|	200000baseDR4 Full	|
 0x40000000000000000	|	200000baseCR4 Full	|
 
-In order to advertise some modes, you need to prepare the mask using “OR” operation for target modes and pass it to the `ethtool` command.  
+In order to advertise some modes, you need to prepare the mask using “OR” operation for target modes and pass it to the `ethtool` command. For example:  
 `ethtool -s sw1p1 advertise 0x80000`  
 
 If auto negotiation is enabled, the prestera driver should verify inbound advertising modes and print an error message whether some unsupported mode has occurred. If auto-negotiation is disabled, the driver just ignores the advertising mode setting.    
@@ -71,5 +71,6 @@ If auto negotiation is enabled, the prestera driver should verify inbound advert
 The configuration of auto-negotiation mechanism is different for low and high speed ports:   
 * For low-speed ports, the auto-negotiation parameters should be taken (or applied) from (to) PHY directly.  The user has a full control of auto-negotiation configuration on the port.  
 * For high-speed SFP ports, only 802.3ap auto-negotiation is supported. The user can enable/disable 802.3ap auto-negotiation on a port and configure the advertised modes. The 802.3ap mode is supported only for TP port type.  
+
 **NOTE**: Auto-negotiation on Copper SFP with RJ-45 module using a Prestera driver is not supported.  
 
