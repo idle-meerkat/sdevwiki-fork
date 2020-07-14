@@ -102,5 +102,5 @@ The following table describes TLV values that LLDPd will advertise in case of de
 |Management Address TLV | IP of management interface|
 |IEEE 802.3 Organizationally Specific TLV information (not supported by LLDPd automatically, TLV value can be configured via custom TLV configuration)|
 
-NOTE: Advertising IEEE 802.1/ IEEE 802.3 Organizationally Specific TLVs is not supported by the agent. This type of advertising can only be done via static custom TLVs.
+**NOTE**: Advertising IEEE 802.1/ IEEE 802.3 Organizationally Specific TLVs is not supported by the agent. This type of advertising can only be done via static custom TLVs.
 
