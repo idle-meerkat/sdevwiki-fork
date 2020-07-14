@@ -77,7 +77,7 @@ By default, the LLDP agent enables LLDP protocol on all available physical inter
 The mandatory and optional TLV information is enabled automatically by the agent and cannot be disabled or enabled separately.  
 
 ## IEEE 802.1/ IEEE 802.3 Organizationally Specific TLV
-This information is not supported by the agent. However, the this TLV information can be provided statically via custom TLV configuration manually. For example:  
+This information is not supported by the agent. However, TLV information can be provided statically via custom TLV configuration manually. For example:  
 
 * IEEE 802.1   
 `lldpcli configure lldp custom-tlv oui 00,80,c2 subtype 1 oui-info 56,78,9,0,90,78,54`  
