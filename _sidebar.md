@@ -8,7 +8,11 @@ System Configurations
 - Firmware Upgrade  
 
 Network Configurations
-- [Switch Port Configuration](switch-port-configuration)
+- Switch Port 
+  - [Switch Port Configuration](switch-port-configuration)
+  - Port Information
+  - Port Auto-Negotiation
+  - Port Statistics
 - Layer 2  
   - [Bridge and VLAN](bridge-and-vlan)
   - [Bridge FDB](bridge-fdb)
