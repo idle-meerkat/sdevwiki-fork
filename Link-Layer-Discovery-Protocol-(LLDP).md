@@ -1,4 +1,7 @@
-This section describes how to configure Link Layer Discovery Protocol (LLDP) on the device.  
+This section describes how to configure Link Layer Discovery Protocol (LLDP) on the device, using one of the following methods:
+* Open-LLDP
+* LLDPd
+ 
 # Open-LLDP
 This section describes how to configure LLDP protocol using an Open-LLDP agent.  
 ## Default Behavior
