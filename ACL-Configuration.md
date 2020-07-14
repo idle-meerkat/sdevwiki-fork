@@ -5,7 +5,7 @@ To offload Linux ACL configuration to netdevs, which represent Marvell switch po
 ## Create/Add ACL Rules  
 Before configuring match rules on switch ports, you must first create the queuing disciplines (qdiscs) to which the flower classifier is attached. In order to prepare for the addition of flower rules, either add the `ingress` qdisc, or `clsact` qdisc to the port, using the following TC command:  
 `$ sudo tc qdisc add dev DEV-NAME {ingress|clsact}`  
-Where `DEV-NAME` is the switchdev interface name, e.g.: sw1p1.  
+Where `DEV-NAME` is the switchDev interface name, e.g.: sw1p1.  
 
 * To create ingress queuing disciplines (qdiscs):  
 `$ sudo tc qdisc add dev sw1p1 ingress`  
