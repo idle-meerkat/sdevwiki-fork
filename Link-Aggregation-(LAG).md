@@ -65,7 +65,7 @@ To configure an IP address for a LAG, run the following command:
 `$ ip addr add [192.168.1.2/24] dev [bond1]`  
 
 ## VRF  
-To set a bond interface as a part of virtual router:  
+To set a bond interface as a part of virtual router, run the following command:  
 `$ ip link set dev [bond1] master [vrf_name]`  
 
 
