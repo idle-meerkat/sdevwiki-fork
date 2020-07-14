@@ -3,8 +3,8 @@ To enable STP on a bridge, run the following command:
 `$ ip link set dev br0 type bridge stp_state 1`  
 
 By default, STP is disabled.  
-To disable STP on a bridge, set `stp_state` to “0”.  
-To show the current `stp_state` value, run the following command:    
+* To disable STP on a bridge, set `stp_state` to “0”.  
+* To show the current `stp_state` value, run the following command:    
 `$ ip -d link show dev br0 | grep stp_state`    
 
 In addition, to show extended STP configuration on the bridge (bridge stp state, port stp state, …), you can use `brctl` utility.  
