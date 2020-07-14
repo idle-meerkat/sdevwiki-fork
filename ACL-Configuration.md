@@ -35,8 +35,11 @@ For example, to create a flower rule which drops an IP packet with source addres
 `$ sudo tc filter add dev sw1p1 ingress protocol ip pref 10 flower skip_swrc_ip 192.168.1.1 action drop`  
  
 This adds a rule with priority (`pref`) 10, matching and dropping every IP packet with the source address 192.168.1.1.  
-**NOTE**: the parameter `skip_sw` instructs TC to skip the insertion of the rule to the kernel's datapath. If this keyword is omitted, the rule is inserted in both the kernel and hardware.  
+
+**NOTE**: the parameter `skip_sw` instructs the TC to skip the insertion of the rule to the kernel's datapath. If this keyword is omitted, the rule is inserted in both the kernel and hardware.  
+
 To add the rule to kernel, e.g. filter CPU traffic, use the `skip_hw` key instead.  
+
 TC rules (filters) are put by order of priority (`pref`). If the priority is omitted, the TC will generate priority automatically based on flower rule/actions provided by user. For rules with the same priority, but different match/action value, the rule is added to the end of all rules with this priority. The rule with lowest `pref` number (high priority) is executed first.  
 
 Similar commands can be used to pass the packet or trap the packet to CPU. For example:  
@@ -50,14 +53,10 @@ Similar commands can be used to pass the packet or trap the packet to CPU. For e
 `$ tc -s filter show dev sw1p1 ingress`  
 
 See [Supported Actions, Keys and Rules](#supported-actions-keys-and-rules) for the full list of supported rules. Following are several examples showing how to use TC with other supported ACL keys (tc flower match):   
-`$ sudo tc filter add dev sw1p1 ingress pref 25 protocol 0x8FF flower skip_sw action pass`
-
-`$ sudo tc filter add dev sw1p1 ingress prio 24 flower skip_sw src_mac 00:11:22:33:44:88 action drop`
-
-`$ sudo tc filter add dev sw1p1 ingress protocol ip flower skip_sw ip_proto tcp action drop`
-
-`$ sudo tc filter add dev sw1p1 ingress preference 43 protocol ip flower skip_sw ip_proto tcp src_port 39 action trap`
-
+`$ sudo tc filter add dev sw1p1 ingress pref 25 protocol 0x8FF flower skip_sw action pass`  
+`$ sudo tc filter add dev sw1p1 ingress prio 24 flower skip_sw src_mac 00:11:22:33:44:88 action drop`  
+`$ sudo tc filter add dev sw1p1 ingress protocol ip flower skip_sw ip_proto tcp action drop`  
+`$ sudo tc filter add dev sw1p1 ingress preference 43 protocol ip flower skip_sw ip_proto tcp src_port 39 action trap`  
 `$ sudo tc filter add dev sw1p1 ingress protocol all flower skip_sw action drop`  
 
 **NOTE**: some TC command keys supports different naming (alias) for some attributes. For example, `pref` Key can be used as `prio`.
@@ -66,9 +65,11 @@ See [Supported Actions, Keys and Rules](#supported-actions-keys-and-rules) for t
 TC flower rule (ACL rules) is deleted based on delete criteria provided by user.  
 For example, to delete all rules with given priority, use the following command:  
 `$ tc filter del dev sw1p1 root prio 1`  
+
 If there are multiple rules in qdisc with the same priority, then the specific rule can be deleted by handle qdisc-id.  
-For example, delete rule with priority 1 and handle 0x2:  
+For example, to delete rule with priority 1 and handle 0x2:  
 `$ sudo tc filter del dev sw1p1 root prio 1 handle 0x2 flower`  
+
 **NOTE**: Use `tc filter show dev sw1p1 root` command to determine which handle to use.  
 
 To delete all rules from a specific qdisk, use the following command:  
