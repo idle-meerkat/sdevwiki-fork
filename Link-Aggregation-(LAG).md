@@ -52,7 +52,7 @@ In order to configure the speed or auto-negotiation, complete the following acti
 To add a LAG interface to a bridge, run the following command:  
 `$ ip link set [bond1] master br0`  
 
-## Adding a LAG Interface to VLAN
+## Adding a LAG Interface to a VLAN
 To configure a VLAN on the LAG interface, run the following command:  
 `$ bridge vlan add vid [XX] pvid dev [bond1]`  
 
