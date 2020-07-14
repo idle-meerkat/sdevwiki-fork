@@ -7,7 +7,7 @@ A bridge is created by running:
 Or:  
 `$ ip link add name br0 type bridge`  
 
-Linux bridge is forwarding packets based on FDB data. To display bridge FDB:  
+A Linux bridge forwards packets based on FDB data. To display bridge FDB data:  
 `$ bridge fdb`  
 `52:54:00:12:35:01 dev sw1p1 master br0 permanent`  
 `00:02:00:00:02:00 dev sw1p1 master br0 offload`   
