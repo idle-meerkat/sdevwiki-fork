@@ -3,7 +3,7 @@ To offload Linux ACL configuration to netdevs, which represent Marvell switch po
 * Netfilter [7], for Linux kernel v5.3 and higher, since it uses a common kernel API to do ACL offload configuration.  
 
 ## Create/Add ACL Rules  
-Before configuring match rules on switch ports, you must first create the queuing disciplines (qdiscs) to which the flower classifier is attached. In order to prepare for the addition of flower rules, either add the `ingress` qdisc or `clsact` qdisc to the port by TC command:  
+Before configuring match rules on switch ports, you must first create the queuing disciplines (qdiscs) to which the flower classifier is attached. In order to prepare for the addition of flower rules, either add the `ingress` qdisc, or `clsact` qdisc to the port, using the following TC command:  
 `$ sudo tc qdisc add dev DEV-NAME {ingress|clsact}`  
 Where `DEV-NAME` is the switchdev interface name, e.g.: sw1p1.  
 
