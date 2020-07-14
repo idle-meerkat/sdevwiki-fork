@@ -1,5 +1,5 @@
 
-The port autoneg can be enabled/disabled using following command:  
+Port auto-negotiation can be enabled/disabled using following command:  
 `ethtool -s sw1p1 autoneg [on | off]`  
 Linux defines following interface modes which user can advertise to the remote side:
 | Mask | Mode |
