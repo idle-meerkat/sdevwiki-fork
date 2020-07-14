@@ -29,5 +29,5 @@ Network Configurations
   - [ACL Configuration](acl-configuration)
   - [Shared Block Support](shared-block-support)
 
-Debugging Tooland and Methods  
+Debugging Tools and and Methods  
 Resources and Releases  
