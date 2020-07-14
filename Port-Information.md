@@ -11,8 +11,7 @@ amzgo-host# ip link show sw1p1
 
 # ethtool sw1pX
 The `ethtool` command provides information about current speed and duplex, autoneg status, supported and advertised link modes, connector type and statistic.  
-The output is shown in the example below:
-
+The following are examples of output. 
 ## Low Speed Port  
 ```
 amzgo-host# ethtool sw1p1
