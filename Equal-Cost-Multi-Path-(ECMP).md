@@ -5,7 +5,7 @@ To install a route with multiple nexthops:
 
 To edit an existing nexthop configuration, you need to delete the entire ECMP route and then re-add it with a modified nexthop configuration.  
 
-## Lindown Nexthops  
+## Linkdown Nexthops  
 When the netdevice goes down, the nexthops that are using it are marked with a `linkdown` flag. By default, the routing subsystem tries to forward packets through them. This behavior is defined by `sysctl setting net.ipv4.conf.default.ignore_routes_with_linkdown`.  
 
 To set the kernel routing subsystem to exclude nexthops with link down from its ECMP group, use the following setting:  
