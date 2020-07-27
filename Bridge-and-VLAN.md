@@ -40,6 +40,7 @@ Output:
 * Change the PVID of the Port using the PVID flag  
 `$ bridge vlan add vid 20 dev sw0p1 pvid`  
 `$ bridge vlan show dev sw1p5`  
+Output:  
 `port         vlan ids`  
 `sw1p5          1 Egress Untagged 20 PVID`  
 ## VLAN Unaware Configurations  
