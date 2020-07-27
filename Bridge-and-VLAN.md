@@ -34,6 +34,7 @@ Linux Bridge supports the following bridges types, defined by 1EEE 802.1Q standa
 * Add a port to VLAN  
 `$ bridge vlan add vid 20 dev sw0p1`  
 `$ bridge vlan show dev sw0p1`  
+Output:  
 `port         vlan ids`  
 `sw0p1           1   PVID Egress Untagged 20`  
 * Change the PVID of the Port using the PVID flag  
