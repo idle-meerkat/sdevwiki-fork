@@ -94,7 +94,7 @@ The table shows the mandatory TLV information.
 |Chassis ID TLV | Mac address of management interface|
 |Port ID TLV | Switchdev port MAC address|
 |Time to Live TLV | TTL|
-|Optional TLVs information|
+||Optional TLVs information|
 |Port Description TLV | Switchdev port name|
 |System Name TLV	| Hostname (hostname tool)|
 |System Description TLV | OS system description in format: \<OS release name\> \<kernel name\> \<kernel release\> \<kernel version\> \<machine hardware name\>. Can be obtained via Linux tools like:  `sed -ne 's/PRETTY_NAME="\(.*\)"/\1/p' /etc/os-release; uname -s; uname -r; uname -v; uname -m`|
