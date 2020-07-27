@@ -2,13 +2,14 @@ Linux bridge is a way to connect two Ethernet segments together in a protocol in
 
 The Linux bridge code implements a subset of the ANSI/IEEE 802.1d standard. [1]. The original Linux bridging was first done in Linux 2.2, then rewritten by Lennert Buytenhek. The code for bridging has been integrated into 2.4 and 2.6 kernel series.  
 ## Linux Commands
-A bridge is created by running:  
+To create a bridge run:  
 `$ ip link add name br0 type bridge`  
 Or:  
 `$ ip link add name br0 type bridge`  
 
 A Linux bridge forwards packets based on FDB data. To display bridge FDB data:  
 `$ bridge fdb`  
+Output:  
 `52:54:00:12:35:01 dev sw1p1 master br0 permanent`  
 `00:02:00:00:02:00 dev sw1p1 master br0 offload`   
 `00:02:00:00:02:00 dev sw1p1 self`  
