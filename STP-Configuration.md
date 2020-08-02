@@ -29,4 +29,8 @@ After the bridge is created and STP is enabled (described above), you can switch
 `$ mstpctl showbridge`  
 * To show port information:  
 `$ mstpctl showport br0 sw1p5`  
+
+# STP LImitations
+* STP is configured by means of standard Linux command line tools (ip bridge, brctl).
+* To enable RSTP requires user-level daemon mstpd which should be run in RSTP mode. `mstpctl` is a utility to configure mstpd. mstpd(mstpctl) is not a standard Linux utility.
   
