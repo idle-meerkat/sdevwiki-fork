@@ -55,3 +55,8 @@ Multiple VLAN-unaware bridges can be created. This can be used, for example, to 
  If learning is off, the bridge will end up flooding any traffic for which it has no FDB entry. By default this flag is on.  
  `Flooding` – controls whether a given port floods unicast traffic for which there is no FDB entry. By default, this flag is on.  
  `$ bridge link set dev sw1p5 learning off flood off`
+
+# Bridge and VLAN Limitations
+* Changing bridge mode while switch ports are enslaved to bridge generates an error.
+* Switchdev does not put all ports into a bridge by default.
+
