@@ -76,5 +76,6 @@ To set a bond interface as a part of virtual router, run the following command:
 * The switchport sw1pX must have admin down state in order to add it to LAG (Linux limitation)
 * Enslaving a port to the LAG device that already has an upper device is not supported.
 * Changing speed/auto-negotiation on a LAG interface is not supported. The speed should be manually changed on all members. (Linux limitation)
-
+* LAG ACL is not supported.
+* Changing the MTU of a port which is part of LAG affects (rewrites) the LAG MTU setting for this port.
 
