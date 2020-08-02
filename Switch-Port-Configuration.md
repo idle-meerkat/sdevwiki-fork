@@ -32,4 +32,12 @@ The port duplex mode can be set using following commands:
 
 **NOTE**: duplex can only be set if auto-neogtiation is disabled. If you pass duplex parameter when auto-neogtiation is enabled, it is ignored.  
 
+# Switch Port Limitations
+* Only the last significant byte of MAC address can be configured on the port. The rest part of MAC address is a common base for all ports. 
+* ethtool -r command to restart the auto negotiation is supported only for 1G low speed copper ports.
+* Port media type should be configured before speed settin.g
+* The ethtool –m command to read SFP module info is not supported.
+* The ethtool –p command to test LEDs on port is not supported.
+* FEC is supported only on SFP ports since 10G speed and higher.
+* Only odd numbers are supported for MTU configuration on port. This is in keeping with the requirement that MRU is changed together with MTU.
 
