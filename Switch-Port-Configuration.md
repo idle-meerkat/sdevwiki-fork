@@ -35,7 +35,7 @@ The port duplex mode can be set using following commands:
 # Switch Port Limitations
 * Only the last significant byte of MAC address can be configured on the port. The rest part of MAC address is a common base for all ports. 
 * ethtool `-r` command to restart the auto negotiation is supported only for 1G low speed copper ports.
-* Port media type should be configured before speed settin.g
+* Port media type should be configured before speed setting.
 * The ethtool `–m` command to read SFP module info is not supported.
 * The ethtool `–p` command to test LEDs on port is not supported.
 * FEC is supported only on SFP ports since 10G speed and higher.
