@@ -38,4 +38,11 @@ To show Linux Routing table:
 `$ 192.168.1.0/24 dev sw1p2  proto kernel  scope link  src`  
 `$ 192.168.1.1/24 offload`  
 `$ 192.168.2.0/24 via 192.168.0.2 dev sw1p1 offload`  
-Entries marked with offload flag are programmed to the PP.   
+Entries marked with offload flag are programmed to the PP.  
+
+# Static Route Limitaions
+* Only IPv4 is supported.
+* Linux Kernel forwarding MUST be enabled.
+* Multicast routing not supported.
+* TODO add limitation from https://jirail.marvell.com/browse/SWITCHDEV-718 and https://jirail.marvell.com/browse/SWITCHDEV-753
+* At least one switch port should be added (enslaved) to the bridge before assigning the IP address on the bridge. Otherwise the router interface for the  bridge is not created.
