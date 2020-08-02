@@ -40,7 +40,7 @@ To show Linux Routing table:
 `$ 192.168.2.0/24 via 192.168.0.2 dev sw1p1 offload`  
 Entries marked with offload flag are programmed to the PP.  
 
-# Static Route Limitaions
+# Static Route Limitations
 * Only IPv4 is supported.
 * Linux Kernel forwarding MUST be enabled.
 * Multicast routing not supported.
