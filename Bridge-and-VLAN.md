@@ -69,11 +69,11 @@ Output:
 
 
 ## VLAN Unaware Configurations  
-Multiple VLAN-unaware bridges can be created. This can be used, for example, to separate FDBs:
-`$ ip link add name br1 type bridge`
-`$ ip link add name br2 type bridge`
-`$ ip link set dev swp1 master br1`
-`$ ip link set dev swp2 master br2`
+Multiple VLAN-unaware bridges can be created. This can be used, for example, to separate FDBs:  
+`$ ip link add name br1 type bridge`  
+`$ ip link add name br2 type bridge`  
+`$ ip link set dev swp1 master br1`  
+`$ ip link set dev swp2 master br2`  
 
 ## Bridge Port Configurations  
 The following bridge port attributes can be configured:
