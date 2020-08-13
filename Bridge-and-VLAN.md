@@ -13,7 +13,8 @@ Linux Bridge supports the following bridges types, defined by 1EEE 802.1Q standa
 * Make a Bridge VLAN Aware:  
 `$ ip link set dev br0 type bridge vlan_filtering 1`
 
-A Linux bridge forwards packets based on FDB data. To display bridge FDB data:  
+A Linux bridge forwards packets based on FDB data.  
+* To display bridge FDB data:  
 `$ bridge fdb`  
 Output:  
 `52:54:00:12:35:01 dev sw1p1 master br0 permanent`  
