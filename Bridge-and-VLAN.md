@@ -74,10 +74,14 @@ Multiple VLAN-unaware bridges can be created. This can be used, for example, to 
 `$ ip link set dev sw0p1.10 master br1`  
 `$ ip link set dev sw0p2.20 master br1`  
 ## Bridge Port Configurations  
- `Learning` – Controls whether a given port will learn MAC addresses from received traffic or not.  
- If learning is off, the bridge will end up flooding any traffic for which it has no FDB entry. By default this flag is on.  
- `Flooding` – controls whether a given port floods unicast traffic for which there is no FDB entry. By default, this flag is on.  
+The following bridge port attributes can be configured:
+* Learning – Controls whether a given port will learn MAC addresses from received traffic or not.  
+ If learning is off, the bridge will end up flooding any traffic for which it has no FDB entry. By default this flag is on.
+* Flooding – controls whether a given port floods unicast traffic for which there is no FDB entry. By default, this flag is on.  
  `$ bridge link set dev sw1p5 learning off flood off`  
+
+To set learning and flooding attributes:
+`$ bridge link set dev DEV learning {on/off} flood {on/off}`  
 
 ## Static and Sticky FDB Entries
 Recently, a new entry type “sticky” was introduced in Linux bridge. In Linux, a static FDB can be roamed to a different port via learning. Sticky FDB entries cannot be moved. 
