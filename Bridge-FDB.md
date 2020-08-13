@@ -10,10 +10,5 @@ Or:
 
 
 ## Bridge Port Configuration
-The following bridge port attributes can be configured:
-* learning
-* flooding
 
-To set learning and flooding attributes:
-`$ bridge link set dev DEV learning {on/off} flood {on/off}`  
  
