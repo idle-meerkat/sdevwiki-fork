@@ -14,8 +14,7 @@ Network Configurations
   - [Port Auto-Negotiation](port-auto-negotiation)  
   - [Port Statistics](port-statistics)  
 - Layer 2  
-  - [Bridge and VLAN](bridge-and-vlan)
-  - [Bridge FDB](bridge-fdb)
+  - [Bridge and VLAN](bridge-and-vlan)  
   - [Link Layer Discovery Protocol (LLDP)](link-layer-discovery-protocol-(lldp))  
   - [Link Aggregation (LAG)](link-aggregation-(lag))
   - [STP Configuration](stp-configuration)
