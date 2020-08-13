@@ -66,13 +66,15 @@ Output:
 Output:  
 `port         vlan ids`  
 `sw1p5          1 Egress Untagged 20 PVID`  
+
+
 ## VLAN Unaware Configurations  
-Multiple VLAN-unaware bridges can be created. This can be used, for example, to bridge two VLAN devices with different VIDs.  
-`$ ip link add link sw0p1 name sw0p1.10 type vlan id 10`  
-`$ ip link add link sw0p2 name sw0p2.20 type vlan id 20`  
-`$ ip link add name br1 type bridge`  
-`$ ip link set dev sw0p1.10 master br1`  
-`$ ip link set dev sw0p2.20 master br1`  
+Multiple VLAN-unaware bridges can be created. This can be used, for example, to separate FDBs:
+`$ ip link add name br1 type bridge`
+`$ ip link add name br2 type bridge`
+`$ ip link set dev swp1 master br1`
+`$ ip link set dev swp2 master br2`
+
 ## Bridge Port Configurations  
 The following bridge port attributes can be configured:
 * Learning – Controls whether a given port will learn MAC addresses from received traffic or not.  
