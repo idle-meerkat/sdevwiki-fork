@@ -33,13 +33,6 @@ Output:
 
 Entries with `offload` flag are externally learned entries (hardware FDB)
 
-
-## VLAN Device Configuration
-* Configure VLAN device on top of a switch port  
-`$ ip link add link sw0p1 name sw0p1.5 type vlan id 5`
-* Delete a VLAN device  
-`$ ip link del dev sw0p1.5`
-
 ## Bridge Membership Configuration
 * Adding a net device port to the bridge  
 `$ ip link set dev sw0p1 master br`  
