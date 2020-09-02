@@ -1,7 +1,6 @@
-[Introduction](Introduction)  
 Build and Installation  
 - Compilation  
-- Installation  
+- Installation(install)  
 
 System Configurations  
 - Kernel Install & Upgrade  
