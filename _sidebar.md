@@ -1,6 +1,6 @@
 Build and Installation  
 - Compilation  
-- Installation(install)  
+- [Installation](install)  
 
 System Configurations  
 - Kernel Install & Upgrade  
