@@ -4,7 +4,7 @@ Build and Installation
 
 System Configurations  
 - Kernel Install & Upgrade  
-- Firmware Upgrade  
+- [Firmware Upgrade](Firmware-Upgrade)  
 
 Network Configurations
 - Switch Port 
