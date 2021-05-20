@@ -2,9 +2,9 @@ Upgrading the firmware to enable using Switchdev includes the following stages:
 1. Fetch the latest HOST image.
 2. Boot from PCIe.
 3. Upgrade the Flash image.  
-* [1. Fetch the Latest HOST Image](#1.-Fetch-the-Latest-HOST-Image)
-* [2. Boot from PCIe](#2.-Boot-from-PCIe)
-* [3. Upgrade the Flash Image](#3.-Upgrade-the-Flash-Image)
+* [1. Fetch the Latest HOST Image](#1-Fetch-the-Latest-HOST-Image)
+* [2. Boot from PCIe](#2-Boot-from-PCIe)
+* [3. Upgrade the Flash Image](#3-Upgrade-the-Flash-Image)
 
 These stages are described below.
 
