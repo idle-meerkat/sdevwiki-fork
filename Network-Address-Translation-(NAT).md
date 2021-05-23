@@ -91,3 +91,86 @@ This example covers the basic use case (many to one, with one private Switchdev 
 The following figure shows Dynamic NAT Setup: 
 
 ![Dynamic NAT Setup](images/dynamic_nat_setup.png)
+
+
+NOTE: the same scenario also covers the case if you have only one private host. 
+
+
+Configuration of private host connected to the switch device (in this case on one private): 
+
+
+# private host: IP/default gateway 
+
+ip addr add dev eth0 192.168.0.2/24 
+
+ip route add default via 192.168.0.1 
+
+
+Configuration of public host connected to the switch device: 
+
+
+# public host: IP 
+
+ip addr add dev eth0 10.1.1.2/24 
+
+
+IP configuration on the switch: 
+
+
+# switch: private/public interface IP 
+
+ip addr add dev sw1p2 192.168.0.1/24 
+
+ip addr add dev sw1p1 91.245.77.1/24 
+
+
+Add default gateway on the switch to route packets via public interface. 
+
+
+# add default gateway via public interface 
+
+ip route add default via 91.245.77.1 
+
+
+Configure connection tracking on private port: 
+
+
+tc qdisc add dev sw1p2 clsact 
+
+tc filter add dev sw1p2 ingress proto ip pref 2 flower ct_state -trk \ 
+
+  action ct 
+
+
+Configure NAT connection tracking on public port: 
+
+
+tc qdisc add dev sw1p1 clsact 
+
+tc filter add dev sw1p1 egress prio 10 proto ip flower \ 
+
+  action ct commit nat src addr 91.245.77.1 pipe action pass 
+
+tc filter add dev sw1p1 ingress prio 5 proto ip flower \ 
+
+  action ct nat pipe action pass 
+
+
+NOTE: Since the NAT configuration is done by using regular ACL rules, it takes resources from regular ACL memory. 
+
+
+NOTE: Egress CT flower filter on public port should be the same as CT flower filter on private port. If CT rule exists on multiple private port, those flower matches should be reflected on egress public port. 
+
+
+3.2.2 Private to Private flow 
+
+
+To skip NAT for packets that are destinated for private subnet or hosts, addition HW offloaded rules (skip_sw flower option) need to be installed on private ports to do so. E.g., rule that matches private subnet with higher priority should be installed with action “do nothing” on each of the private port. 
+
+
+tc filter add dev sw1p2 protocol ip ingress \ 
+
+   flower skip_sw ip_proto tcp dst_ip 192.168.0.1/24 action pass 
+
+
+NOTE: last added rule will have higher priority, so the priority can be skipped in the rule (more details are in ACL document).  
