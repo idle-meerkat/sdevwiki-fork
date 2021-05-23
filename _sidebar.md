@@ -22,6 +22,7 @@ Network Configurations
   - [Equal Cost Multi Path (ECMP)](equal-cost-multi-path-(ecmp))
   - [Virtual Router Interface (VRF)](virtual-router-interface-(vrf))
   - [Virtual Router Redundancy Protocol (VRRP)](virtual-router-redundancy-protocol-(vrrp))  
+  - [Network Address Translation (NAT)](network-address-translation-(nat))  
 - Access Control Lists (ACL)
   - [Supported Actions, Keys and Rules](supported-actions,-keys-and-rules)
   - [ACL Configuration](acl-configuration)
