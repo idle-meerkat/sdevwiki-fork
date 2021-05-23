@@ -67,5 +67,5 @@ tc filter add dev eth0 parent 1: protocol ip matchall \
    action nat egress 10.0.2.2/32 172.31.19.2/32 
 ```
 
-Since the Switchdev driver egress qdisc (egress ACL) is not supported now by Switchdev driver, the public/private Switchdev TC NAT configuration is done by using ingress qdisc only which requires addition HW rules on private switch port
+Since the Switchdev driver egress qdisc (egress ACL) is not supported now by Switchdev driver, the public/private Switchdev TC NAT configuration is done by using ingress qdisc only which requires addition HW rules on private switch port.
 
