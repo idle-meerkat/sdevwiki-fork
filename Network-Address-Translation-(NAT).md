@@ -1,3 +1,5 @@
+# Static (Stateless) NAT Configuration
+
 To configure stateless Network Address Translation (NAT), use the `tc` iproute2 tool, the `tc-nat` action. The action is used in combination with the `flower` filter rule and ingress qdisc to do static NAT entry offloading.
 The command format looks like the following: 
 tc … flower ... action nat { ingress | egress } <OLD> <NEW> 
@@ -9,7 +11,7 @@ egress         translate source addresses, i.e. perform SNAT.
 
 To make NAT one-to-one mapping, you must configure one rule for private-to-public direction, and another rule for public-to-private direction. For more information on `tc-nat` action, see the official man page at [[https://man7.org/linux/man-pages/man8/tc-nat.8.html]]. 
 
-# Basic example 
+## Basic example 
 Create static one-to-one mapping from private (sw1p2) to public (sw1p1) subnet for all TCP traffic.  The IP 192.168.0.0/24 is the private subnet. 
 The following figure shows Static NAT Setup: 
 
@@ -69,7 +71,7 @@ tc filter add dev eth0 parent 1: protocol ip matchall \
 ```
 Since the Switchdev driver egress `qdisc` (egress ACL) is not supported now by Switchdev driver, the public/private Switchdev TC NAT configuration is done by using ingress `qdisc` only, which requires adding hardware rules on the private switch port.
 
-# Private to Private Flow
+## Private to Private Flow
 To skip NAT for packets that are destined for private subnet or hosts, you need to install additional rules on private ports. For example, a rule that matches a private subnet with a higher priority should be installed with the action “do nothing”. 
 
 ```
@@ -78,3 +80,14 @@ tc filter add dev sw1p2 protocol ip ingress \
 ```
 NOTE: The rule added rule has the higher priority. This enable skipping the priority in the rule (see the ACL document for more information). 
 
+# Dynamic (Stateful) NAT Configuration
+The configuration of stateful NAT is done by using `tc` iproute2 tool and the `tc-ct` action. The action is used in combination with `flower` filter rule and ingress qdisc to do the dynamic NAT entry offloading. The user guide for stateful NAT is described in tc-flower and tc-ct man pages. 
+
+NOTE: the stateful NAT feature requires Linux kernel 5.8.9 and above. 
+
+## Basic configuration 
+This example covers the basic use case (many to one, with one private Switchdev port) for stateful NAT configuration, using TC connection tracking subsystem. 
+
+The following figure shows Dynamic NAT Setup: 
+
+![Dynamic NAT Setup](images/dynamic_nat_setup.png)
