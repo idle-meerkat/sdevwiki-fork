@@ -10,7 +10,8 @@ egress         translate source addresses, i.e. perform SNAT.
 To make NAT one-to-one mapping, you must configure one rule for private-to-public direction, and another rule for public-to-private direction. For more information on `tc-nat` action, see the official man page at [[https://man7.org/linux/man-pages/man8/tc-nat.8.html]]. 
 
 # Basic example 
-Create static one-to-one mapping from private (sw1p2) to public (sw1p1) subnet for all TCP traffic.  The IP 192.168.0.0/24 is the private subnet. The setup is described below: 
+Create static one-to-one mapping from private (sw1p2) to public (sw1p1) subnet for all TCP traffic.  The IP 192.168.0.0/24 is the private subnet. 
+The following figure shows Static NAT Setup: 
 
 ![Static NAT Setup](images/static_nat_setup.png)
 
