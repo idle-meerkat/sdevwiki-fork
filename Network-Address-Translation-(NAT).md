@@ -67,6 +67,14 @@ tc qdisc add dev eth0 root handle 1: prio
 tc filter add dev eth0 parent 1: protocol ip matchall \ 
    action nat egress 10.0.2.2/32 172.31.19.2/32 
 ```
+Since the Switchdev driver egress `qdisc` (egress ACL) is not supported now by Switchdev driver, the public/private Switchdev TC NAT configuration is done by using ingress `qdisc` only, which requires adding hardware rules on the private switch port.
 
-Since the Switchdev driver egress qdisc (egress ACL) is not supported now by Switchdev driver, the public/private Switchdev TC NAT configuration is done by using ingress qdisc only which requires addition HW rules on private switch port.
+# Private to Private Flow
+To skip NAT for packets that are destined for private subnet or hosts, you need to install additional rules on private ports. For example, a rule that matches a private subnet with a higher priority should be installed with the action “do nothing”. 
+
+```
+tc filter add dev sw1p2 protocol ip ingress \ 
+   flower skip_sw ip_proto tcp dst_ip 192.168.0.1/24 action pass 
+```
+NOTE: The rule added rule has the higher priority. This enable skipping the priority in the rule (see the ACL document for more information). 
 
