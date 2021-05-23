@@ -11,6 +11,7 @@ To make NAT one-to-one mapping, you must configure one rule for private-to-publi
 
 # Basic example 
 Create static one-to-one mapping from private (sw1p2) to public (sw1p1) subnet for all TCP traffic.  The IP 192.168.0.0/24 is the private subnet. The setup is described below: 
+![Static NAT Setup](images/static_nat_setup.png)
 
 
 Text Box 
