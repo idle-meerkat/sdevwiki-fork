@@ -1,7 +1,7 @@
 # Static (Stateless) NAT Configuration
 
-To configure stateless Network Address Translation (NAT), use the `tc` iproute2 tool, the `tc-nat` action. The action is used in combination with the `flower` filter rule and ingress qdisc to do static NAT entry offloading.
-The command format looks like the following: 
+To configure stateless Network Address Translation (NAT), use the `tc` iproute2 tool, with the `tc-nat` action. The action is used in combination with the `flower` filter rule and ingress qdisc to do static NAT entry offloading.
+This is the command format: 
 ```
 tc … flower ... action nat { ingress | egress } <OLD> <NEW> 
 ```
@@ -11,15 +11,15 @@ where,
 * `ingress`         translate destination addresses, i.e. perform DNAT. 
 * `egress`         translate source addresses, i.e. perform SNAT. 
 
-To make NAT one-to-one mapping, you must configure one rule for private-to-public direction, and another rule for public-to-private direction. For more information on `tc-nat` action, see the official man page at [[https://man7.org/linux/man-pages/man8/tc-nat.8.html]]. 
+To implement NAT one-to-one mapping, you must configure one rule for private-to-public direction, and another rule for public-to-private direction. For more information on `tc-nat` action, see the official man page at [[https://man7.org/linux/man-pages/man8/tc-nat.8.html]]. 
 
-## Basic example 
-Create static one-to-one mapping from private (sw1p2) to public (sw1p1) subnet for all TCP traffic.  The IP 192.168.0.0/24 is the private subnet. 
-The following figure shows Static NAT Setup: 
+## Basic Example 
+Create a static one-to-one mapping from a private (sw1p2) to a public (sw1p1) subnet for all TCP traffic.  The IP 192.168.0.0/24 is the private subnet. 
+The following figure shows static NAT setup: 
 
 ![Static NAT Setup](images/static_nat_setup.png)
 
-First, you must define IP addresses on public/private host interfaces connected to the switch: 
+First, you must define IP addresses on the public/private host interfaces connected to the switch: 
 ```
 # private host IP / default gateway 
 ip addr add dev eth0 192.168.0.2/24 
@@ -28,19 +28,19 @@ ip route add default via 192.168.0.1
 # public host IP address (WAN port) 
 ip addr add dev eth0 10.1.1.2/24 
 ```
-Next, configure IP addresses on the switch public/private ports: 
+Next, configure IP addresses on the public/private switch ports: 
 
 ```
 ip addr add dev sw1p2 192.168.0.1/24 
 ip addr add dev sw1p1 91.245.77.1/24 
 ```
-Add a default gateway on the switch, to route packets via public interface. 
+Add a default gateway on the switch, to route packets via a public interface. 
 
 ```
 # add default gateway via public interface 
 ip route add default via 91.245.77.1 
 ```
-Configure ACL rules on switch to do NAT offloading: 
+Configure ACL rules on the switch to do NAT offloading: 
 
 ```
 # public ports  
@@ -59,7 +59,7 @@ tc filter add dev sw1p2 protocol ip ingress \
    flower skip_sw ip_proto tcp src_ip 192.168.0.2 \ 
    action nat egress 192.168.0.2 91.245.77.1 
 ```
-NOTE: The configuration is slightly different from usual Linux software configuration of stateless TC NAT, where NAT rules are applied on a public port only (e.g., WAN port). For instance: 
+NOTE: The configuration is slightly different from the usual Linux software configuration of stateless TC NAT, where NAT rules are applied on a public port only (such as, WAN port). For instance: 
 ```
 # public network 
 tc qdisc add dev eth0 ingress 
@@ -71,7 +71,7 @@ tc qdisc add dev eth0 root handle 1: prio
 tc filter add dev eth0 parent 1: protocol ip matchall \ 
    action nat egress 10.0.2.2/32 172.31.19.2/32 
 ```
-Since the Switchdev driver egress `qdisc` (egress ACL) is not supported now by Switchdev driver, the public/private Switchdev TC NAT configuration is done by using ingress `qdisc` only, which requires adding hardware rules on the private switch port.
+NOTE: Egress `qdisc` (egress ACL) is not supported by the Switchdev driver. Therefore, the public/private Switchdev TC NAT configuration is done using ingress `qdisc` only, which requires adding hardware rules on the private switch port.
 
 ## Private to Private Flow
 To skip NAT for packets that are destined for private subnet or hosts, you need to install additional rules on private ports. For example, a rule that matches a private subnet with a higher priority should be installed with the action “do nothing”. 
@@ -87,14 +87,14 @@ The configuration of stateful NAT is done by using `tc` iproute2 tool and the `t
 
 NOTE: The stateful NAT feature requires Linux kernel 5.8.9 and above. 
 
-## Basic configuration 
-This example covers the basic use case (many to one, with one private Switchdev port) for stateful NAT configuration, using TC connection tracking subsystem. 
+## Basic Configuration 
+This example covers the basic use case (many-to-one, with one private Switchdev port) for stateful NAT configuration, using a TC connection tracking subsystem. 
 
-The following figure shows Dynamic NAT Setup: 
+The following figure shows dynamic NAT setup: 
 
 ![Dynamic NAT Setup](images/dynamic_nat_setup.png)
 
-NOTE: the same scenario also covers the case if you have only one private host. 
+NOTE: This scenario also covers the case of only one private host. 
 Configuration of private host connected to the switch device (in this case on one private): 
 ```
 # private host: IP/default gateway 
@@ -133,13 +133,13 @@ tc filter add dev sw1p1 egress prio 10 proto ip flower \
 tc filter add dev sw1p1 ingress prio 5 proto ip flower \ 
   action ct nat pipe action pass 
 ```
-NOTE: Since the NAT configuration is done by using regular ACL rules, it takes resources from regular ACL memory. 
+NOTE: Since the NAT configuration is done using regular ACL rules, it takes resources from regular ACL memory. 
 
-NOTE: Egress CT flower filter on public port should be the same as CT flower filter on private port. If CT rule exists on multiple private port, those flower matches should be reflected on egress public port. 
+NOTE: Egress CT flower filter on a public port should be the same as CT flower filter on a private port. If a CT rule exists on multiple private port, those flower matches should be reflected on the egress public port. 
 
-### Private to Private flow 
+### Private to Private Flow 
 
-To skip NAT for packets that are destined for private subnet or hosts, you need to install additional hardware offloaded rules (skip_sw flower option) on private ports. For example, a rule that matches a private subnet with higher priority should be installed with the action “do nothing” on each of the private ports. 
+To skip NAT for packets that are destined for private subnet or hosts, you need to install additional hardware offloaded rules (`skip_sw` flower option) on private ports. For example, a rule that matches a private subnet with higher priority should be installed with the action “do nothing” on each of the private ports. 
 ```
 tc filter add dev sw1p2 protocol ip ingress \ 
    flower skip_sw ip_proto tcp dst_ip 192.168.0.1/24 action pass 
