@@ -6,10 +6,10 @@ The command format looks like the following:
 tc … flower ... action nat { ingress | egress } <OLD> <NEW> 
 ```
 where, 
-`<OLD>`   is the IP address which should be translated. 
-`<NEW>`         is the IP address which IP should be translated into. 
-`ingress`         translate destination addresses, i.e. perform DNAT. 
-`egress`         translate source addresses, i.e. perform SNAT. 
+*`<OLD>`   is the IP address which should be translated. 
+*`<NEW>`         is the IP address which IP should be translated into. 
+*`ingress`         translate destination addresses, i.e. perform DNAT. 
+*`egress`         translate source addresses, i.e. perform SNAT. 
 
 To make NAT one-to-one mapping, you must configure one rule for private-to-public direction, and another rule for public-to-private direction. For more information on `tc-nat` action, see the official man page at [[https://man7.org/linux/man-pages/man8/tc-nat.8.html]]. 
 
