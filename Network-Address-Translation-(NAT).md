@@ -2,7 +2,9 @@
 
 To configure stateless Network Address Translation (NAT), use the `tc` iproute2 tool, the `tc-nat` action. The action is used in combination with the `flower` filter rule and ingress qdisc to do static NAT entry offloading.
 The command format looks like the following: 
-`tc … flower ... action nat { ingress | egress } <OLD> <NEW> `
+```
+tc … flower ... action nat { ingress | egress } <OLD> <NEW> 
+```
 where, 
 `<OLD>`   is the IP address which should be translated. 
 `<NEW>`         is the IP address which IP should be translated into. 
