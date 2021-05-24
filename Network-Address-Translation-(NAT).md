@@ -83,7 +83,7 @@ NOTE: The last rule added has the higher priority, so there is no need to define
 # Dynamic (Stateful) NAT Configuration
 The configuration of stateful NAT is done by using `tc` iproute2 tool and the `tc-ct` action. The action is used in combination with `flower` filter rule and ingress qdisc to do the dynamic NAT entry offloading. The user guide for stateful NAT is described in tc-flower and tc-ct man pages. 
 
-NOTE: the stateful NAT feature requires Linux kernel 5.8.9 and above. 
+NOTE: The stateful NAT feature requires Linux kernel 5.8.9 and above. 
 
 ## Basic configuration 
 This example covers the basic use case (many to one, with one private Switchdev port) for stateful NAT configuration, using TC connection tracking subsystem. 
