@@ -1,5 +1,3 @@
-# Bridge Port Isolation 
-
 Isolated ports cannot communicate between each other, but they can still communicate with non-isolated ports.
 
 To isolate a bridge interface, enter the following command: 
