@@ -40,17 +40,11 @@ where,
   * **bit or a bare number** - Bits per second
   * **kbit** - Kilobits per second
   * **mbit** - Megabits per second
-
-gbit Gigabits per second
-
-tbit Terabits per second
-
-bps Bytes per second
-
-kbps Kilobytes per second
-
-mbps Megabytes per second
-
+  * **gbit** - Gigabits per second
+  * **tbit** - Terabits per second
+  * **bps** - Bytes per second
+  * **kbps** - Kilobytes per second
+  * **mbps** - Megabytes per second
 gbps Gigabytes per second
 
 tbps Terabytes per second
