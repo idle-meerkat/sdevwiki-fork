@@ -17,6 +17,7 @@ Network Configurations
   - [Link Layer Discovery Protocol (LLDP)](link-layer-discovery-protocol-(lldp))  
   - [Link Aggregation (LAG)](link-aggregation-(lag))
   - [STP Configuration](stp-configuration)
+  - [Bridge Port Isolation](bridge-port-isolation)
 - Layer 3 
   - [Static Route](static-route)
   - [Equal Cost Multi Path (ECMP)](equal-cost-multi-path-(ecmp))
