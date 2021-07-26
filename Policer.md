@@ -48,17 +48,16 @@ where,
   * **gbps** - Gigabytes per second
   * **tbps** - Terabytes per second
 
-To specify in IEC units, replace the SI prefix (k-, m-, g-, t-) with IEC prefix (ki-, mi-, gi- and ti-) respectively.
+To specify in IEC units, replace the SI prefix (k-, m-, g-, t-) with the IEC prefix (ki-, mi-, gi- and ti-) respectively.
 
-NOTE: the rate and burts parameters are required options when using “police” action.
+**NOTE**: The `police` action, requires the rate and burst parameters.
 
-conform-exceed option supports only drop action, so it is required to be specified by the user, since the default conform exceed option is to reclassify. Please note, this option value is not validated by the switchdev driver, so any value may be specified by the user. In any case, the driver will use drop action even if different value is provided.
+The `conform-exceed` option supports only the `drop` action, ??so it is required to be specified by the user, since the default conform exceed option is to reclassify. This option value is not validated by the switchdev driver, so any value may be specified, however, the driver performs the `drop` action even if a different value is provided.
 
-For example, to trap the packet that match SMAC 00:B5:4D:B1:32:22 of the packet, set rate limit to 1024K bytes per second and burst 2096 bytes, the following commands should be used:
+For example, to trap the packet that matches SMAC 00:B5:4D:B1:32:22 of the packet, set the rate limit to 1024K bytes-per-second and burst to 2096 bytes, the following commands should be used:
+```
 sudo tc qd add dev sw1p26 clsact
-
 sudo tc filter add dev sw1p26 ingress flower skip_sw src_mac 00:B5:4D:B1:32:22 action trap \
-
 action police rate 1mibps burst 2096 conform-exceed drop
-
-Please note, that rule and police of the packet are bound to one port only (sw1p26 in our case). To bind the rule and the policer to multiple ports, the shared block feature of “tc” tool should be used instead. See ACL documentation [5] on more details on configuring the shared block.
+```
+**NOTE** rule and police of the packet are bound to one port only (sw1p26 in this example). To bind the rule and the policer to multiple ports, use the shared block feature of the `tc` tool. See ACL documentation [5] on more details on configuring a shared block.
