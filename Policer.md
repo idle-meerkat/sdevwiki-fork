@@ -61,3 +61,51 @@ sudo tc filter add dev sw1p26 ingress flower skip_sw src_mac 00:B5:4D:B1:32:22 a
 action police rate 1mibps burst 2096 conform-exceed drop
 ```
 **NOTE** rule and police of the packet are bound to one port only (sw1p26 in this example). To bind the rule and the policer to multiple ports, use the shared block feature of the `tc` tool. See ACL documentation [5] on more details on configuring a shared block.
+
+## Set TC of Trapped Packet
+
+To configure TC of user-defined trap, use the `hw_tc` option of tc flower filter. You can use this option together with the `police` action. By default, if this option is not specified by the user, TC = 3 is used as a default value for all ALC traps.
+```
+tc ... action trap hw_tc TCID …
+```
+where,
+
+`TCID` is the TC queue number (0-7).
+
+For example, to trap the packet that matches SMAC 00:B5:4D:B1:32:22 of the packet and set TC of that trap to highest one, the following commands should be used:
+
+sudo tc qd add dev sw1p26 clsact
+
+sudo tc filter add dev sw1p26 ingress flower skip_sw src_mac 00:B5:4D:B1:32:22 hw_tc 7 action trap
+
+3.2.5 Assign policer to multiple ports
+
+As described above, the policer ALC rule can be assigned to multiple ports in the same way as ACL rule (using shared blocks). For example, assign trap ACL rule to two ports and set rate limit to the flow:
+
+sudo tc qdisc add dev sw1p1 ingress_block 1 clsact
+
+sudo tc qdisc add dev sw1p2 ingress_block 1 clsact
+
+sudo tc filter add block 1 ingress flower skip_sw src_mac 00:B5:4D:B1:32:24 action trap action police rate 1mibps burst 6000 conform-exceed drop
+
+Please note, hw_tc also can be specified in the example above.
+
+3.2.6 Precedence over static trap limits
+
+It is possible to add dynamic (user) ALC rule with the flow which matches the flow defined by static profile. In this case, the user defined rule will have precedence over static one and all limitation of dynamic traps are applied for this trap (4000 pps per TC, default TC = 3 etc.). For example, create ACL trap rule with precedence over LLDP static rate limiter, the following command can be used:
+
+sudo tc qd add dev sw1p26 clsact
+
+sudo tc filter add dev sw1p26 ingress flower skip_sw src_mac 01:80:c2:00:00:0e action trap \
+
+action police rate 1mibps burst 2096 conform-exceed drop
+
+It is possible also to change default TC in the example above.
+
+3.2.7 Limitation
+
+· Only rate and burts and conform-exceed parameters of “policer” action are supported at this moment.
+
+· Specifying rate as a percentage is not supported.
+
+· Specifying cell size for burst option is not supported. · Specifying the burst values less than packet size sent to port does not lead to all packets drop. The packets will be rate limited according to user defined rate.
