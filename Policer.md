@@ -46,7 +46,7 @@ where,
   * **kbps** - Kilobytes per second
   * **mbps** - Megabytes per second
   * **gbps** - Gigabytes per second
-tbps Terabytes per second
+  * **tbps** - Terabytes per second
 
 To specify in IEC units, replace the SI prefix (k-, m-, g-, t-) with IEC prefix (ki-, mi-, gi- and ti-) respectively.
 
