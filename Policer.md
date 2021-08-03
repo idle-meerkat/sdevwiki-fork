@@ -10,7 +10,7 @@ modprobe prestera_sw trap_policer_profile=<PROFILE>
 ```
 where `<PROFILE>` is the number value:
 * 0 – disable
-* 1 – enable first profile. In this case, enable profile specified in the table above. Currently, only one profile is supported.
+* 1 – enable first profile. In this case, enable profile specified in the table above??. Currently, only one profile is supported.
 
 **NOTE**: Applying the changes requires a system restart.
 
