@@ -30,7 +30,7 @@ This feature enables you to set the rate limit and TC of a trapped packet by the
 ## Rate Limit of a Trapped Packet
 To configure the rate limit and burst size of a trapped packet by the ACL, call the `tc` policer action as part of creating the ACL rule. See tc-police.8 for more details on the command format and options used.
 
-To trap a packet to the CPU, set the rate limit (bytes/bits per second unit) and burst size of the trap, use the following command:
+To trap a packet to the CPU, set the rate limit (bytes/bits per second unit), and burst size of the trap, use the following command:
 ```
 tc ... action trap action police rate RATE burst BYTES conform-exceed drop
 ```
@@ -54,7 +54,7 @@ To specify in IEC units, replace the SI prefix (k-, m-, g-, t-) with the IEC pre
 
 The `conform-exceed` option supports only the `drop` action, ??so it is required to be specified by the user, since the default conform exceed option is to reclassify. This option value is not validated by the switchdev driver, so any value may be specified, however, the driver performs the `drop` action even if a different value is provided.
 
-For example, to trap the packet that matches SMAC 00:B5:4D:B1:32:22 of the packet, set the rate limit to 1024K bytes-per-second and burst to 2096 bytes, enter the following commands:
+For example, to trap the packet that matches SMAC 00:B5:4D:B1:32:22 of the packet, set the rate limit to 1024K bytes-per-second, and burst to 2096 bytes, enter the following commands:
 ```
 sudo tc qd add dev sw1p26 clsact
 sudo tc filter add dev sw1p26 ingress flower skip_sw src_mac 00:B5:4D:B1:32:22 action trap \
