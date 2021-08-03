@@ -27,6 +27,7 @@ Network Configurations
 - Access Control Lists (ACL)
   - [Supported Actions, Keys and Rules](supported-actions,-keys-and-rules)
   - [ACL Configuration](acl-configuration)
+  - [Policer](policer)
   - [Shared Block Support](shared-block-support)
 
 Debugging Tools and and Methods  
