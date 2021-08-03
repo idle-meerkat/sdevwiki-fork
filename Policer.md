@@ -1,5 +1,4 @@
-This section describes how to police static and dynamic trapped packets to to the CPU port. This feature is an extension of ACL rules. See 
-See [Supported Actions and Keys](#supported-actions-and-keys) for more information on how to configure ALC rules, see  on device before continue reading this section.
+This section describes how to police static and dynamic trapped packets to to the CPU port. This feature is an extension of ACL rules. See [ACL Configuration](#acl-configuration) for more information on how to configure ALC rules, see  on device before continue reading this section.
 
 # Policing of Static Traps
 
