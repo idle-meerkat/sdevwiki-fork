@@ -2,7 +2,7 @@ This section describes how to police static and dynamic trapped packets to to th
 
 # Policing of Static Traps
 
-Static packet traps are configured upon switchdev driver initialization. The list of packet traps, their rate limit and TC is defined in “Static trap” section above.
+Static packet traps are configured upon switchdev driver initialization. The list of packet traps, their rate limit and TC is defined in “Static trap”?? section above.
 
 You can disable the entire static profile, or select the desired profile during switchdev driver initialization. To select or disable a static trap profile, use the switchdev kernel module parameter, provided for  the `prestera_sw` driver.
 ```
