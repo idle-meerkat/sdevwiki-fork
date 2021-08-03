@@ -2,7 +2,7 @@ This section describes how to police static and dynamic trapped packets to to th
 
 # Policing of Static Traps
 
-Static packet traps are configured upon switchdev driver initialization. The list of packet traps, their rate limit and TC is defined in “Static trap”?? section above.
+Static packet traps are configured upon switchdev driver initialization. The list of packet traps, their rate limit and TC?? is defined in “Static trap”?? section above.
 
 You can disable the entire static profile, or select the desired profile during switchdev driver initialization. To select or disable a static trap profile, use the switchdev kernel module parameter, provided for  the `prestera_sw` driver.
 ```
@@ -60,11 +60,11 @@ sudo tc qd add dev sw1p26 clsact
 sudo tc filter add dev sw1p26 ingress flower skip_sw src_mac 00:B5:4D:B1:32:22 action trap \
 action police rate 1mibps burst 2096 conform-exceed drop
 ```
-**NOTE** Rule and police?? of the packet are bound to one port only (sw1p26 in this example). To bind the rule and the policer to multiple ports, use the shared block feature of the `tc` tool. See ACL documentation [5] on more details on configuring a shared block.
+**NOTE** Rule and police?? of the packet are bound to one port only (sw1p26 in this example). To bind the rule and the policer to multiple ports, use the shared block feature of the `tc` tool. See ACL documentation [5] for more details on configuring a shared block.
 
 ## Set the TC of a Trapped Packet
 
-To configure the TC of a user-defined trap, use the `hw_tc` option of tc flower filter. You can use this option together with the `police` action. If this option is not specified, TC = 3 is used as a default value for all ALC traps.
+To configure the TC of a user-defined trap, use the `hw_tc` option of tc flower filter. You can use this option together with the `police` action. If this option is not specified, TC = 3 is used as a default value for all ACL traps.
 ```
 tc ... action trap hw_tc TCID …
 ```
@@ -89,7 +89,7 @@ sudo tc filter add block 1 ingress flower skip_sw src_mac 00:B5:4D:B1:32:24 acti
 
 ## Precedence over Static Trap Limits
 
-You cam add a dynamic (user) ACL rule with the flow which matches the static profile flow. In this case, the user-defined rule will have precedence over the static rule, and all limitations on dynamic traps are applied for this trap (4000 pps per TC, default TC = 3 etc.). 
+You can add a dynamic (user) ACL rule with the flow which matches the static profile flow. In this case, the user-defined rule has precedence over the static rule, and all limitations on dynamic traps are applied for this trap (4000 pps per TC, default TC = 3 etc.). 
 For example, to create an ACL trap rule with precedence over the LLDP static rate limiter, enter the following command:
 ```
 sudo tc qd add dev sw1p26 clsact
@@ -99,11 +99,11 @@ action police rate 1mibps burst 2096 conform-exceed drop
 It is possible also to change default TC in the example above.
 
 ## Limitations
-These are the limitations on Policing of Dynamic Traps
+These are the limitations on policing of dynamic traps:
 * The following parameters the `policer` action are supported: `rate` and `burst` and `conform-exceed`.
 * Specifying `rate` as a percentage is not supported.
 * Specifying cell size for the `burst` option is not supported.  
-* Specifying the `burst` values as less than the packet size sent to port does not drop all packets. The packets are be rate-limited according to the user defined rate.
+* Specifying the `burst` values as less than the packet size sent to port does not drop all packets. The packets are rate-limited according to the user defined rate.
 
 # Policing Data Path Traffic
 Configuring the policing of data path traffic is similar to the configuration of dynamic traps, except that trap action must not be specified.
@@ -123,11 +123,11 @@ sudo tc filter add dev sw1p26 ingress flower skip_sw src_mac 00:B5:4D:B1:32:22 \
 action police rate 100mbps burst 64000 conform-exceed drop
 ```
 
-You can set the maximum policing rate to the same rate as for dynamic rules, but the actual rate is limited by the capabilities of the physical port. Please note, that SCT limitation for data path policing is not get applied.
+You can set the maximum policing rate to the same rate as for dynamic rules, but the actual rate is limited by the capabilities of the physical port. Please note, that SCT limitation for data path policing is not supported.
 
 ## Assigning A Policer to Multiple Ports
 
-As with dynamic traps, a shared block can be used to police data path traffic for multiple ports. In this case the expected rate will be divided among all ports.
+As with dynamic traps, a shared block can be used to police data path traffic for multiple ports. In this case the expected rate is divided among all ports.
 ```
 sudo tc qdisc add dev sw1p1 ingress_block 1 clsact
 sudo tc qdisc add dev sw1p2 ingress_block 1 clsact
