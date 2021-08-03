@@ -28,7 +28,7 @@ You can configure the device to trap certain packets to the CPU port (switchdev 
 This feature enables you to set the rate limit and TC of a trapped packet by the ACL according to user-pecific values.
 
 ## Rate Limit of a Trapped Packet
-To configure the rate limit and burst size of a trapped packet by the ACL, call the `tc`” policer action as part of creating the ACL rule. See tc-police.8 for more details on the command format and options used.
+To configure the rate limit and burst size of a trapped packet by the ACL, call the `tc` policer action as part of creating the ACL rule. See tc-police.8 for more details on the command format and options used.
 
 To trap a packet to the CPU, set the rate limit (bytes/bits per second unit) and burst size of the trap, use the following command:
 ```
