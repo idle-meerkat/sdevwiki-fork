@@ -4,7 +4,7 @@ The application should be in the HOST CPU FS /usr/bin directory and it enables u
 Do the following to update the image:  
 1. Make sure the fw_flash application is located in HOST CPU FS /usr/bin directory.  
 1. Enable the execution rights for the application by calling `chmod +x` Linux command.  
-1. Connect to the HOST A7K CPU, fetch the required flash image into the HOST CPU FS:  
+1. Connect to the HOST A7K CPU, and fetch the required flash image into the HOST CPU FS:  
 e.g. using ‘tftp’ command to download the files.  
 **DNI**:  
 `tftp 10.5.116.4 - binary -c get switchdev/tn4810m-prestera-fw-flach-image-v1.0.img`  
