@@ -71,7 +71,7 @@ where,
 
 To specify in IEC units, replace the SI prefix (k-, m-, g-, t-) with the IEC prefix (ki-, mi-, gi- and ti-) respectively.
 
-**NOTE**: The `police` action, requires the `rate` and `burst` parameters.
+**NOTE**: The `police` action requires the `rate` and `burst` parameters.
 
 The `conform-exceed` option supports only the `drop` action, ??so it is required to be specified by the user, since the default conform exceed option is to reclassify. This option value is not validated by the switchdev driver, so any value may be specified, however, the driver performs the `drop` action even if a different value is provided.
 
