@@ -3,9 +3,9 @@ This section describes how to police static and dynamic trapped packets to to th
 
 The rate limiting (packet per second) and Traffic Class queue (TC) features of static traps are configured by the firmware during Switchdev initialization, and are not configurable. However, as part of Switchdev initialization, you can disable policing of static traps completely, or specify a profile that is configurable. A profile is a list of static traps, their rate limit and TC to be initialized during Switchdev initialization. The following table defines the supported profile for configuration. 
 
-Default profile definition. 
+**Default Configuable Profile** 
 
-|Traffic type | TC (queue) | Rate (pps) |
+|Traffic Type | TC (queue) | Rate (pps) |
 | ----------- | --------- | ----------|
 |BGP (routing protocol) | 7 | 1000 | 
 |All-Routers MC (used by BGP) | 7 | 100  |
