@@ -23,7 +23,7 @@ The rate limiting (packet per second) and Traffic Class queue (TC) features of s
 
 # Policing of Static Traps
 
-Static packet traps are configured upon switchdev driver initialization. The list of packet traps, their rate limit and TC is defined in “Static trap”?? section above.
+Static packet traps are configured upon switchdev driver initialization. The list of packet traps, their rate limit and TC is defined in the **Default Configuable Profile** table above.
 
 You can disable the entire static profile, or select the desired profile during switchdev driver initialization. To select or disable a static trap profile, use the switchdev kernel module parameter, provided for  the `prestera_sw` driver.
 ```
@@ -31,7 +31,7 @@ modprobe prestera_sw trap_policer_profile=<PROFILE>
 ```
 where `<PROFILE>` is the number value:
 * 0 – disable
-* 1 – enable first profile. In this case, enable profile specified in the table above??. Currently, only one profile is supported.
+* 1 – enable first profile. In this case, enable the profile specified in the table above. Only one profile is supported.
 
 **NOTE**: Applying the changes requires a system restart.
 
@@ -81,7 +81,7 @@ sudo tc qd add dev sw1p26 clsact
 sudo tc filter add dev sw1p26 ingress flower skip_sw src_mac 00:B5:4D:B1:32:22 action trap \
 action police rate 1mibps burst 2096 conform-exceed drop
 ```
-**NOTE** Rule and police?? of the packet are bound to one port only (sw1p26 in this example). To bind the rule and the policer to multiple ports, use the shared block feature of the `tc` tool. See ACL documentation [5] for more details on configuring a shared block.
+**NOTE** Rule and police of the packet are bound to one port only (sw1p26 in this example). To bind the rule and the policer to multiple ports, use the shared block feature of the `tc` tool. See ACL documentation for more details on configuring a shared block.
 
 ## Set the TC of a Trapped Packet
 
@@ -93,14 +93,14 @@ where,
 
 `TCID` is the TC queue number (0-7).
 
-For example, to trap the packet that matches SMAC 00:B5:4D:B1:32:22 of the packet??, and set the TC of that trap to the highest one??, enter the following commands:
+For example, to trap the packet that matches SMAC 00:B5:4D:B1:32:22, and set the TC of that trap to the highest value (7), enter the following commands:
 ```
 sudo tc qd add dev sw1p26 clsact
 sudo tc filter add dev sw1p26 ingress flower skip_sw src_mac 00:B5:4D:B1:32:22 hw_tc 7 action trap
 ```
 ## Assign a Policer to Multiple Ports
 
-A policer ACL rule can be assigned to multiple ports in the same way as a regular?? ACL rule (using shared blocks). For example, to assign a trap ACL rule to two ports and set rate limit to the flow, enter the following:
+A policer ACL rule can be assigned to multiple ports in the same way as a generic ACL rule (using shared blocks). For example, to assign a trap ACL rule to two ports and set rate limit to the flow, enter the following:
 ```
 sudo tc qdisc add dev sw1p1 ingress_block 1 clsact
 sudo tc qdisc add dev sw1p2 ingress_block 1 clsact
@@ -155,7 +155,7 @@ sudo tc qdisc add dev sw1p2 ingress_block 1 clsact
 sudo tc filter add block 1 ingress flower skip_sw src_mac 00:B5:4D:B1:32:24 action police rate 1mibps burst 6000 conform-exceed drop
 ```
 ## Limitations
-* When ports in an ingress_block belong to different Processor Port?? (PP), the expected rate is doubled (applicable for AlleyCatC3x PPs).
+* When ports in an ingress_block belong to different Packet Processor (PP), the expected rate is doubled (applicable for AlleyCatC3x PPs).
 * TC configuration is not applied for data path policing.
 
 # Debugging CPU Code Counters
