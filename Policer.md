@@ -1,8 +1,38 @@
 This section describes how to police static and dynamic trapped packets to to the CPU port. This feature is an extension of ACL rules. See [ACL Configuration](acl-configuration) for more information on how to configure ALC rules.
+# Static traps 
+
+The rate limiting (packet per second) and Traffic Class queue (TC) of static traps are configured on switchdev initialization by firmware and are not configurable. However, as part of Switchdev initialization, you can disable the entire policing of static traps or specify a profile that is configurable. A profile is a list of static traps, their rate limit and TC to be initialized during switchdev initialization. The supported profile for configurationit is defined in the following table below. 
+
+Default profile definition. 
+
+|Traffic type | TC (queue) | Rate (pps) |
+| ----------- | --------- | ----------|
+|BGP (routing protocol) | 7 | 1000 | 
+|All-Routers MC (used by BGP) | 7 | 100  |
+|STP BPDU | 7 | 200  |
+|LACP | 7 | 200  |
+|VRRP | 7 | 200  |
+
+LLDP  6  200  
+
+SSH  5  200  
+
+Telnet  5  200  
+
+DHCP BC 4  100  
+
+ICMP  4  100  
+
+ARP reply to me  4  300  
+
+ARP BC  4  100  
+
+IP to My address 2 4000 
+
 
 # Policing of Static Traps
 
-Static packet traps are configured upon switchdev driver initialization. The list of packet traps, their rate limit and TC?? is defined in “Static trap”?? section above.
+Static packet traps are configured upon switchdev driver initialization. The list of packet traps, their rate limit and TC is defined in “Static trap”?? section above.
 
 You can disable the entire static profile, or select the desired profile during switchdev driver initialization. To select or disable a static trap profile, use the switchdev kernel module parameter, provided for  the `prestera_sw` driver.
 ```
