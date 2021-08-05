@@ -12,23 +12,14 @@ Default profile definition.
 |STP BPDU | 7 | 200  |
 |LACP | 7 | 200  |
 |VRRP | 7 | 200  |
-
-LLDP  6  200  
-
-SSH  5  200  
-
-Telnet  5  200  
-
-DHCP BC 4  100  
-
-ICMP  4  100  
-
-ARP reply to me  4  300  
-
-ARP BC  4  100  
-
-IP to My address 2 4000 
-
+|LLDP | 6 | 200  |
+|SSH | 5 | 200  |
+|Telnet | 5 | 200  |
+|DHCP BC | 4 | 100  |
+|ICMP | 4 | 100  |
+|ARP reply to me | 4 | 300  |
+|ARP BC | 4 | 100  |
+|IP to My address | 2 | 4000 |
 
 # Policing of Static Traps
 
