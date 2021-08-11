@@ -144,7 +144,8 @@ action police rate 100mbps burst 64000 conform-exceed drop
 ```
 
 You can set the maximum policing rate to the same rate as for dynamic rules, but the actual rate is limited by the capabilities of the physical port. 
-NOTE: SCT limitation for data path policing is not supported.
+
+**NOTE**: SCT limitation for data path policing is not supported.
 
 ## Assigning A Policer to Multiple Ports
 
@@ -191,7 +192,7 @@ To read all counters at once (for all CPU codes), there is separate entry or fil
 ```
 cat <MOUNTPOINT>/prestera/traps/cpu_code_stats
 ```
-the output of the command above is as follows:
+The output of the command above is as follows:
 ```
 5:200000
 26:200000
