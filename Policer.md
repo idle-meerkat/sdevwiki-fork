@@ -143,7 +143,8 @@ sudo tc filter add dev sw1p26 ingress flower skip_sw src_mac 00:B5:4D:B1:32:22 \
 action police rate 100mbps burst 64000 conform-exceed drop
 ```
 
-You can set the maximum policing rate to the same rate as for dynamic rules, but the actual rate is limited by the capabilities of the physical port. Please note, that SCT limitation for data path policing is not supported.
+You can set the maximum policing rate to the same rate as for dynamic rules, but the actual rate is limited by the capabilities of the physical port. 
+NOTE: SCT limitation for data path policing is not supported.
 
 ## Assigning A Policer to Multiple Ports
 
