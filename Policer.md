@@ -23,9 +23,9 @@ The rate limiting (packet per second) and Traffic Class queue (TC) features of s
 
 # Policing of Static Traps
 
-Static packet traps are configured upon switchdev driver initialization. The list of packet traps, their rate limit and TC is defined in the **Default Configuable Profile** table above.
+Static packet traps are configured upon Switchdev driver initialization. The list of packet traps, their rate limit and TC is defined in the **Default Configuable Profile** table above.
 
-You can disable the entire static profile, or select the desired profile during switchdev driver initialization. To select or disable a static trap profile, use the switchdev kernel module parameter, provided for  the `prestera_sw` driver.
+You can disable the entire static profile, or select the desired profile during Switchdev driver initialization. To select or disable a static trap profile, use the Switchdev kernel module parameter, provided for  the `prestera_sw` driver.
 ```
 modprobe prestera_sw trap_policer_profile=<PROFILE>
 ```
@@ -35,11 +35,11 @@ where `<PROFILE>` is the number value:
 
 **NOTE**: Applying the changes requires a system restart.
 
-If an incorrect number is provided, the switchdev driver fails to start, and prints an error message in the kernel log.
+If an incorrect number is provided, the Switchdev driver fails to start, and prints an error message in the kernel log.
 
 On System V systems, the configuration is typically done via initialization scripts located in the `/etc/init.d` folder.
 
-To get the current profile number, which was loaded by the switched driver (e.g. read the switchdev driver parameter value). Run the following command:
+To get the current profile number, which was loaded by the switched driver (e.g. read the Switchdev driver parameter value). Run the following command:
 ```
 cat /sys/module/prestera_sw/parameters/trap_policer_profile
 ```
@@ -163,7 +163,7 @@ For development, or debugging purposes, it is important to be able to see the nu
 
 ## Enabling Debug CPU Code Counter
 
-This feature is enabled as part of the switchdev driver initialization. To start working with CPU code debug counters, initialize the `debug fs` in the Linux kernel by mounting it to some user point. To do this, enter the following commands:
+This feature is enabled as part of the Switchdev driver initialization. To start working with CPU code debug counters, initialize the `debug fs` in the Linux kernel by mounting it to some user point. To do this, enter the following commands:
 ```
 mount -t debugfs none <MOUNTPOINT>
 ```
