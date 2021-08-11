@@ -15,6 +15,7 @@ These stages are described below.
 `tftp 10.5.116.4 -m binary -c get switchdev/shared/mrvl_val/as5114-loader/as5114_48x-prestera-fw-flash-image-v1.0.img`  
 `tftp 10.5.116.4 -m binary -c get switchdev/shared/mrvl_val/as4224-loader/as4224_52p-prestera-fw-flash-image-v1.0.img`  
 3.	`/usr/bin/fw_flash -i <flash_image>`  
+
 At this point the HOST image is updated and you can proceed to the next stage.  
 
 # 2. Boot from PCIe  
