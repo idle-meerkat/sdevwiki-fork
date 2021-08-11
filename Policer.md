@@ -1,4 +1,4 @@
-This section describes how to police static and dynamic trapped packets to to the CPU port. This feature is an extension of ACL rules. See [ACL Configuration](acl-configuration) for more information on how to configure ALC rules.
+This section describes how to police static and dynamic trapped packets to to the CPU port. This feature is an extension of ACL rules. See [ACL Configuration](acl-configuration) for more information on how to configure ACL rules.
 # Static Traps 
 
 The rate limiting (packet per second) and Traffic Class queue (TC) features of static traps are configured by the firmware during Switchdev initialization, and are not configurable. However, as part of Switchdev initialization, you can disable policing of static traps completely, or specify a profile that is configurable. A profile is a list of static traps, their rate limit and TC to be initialized during Switchdev initialization. The following table defines the supported profile for configuration. 
