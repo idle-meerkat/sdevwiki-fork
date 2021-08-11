@@ -19,7 +19,7 @@ or
 This image is intended to be loaded by the HOST CPU Switchdev driver into the firmware CoProcessor.  
 It includes the Firmware Agent application.  
 This image must be uploaded to the standard firmware path on running DENT/ONL rootfs under `/lib/firmware/marvell/`   
-**NOTE**: The DENT/ONL build is done at a later stage by system integrator, therefore, this image must be placed manually in the DENT/ONL FS.  This means that you will be able to copy (scp) it to the target DUT only after the DENT/ONL FS is run. 
+**NOTE**: The DENT/ONL build is done at a later stage by a system integrator, therefore, this image must be placed manually in the DENT/ONL FS.  This means that you can only copy (scp) it to the target DUT after the DENT/ONL FS is run. 
 This step is done only once. You can include this copy as part of the DENT/ONL build.  
 ## Linux Kernel Switchdev Drivers 
 ### Switchdev Driver Code Patch (onl-switchdev-v2.x.x.patch)   
