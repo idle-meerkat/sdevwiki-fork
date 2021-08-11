@@ -56,8 +56,8 @@ To trap a packet to the CPU, set the rate limit (bytes/bits per second unit), an
 tc ... action trap action police rate RATE burst BYTES conform-exceed drop
 ```
 where,
-* BYTES indicate the maximum allowed burst in bytes.
-* RATE is the rate limit. See RATE parameters of the `tc` option for more information. Possible values are:
+* `BYTES` indicate the maximum allowed burst in bytes.
+* `RATE` is the rate limit. See RATE parameters of the `tc` option for more information. Possible values are:
   * **bit or a bare number** - Bits per second
   * **kbit** - Kilobits per second
   * **mbit** - Megabits per second
