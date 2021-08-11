@@ -71,9 +71,8 @@ where,
 
 To specify in IEC units, replace the SI prefix (k-, m-, g-, t-) with the IEC prefix (ki-, mi-, gi- and ti-) respectively.
 
-**NOTE**: The `police` action requires the `rate` and `burst` parameters.
-
-The `conform-exceed` option supports only the `drop` action, ??so it is required to be specified by the user, since the default conform exceed option is to reclassify. This option value is not validated by the switchdev driver, so any value may be specified, however, the driver performs the `drop` action even if a different value is provided.
+**NOTE**: The `police` action requires the `rate` and `burst` parameters. Other parameters are ignored.
+Packets which exceed the configured bandwidth limit are dropped, regardless of the `conform-exceed` policer parameter setting defined.
 
 For example, to trap the packet that matches SMAC 00:B5:4D:B1:32:22 of the packet, set the rate limit to 1024K bytes-per-second, and burst to 2096 bytes, enter the following commands:
 ```
