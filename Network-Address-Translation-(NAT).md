@@ -80,7 +80,7 @@ To skip NAT for packets that are destined for private subnet or hosts, you need 
 tc filter add dev sw1p2 protocol ip ingress \ 
    flower skip_sw ip_proto tcp dst_ip 192.168.0.1/24 action pass 
 ```
-NOTE: The last rule added has the higher priority, so there is no need to define the priority in the rule (see the ACL document for more information).
+NOTE: The last rule added has the higher priority, so there is no need to define the priority in the rule (see [Supported Actions, Keys and Rules](supported-actions,-keys-and-rules) for more information).
 
 # Dynamic (Stateful) NAT Configuration
 The configuration of stateful NAT is done by using `tc` iproute2 tool and the `tc-ct` action. The action is used in combination with `flower` filter rule and ingress qdisc to do the dynamic NAT entry offloading. The user guide for stateful NAT is described in tc-flower and tc-ct man pages. 
