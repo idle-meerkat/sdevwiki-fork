@@ -8,5 +8,21 @@ Linux Command:
 
 This setting is available through (rt) netlink, and it has no equivalent in ioctl/brctl
 
+12.2	Design Guidelines
+
+Port Isolation utilizes a dedicated hardware mechanism in Marvell Prestera switch devices, called ‘Port Isolation – Protected Ports’. This mechanism enables/disables traffic forwarding between any pair of ingress port and egress port in a single-device topology and back-to-back topology. 
+
+Traffic should be matted based on the source ePort that represents the source physical port.
+
+### SwitchDev Driver
+
+High-level requirements:
+* New bridge port attribute of type ‘isolated’
+* Ability to enable/disable port isolation on bridge physical port member
+
+CPSS APIs for reference:
+* cpssDxChBrgSrcIdPortDefaultSrcIdSet
+* cpssDxChBrgSrcIdGroupPortAdd
+* cpssDxChBrgSrcIdGroupPortDelete
 
 
