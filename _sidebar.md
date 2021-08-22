@@ -7,6 +7,9 @@ System Configurations
 - [Firmware Upgrade](Firmware-Upgrade)  
 
 Network Configurations
+- Control Plane Policing
+- Traffic Policing
+- Port Isolation
 - Switch Port 
   - [Switch Port Configuration](switch-port-configuration)  
   - [Port Information](port-information)  
@@ -30,6 +33,8 @@ Network Configurations
   - [Supported Actions, Keys and Rules](supported-actions,-keys-and-rules)
   - [Policer](policer)
   - [Shared Block Support](shared-block-support)
+  - Chain Templates Support
+  - Multi-chain Support 
 
 Debugging Tools and and Methods  
 Resources and Releases  
