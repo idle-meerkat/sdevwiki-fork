@@ -14,7 +14,7 @@ or
 **Both**:  
 `/user/bin/fw_flash -i <flash_image>`  
 ## Host CPU  
-The host CPU in this example is A7K
+The host CPU in the following example is ARMADA-7K
 ### Firmware Agent Application (mvsw_prestera_fw.img)  
 This image is intended to be loaded by the HOST CPU Switchdev driver into the firmware CoProcessor.  
 It includes the Firmware Agent application.  
