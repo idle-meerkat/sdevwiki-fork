@@ -5,12 +5,12 @@ For example:
 `$ sudo ip link set dev sw1p1 up`  
 `$ sudo ip addr add 192.168.2.1/24 sw1p2`  
 `$ sudo ip link set dev sw1p1 up`  
-**NOTE**: A configuration is applied only after the interface is set to admin UP  
+**NOTE**: A configuration is applied only after the interface is set to admin UP.  
 
 ## Bridge Routing Interface
 To create router interfaces on top of bridge netdev, an IP address has to be assigned.  
 For .1Q bridge, a router interface can be created for each of its upper VLAN devices.  
-For .1D a router interface can be created to bridge itself only.  
+For .1D a router interface can be created to the bridge itself only.  
 
 ### .1D Bridge Example:  
 `$ ip link add name br0 type bridge`  
@@ -28,7 +28,7 @@ For .1D a router interface can be created to bridge itself only.
 `$ ip addr ass 192.1684.1/24 dev br0.10`  
 
 ## Nexthop Routes  
-Static routes are added using ip route command, provided by iprote2 package.  
+Static routes are added using the `ip route` command, provided by the `iprote2` package.  
 Example of adding static routes:  
 `$ sudo ip route add 10.10.1.0/24 via 192.168.1.2 dev sw1p1`  
 To show Linux Routing table:  
@@ -40,9 +40,9 @@ To show Linux Routing table:
 `$ 192.168.2.0/24 via 192.168.0.2 dev sw1p1 offload`  
 Entries marked with offload flag are programmed to the PP.  
 
-# Static Route Limitations
+## NOTES
 * Only IPv4 is supported.
 * Linux Kernel forwarding MUST be enabled.
-* Multicast routing not supported.
+* Multicast routing is not supported.
 * TODO add limitation from https://jirail.marvell.com/browse/SWITCHDEV-718 and https://jirail.marvell.com/browse/SWITCHDEV-753
 * At least one switch port should be added (enslaved) to the bridge before assigning the IP address on the bridge. Otherwise the router interface for the  bridge is not created.
