@@ -1,4 +1,9 @@
-{toc:printable=true|style=square|maxLevel=2|indent=5px|minLevel=2|class=bigpink|exclude=[1//2]|type=list|outline=true|include=.*}
+[TOC]
+
+# Header 1
+
+## Header 2
+
 Upgrading the firmware to enable using Switchdev includes the following stages:  
 * [Fetch the Latest HOST Image](#1-Fetch-the-Latest-HOST-Image)
 * [Boot from PCIe](#2-Boot-from-PCIe)
