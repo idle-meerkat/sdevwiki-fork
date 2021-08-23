@@ -2,14 +2,14 @@ There are two types of port statistic:
 * Software statistics account for packets trapped to the CPU or packets sent from the CPU.  
 * Hardware statistics account for all packets going through the port, including those not trapped to or originating from the CPU.  
 
-# Software Statistics  
+## Software Statistics  
 The `ifstat` tool can be used to query the port's software statistics.  
 
-# Hardware Statistics  
+## Hardware Statistics  
 The following command can be used to review port hardware statistics:
 * ip –s link show sw1pX
 * Ifconfig sw1pX
-* Ethtool –S sw1pX  
+* ethtool –S sw1pX  
 
 The `ip –s link show` and `ifconfig` commands display basic hardware statistics in rtnl_link_stats64 linux format.  
 ```
@@ -20,7 +20,7 @@ The `ip –s link show` and `ifconfig` commands display basic hardware statistic
     TX: bytes  packets  errors  dropped carrier collsns 
     3056       40       0       0       0       0
 ```
-The “ethtool” command displays detailed port hardware counters. 
+The `ethtool` command displays detailed port hardware counters. 
 ```
 amzgo-host# ethtool -S sw1p1
 NIC statistics:
