@@ -86,7 +86,7 @@ Because of the current infrastructure of the switchdev FDB notification chain, t
 * To delete the static FDB entry:  
 `$ bridge fdb add ADDR dev DEV master static [vlan VID]`  
 
-# Bridge and VLAN Limitations
+## NOTES
 * Changing bridge mode while switch ports are enslaved to bridge generates an error.
 * Switchdev does not put all ports into a bridge by default.
 
