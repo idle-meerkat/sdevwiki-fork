@@ -151,11 +151,11 @@ NOTE: Since the NAT configuration is done using regular ACL rules, it takes reso
 
 NOTE: Egress CT flower filter on a public port should be the same as CT flower filter on a private port. If a CT rule exists on multiple private port, those flower matches should be reflected on the egress public port. 
 
-#### Private to Private Flow 
+### Private to Private Flow 
 
 To skip NAT for packets that are destined for private subnet or hosts, you need to install additional hardware offloaded rules (`skip_sw` flower option) on private ports. For example, a rule that matches a private subnet with higher priority should be installed with the action “do nothing” on each of the private ports. 
 ```
 tc filter add dev sw1p2 protocol ip ingress \ 
    flower skip_sw ip_proto tcp dst_ip 192.168.0.1/24 action pass 
 ```
-NOTE: The last rule added has the higher priority, so there is no need to define the priority in the rule (see the ACL document for more information).  
+**NOTE:** The last rule added has the higher priority, so there is no need to define the priority in the rule (see the ACL document for more information).  
