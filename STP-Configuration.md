@@ -1,9 +1,9 @@
 This section describes how to configure STP on the device, using one of the following methods:
 
-* [STP (802.1D) Configuration](#STP-802-1D-Configuration)
-* [RSTP (802.1w) Configuration](#RSTP-(802-1w)-Configuration)
+* [STP (802.1D) Configuration](#STP)
+* [RSTP (802.1w) Configuration](#RSTP)
 
-## STP (802.1D) Configuration
+## <a id="STP"></a>STP (802.1D) Configuration
 To enable STP on a bridge, run the following command:  
 `$ ip link set dev br0 type bridge stp_state 1`  
 
@@ -22,7 +22,7 @@ You can use `brctl` to configure the following spanning tree protocol parameters
 * Hello time
 * Max age  
  
-## RSTP (802.1w) Configuration  
+## <a id="RSTP"></a>RSTP (802.1w) Configuration  
 RSTP support requires user-level daemon mstpd, running in RSTP mode. The mstpd daemon is an open source project (https://github.com/mstpd/mstpd).  
 The `mstpctl` utility, provided by the mstpd service, configures STP.  
 
