@@ -68,7 +68,7 @@ To configure an IP address for a LAG, run the following command:
 To set a bond interface as a part of virtual router, run the following command:  
 `$ ip link set dev [bond1] master [vrf_name]`  
 
-# LAG Limitations
+## NOTES
 * Up to 62 Link aggregation groups are supported.
 * Up to 8 port members per LAG.
 * Only the bond configuration mechanism is supported.
