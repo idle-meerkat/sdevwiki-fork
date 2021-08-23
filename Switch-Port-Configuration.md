@@ -14,7 +14,7 @@ The port administrative status can be set using one of the following commands:
 The port Maximum Transmission Unit (MTU) can be set using the following command:  
 `ip link set dev sw1p1 mtu 1500`  
 
-**NOTE** The driver supports up to three different MTU settings.
+**NOTE:** The driver supports up to three different MTU settings.
 
 ## Port MAC Address  
 The port MAC address can be set using the following command:  
