@@ -6,7 +6,7 @@ NAT covers both IPv4 and IPv6 networks:
 
 This section explains the following NAT configuration types:
 * [Static (Stateless) NAT Configuration](Static-(Stateless)-NAT-Configuration)
-* [Dybanuc (Stateful) NAT Configuration](Dybamic-(Stateful)-NAT-Configuration)
+* [Dynamic (Stateful) NAT Configuration](Dynamic-(Stateful)-NAT-Configuration)
 
 The following figure shows network address translation between a large site, and a WAN.
 ![NAT Overview](images/nat_overview.png)
