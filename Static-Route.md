@@ -27,7 +27,7 @@ For .1D a router interface can be created to the bridge itself only.
 `$ bridge vlan add dev br0 vid 10 self`  
 `$ ip addr ass 192.1684.1/24 dev br0.10`  
 
-## Nexthop Routes  
+## Next-hop Routes  
 Static routes are added using the `ip route` command, provided by the `iprote2` package.  
 Example of adding static routes:  
 `$ sudo ip route add 10.10.1.0/24 via 192.168.1.2 dev sw1p1`  
