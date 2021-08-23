@@ -1,4 +1,3 @@
-# Installation
 ## Update the Firmware Binary Image
 The application should be in the HOST CPU FS /usr/bin directory and it enables updating the firmware Co-Processor FLASH NAND.  
 Do the following to update the image:  
