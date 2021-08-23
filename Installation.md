@@ -13,7 +13,8 @@ or
 `tftp 10.5.116.4 - binary -c get switchdev/as5114_48x-prestera-fw-flach-image-v1.0.img`  
 **Both**:  
 `/user/bin/fw_flash -i <flash_image>`  
-## Host ARMADA 7K CPU  
+## Host CPU  
+The host CPU in this example is A7K
 ### Firmware Agent Application (mvsw_prestera_fw.img)  
 This image is intended to be loaded by the HOST CPU Switchdev driver into the firmware CoProcessor.  
 It includes the Firmware Agent application.  
