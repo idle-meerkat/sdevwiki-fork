@@ -1,4 +1,5 @@
 [TOC]
+
 Upgrading the firmware to enable using Switchdev includes the following stages:  
 * [Fetch the Latest HOST Image](#1-Fetch-the-Latest-HOST-Image)
 * [Boot from PCIe](#2-Boot-from-PCIe)
