@@ -2,12 +2,12 @@ This section describes how to configure Link Layer Discovery Protocol (LLDP) on 
 * [Open-LLDP](#open-lldp)
 * [LLDPd](#lldpd)
  
-# Open-LLDP
+## Open-LLDP
 This section describes how to configure LLDP protocol using an Open-LLDP agent.  
-## Default Behavior
+### Default Behavior
 By default, the LLDP agent does not enable LLDP protocol on switchDev interfaces on the system. This configuration should be done manually (e.g. enable protocol, configure TLVs etc). After restarting the agent, the configuration is preserved, the LLDP agent configuration is stored automatically in /var/lib/lldpad/lldpad.conf file.  
 
-## Agent Configuration
+### Agent Configuration
 * To enable LLDP (receive & transmit TLV information) on a specific port, use the following command:  
 `ip link set dev <SW-PORT> up`  
 `lldptool -L -i <SW-PORT> adminStatus=rxtx`  
@@ -30,10 +30,10 @@ By default, the LLDP agent does not enable LLDP protocol on switchDev interfaces
 * To get a specific TLV value:  
 `lldptool -t -n -V portID -i <SW-PORT>`   
 
-## Configure Mandatory TLV  
+### Configure Mandatory TLV  
 Once the LLDP protocol is enabled on a switchDev port, the mandatory TLV information is enabled automatically. The mandatory TLV cannot be disabled by user.  
 
-## Configure Optional TLV  
+### Configure Optional TLV  
 The following table describes the TLV names (including mandatory) that can be used by the agent to configure required TLV values:
 TLV Name	|	TLV Descripton
 --- | ---
@@ -51,13 +51,13 @@ MTU	|	Maximum Frame Size TLV
 
 **NOTE**: The agent does not work on a physical port if it belongs to a LAG.  
 
-# LLDPd
+## LLDPd
 This section describes how to configure the LLDP protocol using an LLDPd agent.
 
-## Default Behavior
+### Default Behavior
 By default, the LLDP agent enables LLDP protocol on all available physical interfaces. To limit the agent to listen only on switchDev interfaces, you need to provide a configuration file.
 
-## Agent Configuration
+### Agent Configuration
 
 * To limit the LLDP agent on specific port(s):  
 `lldpcli configure system interface pattern sw*`  
@@ -73,10 +73,10 @@ By default, the LLDP agent enables LLDP protocol on all available physical inter
 
 **NOTE**: Detailed instructions how to configure the agent can be found on lldpd manual page at https://vincentbernat.github.io/lldpd/usage.html.  
 
-## Configure Mandatory/Optional TLV  
+### Configure Mandatory/Optional TLV  
 The mandatory and optional TLV information is enabled automatically by the agent and cannot be disabled or enabled separately.  
 
-## IEEE 802.1/ IEEE 802.3 Organizationally Specific TLV
+### IEEE 802.1/ IEEE 802.3 Organizationally Specific TLV
 This information is not supported by the agent. However, TLV information can be provided statically via custom TLV configuration manually. For example:  
 
 * IEEE 802.1   
@@ -84,7 +84,7 @@ This information is not supported by the agent. However, TLV information can be 
 * IEEE 802.3  
 `lldpcli configure lldp custom-tlv oui 00,12,0f subtype 1 oui-info 56,78,9,0,90,78,54
 
-## TLV Information Values  
+### TLV Information Values  
 The following table describes TLV values that LLDPd will advertise in case of default configuration.  
 The table shows the mandatory TLV information.  
 
@@ -103,6 +103,6 @@ The table shows the mandatory TLV information.
 
 **NOTE**: Advertising IEEE 802.1/ IEEE 802.3 Organizationally Specific TLVs is not supported by the agent. This type of advertising can only be done via static custom TLVs.
 
-# LLDP Limitations
+## NOTES
 * LLDP is supported on physical interfaces only, does not matter if port is part of bridge or lag.
 * LLDPd does not support advertising of IEEE 802.3/802.1 TLV information automatically. To advertise the information (static only), apply manual LLDPd custom TLV configuration.
