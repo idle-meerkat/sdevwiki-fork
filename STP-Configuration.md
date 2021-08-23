@@ -1,3 +1,8 @@
+This section describes how to configure STP on the device, using one of the following methods:
+
+STP (802.1D) Configuration
+RSTP (802.1w) Configuration
+
 ## STP (802.1D) Configuration
 To enable STP on a bridge, run the following command:  
 `$ ip link set dev br0 type bridge stp_state 1`  
