@@ -1,11 +1,11 @@
 Upgrading the firmware to enable using Switchdev includes the following stages:  
-* [Fetch the Latest HOST Image](#1-Fetch-the-Latest-HOST-Image)
+* [Fetch the Latest HOST Image](##Fetch-the-Latest-HOST-Image)
 * [Boot from PCIe](#2-Boot-from-PCIe)
 * [Upgrade the Flash Image](#3-Upgrade-the-Flash-Image)
 
 These stages are described below.
 
-# Fetch the Latest HOST Image  
+## Fetch the Latest HOST Image  
 1.	Connect to the HOST CPU, in our example this is an ARMADA-7K device.  
 2.	Fetch the required flash image from Pluto server:  
 **DNI:**  
