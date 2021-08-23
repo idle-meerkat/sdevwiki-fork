@@ -1,9 +1,9 @@
 This section describes how to configure STP on the device, using one of the following methods:
 
-* [STP (802.1D) Configuration](#S.TP)
+* [STP (802.1D) Configuration](#STP)
 * [RSTP (802.1w) Configuration](#RSTP)
 
-## <a id="S.TP"></a>STP (802.1D) Configuration
+## <a id="STP"></a>STP (802.1D) Configuration
 To enable STP on a bridge, run the following command:  
 `$ ip link set dev br0 type bridge stp_state 1`  
 
@@ -35,7 +35,7 @@ After the bridge is created and STP is enabled (described above), you can switch
 * To show port information:  
 `$ mstpctl showport br0 sw1p5`  
 
-# STP Limitations
-* STP is configured by means of standard Linux command line tools (ip bridge, brctl).
-* To enable RSTP requires user-level daemon mstpd which should be run in RSTP mode. `mstpctl` is a utility to configure mstpd. mstpd(mstpctl) is not a standard Linux utility.
+## NOTES
+* STP is configured using standard Linux command line tools (ip bridge, brctl).
+* RSTP requires a user-level daemon mstpd which should be run in RSTP mode. `mstpctl` is a utility to configure mstpd. mstpd(mstpctl) is not a standard Linux utility.
   
