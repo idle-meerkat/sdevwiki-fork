@@ -5,8 +5,8 @@ NAT covers both IPv4 and IPv6 networks:
 * NAT-PT - IPv4-to-IPv6 Network Address Translation
 
 This section explains the following NAT configuration types:
-* [Static (Stateless) NAT Configuration](Static-(Stateless)-NAT-Configuration)
-* [Dynamic (Stateful) NAT Configuration](Dynamic-(Stateful)-NAT-Configuration)
+* [Static (Stateless) NAT Configuration](#Static-(Stateless)-NAT-Configuration)
+* [Dynamic (Stateful) NAT Configuration](#Dynamic-(Stateful)-NAT-Configuration)
 
 The following figure shows network address translation between a large site, and a WAN.
 ![NAT Overview](images/nat_overview.png)
