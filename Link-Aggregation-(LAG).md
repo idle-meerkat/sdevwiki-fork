@@ -69,7 +69,7 @@ To set a bond interface as a part of virtual router, run the following command:
 `$ ip link set dev [bond1] master [vrf_name]`  
 
 ## NOTES
-* Up to 62 Link aggregation groups are supported.
+* Up to 62 LAGs are supported.
 * Up to 8 port members per LAG.
 * Only the bond configuration mechanism is supported.
 * Only LACP 802.3ad operational mode is supported.
