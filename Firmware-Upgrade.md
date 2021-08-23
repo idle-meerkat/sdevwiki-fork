@@ -1,7 +1,7 @@
 Upgrading the firmware to enable using Switchdev includes the following stages:  
-* [Fetch the Latest HOST Image](##Fetch-the-Latest-HOST-Image)
-* [Boot from PCIe](#2-Boot-from-PCIe)
-* [Upgrade the Flash Image](#3-Upgrade-the-Flash-Image)
+* [Fetch the Latest HOST Image](#Fetch-the-Latest-HOST-Image)
+* [Boot from PCIe](#Boot-from-PCIe)
+* [Upgrade the Flash Image](#Upgrade-the-Flash-Image)
 
 These stages are described below.
 
@@ -18,7 +18,7 @@ These stages are described below.
 
 At this point the HOST image is updated and you can proceed to the next stage.  
 
-# Boot from PCIe  
+## Boot from PCIe  
 From the HOST CPU Linux CLI:
 1. Modify the boot vector - boot from PCIe:  
 The Switchdev Platforms include a CPLD that controls the BOOT vector of the Coprocessor (FW_CPU).  
@@ -49,7 +49,7 @@ If the Coprocessor NAND FLASH is empty, use the following procedure to upload th
 `00:00.0 PCI bridge: Marvell Technology Group Ltd. Device 0110`  
 `01:00.0 Memory controller: Marvell Technology Group Ltd. Device 6820 (rev 0a)`   
 
-# Upgrade the Flash Image  
+## Upgrade the Flash Image  
 1. Download the image from TFTP:  
 **DNI:**  
 `tftp 10.5.116.4 -m binary -c get switchdev/shared/mrvl_val/tn4810m-loader/tn4810m-prestera-fw-flash-image-v1.0.img`  
