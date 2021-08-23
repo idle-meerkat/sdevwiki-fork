@@ -6,7 +6,7 @@ Upgrading the firmware to enable using Switchdev includes the following stages:
 These stages are described below.
 
 # Fetch the Latest HOST Image  
-1.	Connect to the HOST A7K CPU.  
+1.	Connect to the HOST CPU, in our example this is an ARMADA-7K device.  
 2.	Fetch the required flash image from Pluto server:  
 **DNI:**  
 `tftp 10.5.116.4 -m binary -c get /tftpboot/switchdev/shared/mrvl_val/tn4810m-prestera-fw-flash-image-v1.0.img`  
