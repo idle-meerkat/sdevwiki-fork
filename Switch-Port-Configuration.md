@@ -4,6 +4,10 @@ In most cases, the configuration of a port’s parameters can be done using `ip`
 * [Port Auto-Negotitation](#port-auto-negotiation)
 * [Port Statistics](#port-statistics)
 
+The following ethtool commands are not supported:
+* `–m` command to read SFP module information.
+* `–p` command to test LEDs on port.
+
 ## Port Configuration 
 ### Port Identification   
 In order to specify the corresponding switch port name in Linux, use the following udev rule. It sets the interface name in the kernel driver, based on kernel port properties, such as switch ID and port ID.  
@@ -21,17 +25,18 @@ Use one of the following commands to set the port administrative status:
 The port Maximum Transmission Unit (MTU) can be set using the following command:  
 `ip link set dev sw1p1 mtu 1500`  
 
-**NOTE:** The driver supports up to three different MTU settings.
-
 ### Port MAC Address  
 The port MAC address can be set using the following command:  
 `ip link set dev sw1p1 address 00:00:00:00:00:02`  
+** NOTE:** 
 
 ### Port Speed
 The port speed can be set using the following command (the speed value is in Mb/s.):  
 `ethtool -s sw1p1 speed 1000`   
 
-**NOTE:** The speed can only be set if auto-negotiation is disabled. If you pass a speed parameter when auto-neogtiation is enabled, it is ignored.  
+**NOTES:**  
+* Before setting the speed, make sure to configure the port media type.
+* The speed can only be set if auto-negotiation is disabled. If you pass a speed parameter when auto-neogtiation is enabled, it is ignored.  
 
 ### Port Duplex Mode
 The port duplex mode can be set using the following command:
@@ -40,15 +45,10 @@ The port duplex mode can be set using the following command:
 **NOTE**: duplex can only be set if auto-neogtiation is disabled. If you pass duplex parameter when auto-neogtiation is enabled, it is ignored.  
 
 ## NOTES
-* Only odd numbers are supported for Maximum Receive Unit (MRU) configuration on the port. This is in keeping with the requirement that MTU is changed together with MTU.
-* Before setting the speed, make sure to configure the port media type.
-* Only the least significant byte of a MAC address can be configured on the port. The rest of the MAC address is a common base for all ports. 
+
+
 * The ethtool `-r` command to restart the auto negotiation is supported only for 1G low speed copper ports.
 * FEC is supported only on SFP ports of 10G speed and higher.
-
-The following ethtool commands are not supported:
-* `–m` command to read SFP module information.
-* `–p` command to test LEDs on port.
 
 ## Port Information
 To view the port status and configuration, use the `ifconfig`, `ip link show` and `ethtool` commands.  
@@ -278,6 +278,9 @@ NIC statistics:
      frames_1519_to_max_octets: 0
      good_octets_sent: 3056
 ```
+**NOTES:** 
+* The driver supports up to three different MTU settings.
+* Only odd numbers are supported for Maximum Receive Unit (MRU) configuration on the port. This is in keeping with the requirement that MTU is changed together with MTU.
 
 
 
