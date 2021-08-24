@@ -24,7 +24,6 @@ Network Configurations
   - [Virtual Router Interface (VRF)](virtual-router-interface-(vrf))
   - [Equal Cost Multi Path (ECMP)](equal-cost-multi-path-(ecmp))
   - [Virtual Router Redundancy Protocol (VRRP)](virtual-router-redundancy-protocol-(vrrp))  
-  - [Network Address Translation (NAT)](network-address-translation-(nat))  
 - Quality of Service (QoS)
   - Control Plane Policing
   - Traffic Policing
@@ -37,6 +36,6 @@ Network Configurations
   - [Shared Block Support](shared-block-support)
   - Chain Templates Support
   - Multi-chain Support 
-
+- [Network Address Translation (NAT)](network-address-translation-(nat))  
 Debugging Tools and and Methods  
 Resources and Releases  
