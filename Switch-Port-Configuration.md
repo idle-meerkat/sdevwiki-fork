@@ -33,7 +33,8 @@ The port Maximum Transmission Unit (MTU) can be set using the following command:
 ### Port MAC Address  
 The port MAC address can be set using the following command:  
 `ip link set dev sw1p1 address 00:00:00:00:00:02`  
-** NOTE:** 
+
+**NOTE:** Only the least significant byte of MAC address can be configured on the port. The rest of the MAC address is a common base for all ports.
 
 ### Port Speed
 The port speed can be set using the following command (the speed value is in Mb/s.):  
@@ -143,7 +144,9 @@ Settings for sw1p1:
 ## Port Auto Negotiation
 Port auto-negotiation can be enabled/disabled using following command:  
 `ethtool -s sw1p1 autoneg [on | off]`  
+
 **NOTE:** The ethtool `-r` command to restart the auto negotiation is supported only for 1G low speed copper ports.  
+
 Linux defines following interface modes for advertising to the remote side:
 | Mask | Mode |
 |---- |---- |
