@@ -29,9 +29,9 @@ Network Configurations
   - [Shared Block Support](shared-block-support)
   - Chain Templates Support
   - Multi-chain Support 
-- [Network Address Translation (NAT)](network-address-translation-(nat))  
+- Network Address Translation (NAT)  
   - [NAT Overview](NAT-overview)
   - [Static (Stateless) NAT](Static-(Stateless)-NAT)
   - [Dynamic (Stateful) NAT](Dynamic-(Stateful)-NAT)   
-Debugging Tools and and Methods  
-Resources and Releases  
+- Debugging Tools and and Methods  
+- Resources and Releases  
