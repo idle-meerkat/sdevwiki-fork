@@ -25,9 +25,7 @@ Network Configurations
   - [Traffic Policing](traffic-policing)
   - Priority Mapping
 - Access Control Lists (ACL)
-  - [ACL Overview](ACL-Overview)
-  - [ACL Configuration](acl-configuration)
-  - [Supported Actions, Keys and Rules](supported-actions,-keys-and-rules)
+  - [ACL](ACL)
   - [Shared Block Support](shared-block-support)
   - Chain Templates Support
   - Multi-chain Support 
