@@ -6,7 +6,7 @@ In most cases, the configuration of a port’s parameters can be done using `ip`
 
 The following ethtool commands are not supported:
 * `–m` command to read SFP module information.
-* `–p` command to test LEDs on port.
+* `–p` command to test LEDs on a port.
 
 ## Port Configuration 
 ### Port Identification   
