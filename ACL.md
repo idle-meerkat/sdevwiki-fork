@@ -1,5 +1,6 @@
 This section includes the following:
 * [ACL Overview](#acl-overview)
+* [Linux Support](#linux-support)
 * [ACL Configuration](#acl-configuration)
 * [Supported Actions, Keys and Rules](#acl-actions)
 
@@ -97,11 +98,11 @@ If an ACL is not going to be used anymore on the switchdev interface, use the fo
 
 ## <a id="acl-actions"></a>Supported Actions, Keys and Rules
 
-## ACL supported actions [3]
+### ACL supported actions [3]
 * drop
 * trap
 * pass
-## ACL supported keys [3]
+### ACL supported keys [3]
 * Ingress interfaces (only switchdev interface)
 * Protocol (ethertype)
 * src_mac
@@ -112,7 +113,7 @@ If an ACL is not going to be used anymore on the switchdev interface, use the fo
 * src_port
 * dst_port
 * vlan_id
-## Supported TC Flower Rules and Actions
+### Supported TC Flower Rules and Actions
 The following list of ACL rules (TC flower matches) are supported:
 * indev DEV-NAME (useful when using qdisc blocks, which is described in next major section)
 * protocol PROTO (tc filter option, not flower filter type)
