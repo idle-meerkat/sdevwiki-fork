@@ -10,7 +10,7 @@ In order to specify the corresponding switch port name in Linux, use the followi
 `SUBSYSTEM=="net", ACTION=="add", ATTR{phys_switch_id}=="00", ATTR{phys_port_name}!="", NAME="sw0p$attr{phys_port_name}"`  
 
 ### Port State  
-The port administrative status can be set using one of the following commands:
+Use one of the following commands to set the port administrative status:
 
 `ip link set sw1p1 [up | down]`  
 `ifconfig sw1p1 [up | down]`  
@@ -226,10 +226,11 @@ There are two types of port statistic:
 The `ifstat` tool can be used to query the port's software statistics.  
 
 ### Hardware Statistics  
-The following command can be used to review port hardware statistics:
-* ip –s link show sw1pX
-* Ifconfig sw1pX
-* ethtool –S sw1pX  
+Use one of the following commands to review port hardware statistics:
+
+`ip –s link show sw1pX`  
+`Ifconfig sw1pX`  
+`ethtool –S sw1pX`  
 
 The `ip –s link show` and `ifconfig` commands display basic hardware statistics in rtnl_link_stats64 linux format.  
 ```
