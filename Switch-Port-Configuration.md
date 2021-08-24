@@ -224,8 +224,8 @@ The configuration of auto-negotiation mechanism is different for low and high sp
 
 ## Port Statistics
 These are the types of port statistics:
-* Software statistics account for packets trapped to the CPU or packets sent from the CPU.  
-* Hardware statistics account for all packets going through the port, including those not trapped to or originating from the CPU.  
+* [Software Statistics](#software-statistics) account for packets trapped to the CPU or packets sent from the CPU.  
+* [Hardware Statistics](#hardware-statistics) account for all packets going through the port, including those not trapped to or originating from the CPU.  
 
 ### Software Statistics  
 The `ifstat` tool can be used to query the port's software statistics.  
