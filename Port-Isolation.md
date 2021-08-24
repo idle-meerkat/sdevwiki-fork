@@ -1,12 +1,12 @@
 Port isolation (also called ‘protected ports’ or ‘pvlan edge’) enables you to control how traffic is forwarded between ports that are connected at the same bridge domain. Traffic between isolated ports is prevented regardless of their VLAN membership. However, isolated ports can still communicate with non-isolated ports such as uplink to access WAN.  
-Port Isolation enables/disables traffic forwarding between any pair of ingress/egress ports in a single-device topology and back-to-back topology.  
-Traffic should be paired based on the source ePort that represents the source physical port.
+
+Port Isolation enables/disables traffic forwarding between any pair of ingress/egress ports in a single-device topology and back-to-back topology. Traffic should be paired based on the source ePort that represents the source physical port.
 
 The following image shows how port isolation is implemented.
 ![Port Isolation Overview](images/port_isolation_overview.png)
 
 ## Linux Support
-This capability is supported by Linux kernels since 4.18. The support is provides on the port level (that is, not per port and vlan). Isolation is always applied on netdev switch ports.
+This capability is supported by Linux kernels since 4.18. The support is provides on the port level (that is, not per port and VLAN). Isolation is always applied on netdev switch ports.
 
 Linux Command:
 
