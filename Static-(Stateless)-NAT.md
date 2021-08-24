@@ -59,7 +59,7 @@ tc filter add dev sw1p2 protocol ip ingress \
    flower skip_sw ip_proto tcp src_ip 192.168.0.2 \ 
    action nat egress 192.168.0.2 91.245.77.1 
 ```
-NOTE: The configuration is slightly different from the usual Linux software configuration of stateless TC NAT, where NAT rules are applied on a public port only (such as, WAN port). For instance: 
+**NOTE:** The configuration is slightly different from the usual Linux software configuration of stateless TC NAT, where NAT rules are applied on a public port only (such as, WAN port). For instance: 
 ```
 # public network 
 tc qdisc add dev eth0 ingress 
@@ -71,7 +71,7 @@ tc qdisc add dev eth0 root handle 1: prio
 tc filter add dev eth0 parent 1: protocol ip matchall \ 
    action nat egress 10.0.2.2/32 172.31.19.2/32 
 ```
-NOTE: Egress `qdisc` (egress ACL) is not supported by the Switchdev driver. Therefore, the public/private Switchdev TC NAT configuration is done using ingress `qdisc` only, which requires adding hardware rules on the private switch port.
+**NOTE:** Egress `qdisc` (egress ACL) is not supported by the Switchdev driver. Therefore, the public/private Switchdev TC NAT configuration is done using ingress `qdisc` only, which requires adding hardware rules on the private switch port.
 
 ### Private to Private Flow
 To skip NAT for packets that are destined for private subnet or hosts, you need to install additional rules on private ports. For example, a rule that matches a private subnet with a higher priority should be installed with the action “do nothing”. 
@@ -80,4 +80,4 @@ To skip NAT for packets that are destined for private subnet or hosts, you need 
 tc filter add dev sw1p2 protocol ip ingress \ 
    flower skip_sw ip_proto tcp dst_ip 192.168.0.1/24 action pass 
 ```
-NOTE: The last rule added has the higher priority, so there is no need to define the priority in the rule (see [Supported Actions, Keys and Rules](supported-actions,-keys-and-rules) for more information).
+**NOTE:** The last rule added has the higher priority, so there is no need to define the priority in the rule (see [Supported Actions, Keys and Rules](supported-actions,-keys-and-rules) for more information).
