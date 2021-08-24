@@ -80,4 +80,4 @@ To skip NAT for packets that are destined for private subnet or hosts, you need 
 tc filter add dev sw1p2 protocol ip ingress \ 
    flower skip_sw ip_proto tcp dst_ip 192.168.0.1/24 action pass 
 ```
-**NOTE:** The last rule added has the higher priority, so there is no need to define the priority in the rule (see [ACL](acl) for more information).
+**NOTE:** The last rule added has the higher priority, so there is no need to define the priority in the rule (see [ACL](acl#supported-actions-keys-and-rules) for more information).
