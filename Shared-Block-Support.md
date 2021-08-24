@@ -22,5 +22,5 @@ Once the qdisc block is shared, you can no longer manipulate the filters using t
 Or set rules for a specific interface in the block:  
 `$ sudo tc filter add block 1 root flower skip_sw indev sw1p1 action pass`  
 
-In addition to `clsact` qdisc, block sharing is also supported for `ingress` qdisc:
+In addition to `clsact` qdisc, block sharing is also supported for `ingress` qdisc:  
 `$ sudo tc qdisc add dev sw1p5 ingress_block 2 ingress`  
