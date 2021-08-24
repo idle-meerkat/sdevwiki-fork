@@ -9,9 +9,6 @@ System Configurations
 Network Configurations
 - Switch Port 
   - [Switch Port Configuration](switch-port-configuration)  
-  - [Port Information](port-information)  
-  - [Port Auto-Negotiation](port-auto-negotiation)  
-  - [Port Statistics](port-statistics)  
   - [Port Isolation](port-isolation)
   - [Bridge Port Isolation](bridge-port-isolation)
 - Layer 2  
