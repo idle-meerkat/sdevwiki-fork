@@ -210,7 +210,8 @@ Linux defines following interface modes for advertising to the remote side:
 0x20000000000000000	|	200000baseDR4 Full	|
 0x40000000000000000	|	200000baseCR4 Full	|
 
-In order to advertise some modes, you need to prepare the mask using “OR” operation for target modes and pass it to the `ethtool` command. For example:  
+In order to advertise some modes, you need to prepare the mask using “OR” operation for target modes and pass it to the `ethtool` command.   
+For example:  
 `ethtool -s sw1p1 advertise 0x80000`  
 
 If auto negotiation is enabled, the Prestera driver should verify inbound advertising modes and print an error message whether some unsupported mode has occurred. If auto-negotiation is disabled, the driver just ignores the advertising mode setting.    
@@ -222,7 +223,7 @@ The configuration of auto-negotiation mechanism is different for low and high sp
 **NOTE**: Auto-negotiation on Copper SFP with RJ-45 module using a Prestera driver is not supported.  
 
 ## Port Statistics
-There are two types of port statistic:
+These are the types of port statistics:
 * Software statistics account for packets trapped to the CPU or packets sent from the CPU.  
 * Hardware statistics account for all packets going through the port, including those not trapped to or originating from the CPU.  
 
