@@ -25,6 +25,11 @@ Use one of the following commands to set the port administrative status:
 The port Maximum Transmission Unit (MTU) can be set using the following command:  
 `ip link set dev sw1p1 mtu 1500`  
 
+**NOTES:** 
+* The driver supports up to three different MTU settings.
+* Only odd numbers are supported for Maximum Receive Unit (MRU) configuration on the port. This is in keeping with the requirement that MTU is changed together with MTU.
+
+
 ### Port MAC Address  
 The port MAC address can be set using the following command:  
 `ip link set dev sw1p1 address 00:00:00:00:00:02`  
@@ -43,12 +48,6 @@ The port duplex mode can be set using the following command:
 `ethtool -s sw1p1 duplex [half|full]`  
 
 **NOTE**: duplex can only be set if auto-neogtiation is disabled. If you pass duplex parameter when auto-neogtiation is enabled, it is ignored.  
-
-## NOTES
-
-
-* The ethtool `-r` command to restart the auto negotiation is supported only for 1G low speed copper ports.
-* FEC is supported only on SFP ports of 10G speed and higher.
 
 ## Port Information
 To view the port status and configuration, use the `ifconfig`, `ip link show` and `ethtool` commands.  
@@ -144,6 +143,7 @@ Settings for sw1p1:
 ## Port Auto Negotiation
 Port auto-negotiation can be enabled/disabled using following command:  
 `ethtool -s sw1p1 autoneg [on | off]`  
+**NOTE:** The ethtool `-r` command to restart the auto negotiation is supported only for 1G low speed copper ports.  
 Linux defines following interface modes for advertising to the remote side:
 | Mask | Mode |
 |---- |---- |
@@ -278,10 +278,8 @@ NIC statistics:
      frames_1519_to_max_octets: 0
      good_octets_sent: 3056
 ```
-**NOTES:** 
-* The driver supports up to three different MTU settings.
-* Only odd numbers are supported for Maximum Receive Unit (MRU) configuration on the port. This is in keeping with the requirement that MTU is changed together with MTU.
-
+## NOTES  
+* FEC is supported only on SFP ports of 10G speed and higher.
 
 
 
