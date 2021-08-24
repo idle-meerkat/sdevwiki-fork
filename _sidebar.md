@@ -30,5 +30,8 @@ Network Configurations
   - Chain Templates Support
   - Multi-chain Support 
 - [Network Address Translation (NAT)](network-address-translation-(nat))  
+  - [NAT Overview](NAT-overview)
+  - [Static NAT](Static-NAT)
+  - [Dynamic NAT](Dynamic NAT) 
 Debugging Tools and and Methods  
 Resources and Releases  
