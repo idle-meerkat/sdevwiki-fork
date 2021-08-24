@@ -10,7 +10,6 @@ Network Configurations
 - Switch Port 
   - [Switch Port Configuration](switch-port-configuration)  
   - [Port Isolation](port-isolation)
-  - [Bridge Port Isolation](bridge-port-isolation)
 - Layer 2  
   - [Bridge and VLAN](bridge-and-vlan)  
   - [Link Aggregation (LAG)](link-aggregation-(lag))
