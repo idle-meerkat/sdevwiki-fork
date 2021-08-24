@@ -22,13 +22,12 @@ Network Configurations
   - [Virtual Router Redundancy Protocol (VRRP)](virtual-router-redundancy-protocol-(vrrp))  
 - Quality of Service (QoS)
   - Control Plane Policing
-  - Traffic Policing
+  - [Traffic Policing](policer)
   - Priority Mapping
 - Access Control Lists (ACL)
   - [ACL Overview](ACL-Overview)
   - [ACL Configuration](acl-configuration)
   - [Supported Actions, Keys and Rules](supported-actions,-keys-and-rules)
-  - [Policer](policer)
   - [Shared Block Support](shared-block-support)
   - Chain Templates Support
   - Multi-chain Support 
