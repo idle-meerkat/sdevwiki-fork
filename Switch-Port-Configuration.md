@@ -144,7 +144,7 @@ Settings for sw1p1:
 ## Port Auto Negotiation
 Port auto-negotiation can be enabled/disabled using following command:  
 `ethtool -s sw1p1 autoneg [on | off]`  
-Linux defines following interface modes which user can advertise to the remote side:
+Linux defines following interface modes for advertising to the remote side:
 | Mask | Mode |
 |---- |---- |
 |0x001| 10baseT Half |
