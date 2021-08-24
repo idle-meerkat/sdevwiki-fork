@@ -2,7 +2,7 @@ This section includes the following:
 * [ACL Overview](#acl-overview)
 * [Linux Support](#linux-support)
 * [ACL Configuration](#acl-configuration)
-* [Supported Actions, Keys and Rules](#acl-actions)
+* [Supported Actions, Keys and Rules](#supported-actions-keys-and-rules)
 
 ## ACL Overview 
 Access Control Lists (ACL) enable you to apply policies on traffic flows by setting matching criteria (for example, 5-tuple) and actions (for example, pass/drop). The ACL can be used to restrict traffic forwarding, limit traffic rate, maintain statistics and trigger network address translation. ACL rules can be added/removed at any time and can apply to traffic ingresses and/or egresses, at the port level. 
@@ -44,7 +44,9 @@ Where:
     `ingress`  is used for clsact qdisc.  
     `root`  is used for ingress qdisc.   
 For more information on flower specific parameters, see the man tc-flower page.  
-**NOTE**: The driver does not support all parameters. See [Supported Actions, Keys and Rules](supported-actions,-keys-and-rules) for the full list of supported actions and keys.   
+**NOTE**: The driver does not support all parameters. See 
+[Supported Actions, Keys and Rules](#supported-actions-keys-and-rules)
+ for the full list of supported actions and keys.   
 
 ### Add Flower (ACL) Rules  
 Once the qdisc is created, you can add flower rules which are bound to a specific qdisc/switchdev interface.   
