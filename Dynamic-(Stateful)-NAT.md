@@ -1,7 +1,7 @@
 ## <a id="dynamic"></a>Dynamic (Stateful) NAT Configuration
 The configuration of stateful NAT is done by using `tc` iproute2 tool and the `tc-ct` action. The action is used in combination with `flower` filter rule and ingress qdisc to do the dynamic NAT entry offloading. The user guide for stateful NAT is described in tc-flower and tc-ct man pages. 
 
-NOTE: The stateful NAT feature requires Linux kernel 5.8.9 and above. 
+**NOTE:** The stateful NAT feature requires Linux kernel 5.8.9 and above. 
 
 ### Basic Configuration 
 This example covers the basic use case (many-to-one, with one private Switchdev port) for stateful NAT configuration, using a TC connection tracking subsystem. 
@@ -10,7 +10,7 @@ The following figure shows dynamic NAT setup:
 
 ![Dynamic NAT Setup](images/dynamic_nat_setup.png)
 
-NOTE: This scenario also covers the case of only one private host. 
+**NOTE:** This scenario also covers the case of only one private host. 
 Configuration of private host connected to the switch device (in this case on one private): 
 ```
 # private host: IP/default gateway 
@@ -49,9 +49,9 @@ tc filter add dev sw1p1 egress prio 10 proto ip flower \
 tc filter add dev sw1p1 ingress prio 5 proto ip flower \ 
   action ct nat pipe action pass 
 ```
-NOTE: Since the NAT configuration is done using regular ACL rules, it takes resources from regular ACL memory. 
-
-NOTE: Egress CT flower filter on a public port should be the same as CT flower filter on a private port. If a CT rule exists on multiple private port, those flower matches should be reflected on the egress public port. 
+**NOTES:** 
+* Since the NAT configuration is done using regular ACL rules, it takes resources from regular ACL memory. 
+* Egress CT flower filter on a public port should be the same as CT flower filter on a private port. If a CT rule exists on multiple private port, those flower matches should be reflected on the egress public port. 
 
 ### Private to Private Flow 
 
