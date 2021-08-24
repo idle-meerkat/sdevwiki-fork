@@ -31,7 +31,7 @@ Network Configurations
   - Multi-chain Support 
 - [Network Address Translation (NAT)](network-address-translation-(nat))  
   - [NAT Overview](NAT-overview)
-  - [Static NAT](Static-NAT)
+  - [Static (Stateless) NAT](Static-(Stateless)-NAT)
   - [Dynamic (Stateful) NAT](Dynamic-(Stateful)-NAT)   
 Debugging Tools and and Methods  
 Resources and Releases  
