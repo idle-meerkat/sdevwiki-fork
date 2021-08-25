@@ -10,7 +10,7 @@ Linux Bridge supports the following bridges types, defined by 1EEE 802.1Q standa
 `$ ip link add name br0 type bridge`
 * Delete a Bridge:  
   `$ip link del dev br0`
-* Make a BridgeVLAN-Aware:  
+* Make a Bridge VLAN-aware:  
 `$ ip link set dev br0 type bridge vlan_filtering 1`
 
 A Linux bridge forwards packets based on FDB data.  
