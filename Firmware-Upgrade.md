@@ -44,7 +44,7 @@ If the Coprocessor NAND FLASH is empty, use the following procedure to upload th
 `mw 0xf6081808 0x003f0001`  
 5. Boot to the HOST Linux system:  
 `Marvell>> boot`  
-6. At this point the PCIe is ready to use:
+6. At this point the PCIe is ready to use:  
 `amzgo-host# lspci`   
 `00:00.0 PCI bridge: Marvell Technology Group Ltd. Device 0110`  
 `01:00.0 Memory controller: Marvell Technology Group Ltd. Device 6820 (rev 0a)`   
