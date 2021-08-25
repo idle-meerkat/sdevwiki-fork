@@ -66,7 +66,9 @@ amzgo-host# ip link show sw1p1
 The `ethtool` command provides information about current speed and duplex, auto-negotiation status, supported and advertised link modes, connector type and statistics.  
 
 The following are examples of output. 
-#### Low Speed Port  
+* [Low Speed Port Output](#Output-Example-Low-Speed-Port)
+* [High Speed Port Output](#Output-Example-High-Speed-Port)
+#### Output Example: Low Speed Port  
 ```
 amzgo-host# ethtool sw1p1
 Settings for sw1p1:
@@ -108,7 +110,7 @@ Settings for sw1p1:
 # section should display the actual port operational status
         Link detected: yes
 ```
-#### High Speed Port  
+#### Output Example: High Speed Port  
 ```
 # Supported media type
         Supported ports: [ TP FIBRE ]  
