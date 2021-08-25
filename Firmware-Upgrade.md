@@ -30,7 +30,7 @@ If the Coprocessor NAND FLASH is empty, use the following procedure to upload th
 `i2cset -y 0 0x40 0x51 0x6c`   
 2. Soft reboot on the HOST CPU:   
 `amzgo-host# reboot`  
-3. From the firmware console you should see this output, indicating boot from PCIe:
+3. From the firmware console you should see this output, indicating boot from PCIe:  
 `BootROM - 1.73`  
 `Booting from PEX0 (X1)`  
 4. Stop at HOST u-boot and modify the bar window size allocation:  
