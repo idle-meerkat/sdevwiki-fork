@@ -30,8 +30,8 @@ It applies the following code and must be patched into the DENT/ONL code package
 
 **Example**:  
 `patch -d <ONL_GIT_SOURCES> -p1 < onl-switchdev-v2.3.0.patch`  
-**NOTE**: When Switchdev driver is configured as a built-in driver into the kernel, the driver cannot be used to load a firmware image from the rootfs to the firmware CPU.  
-The reason is that the Switchdev driver starts before the rootfs FS is mounted during the kernel startup. As the firmware is loaded from the rootfs, the Switchdev kernel driver has been changed to compile as **kernel modules**. Provided that the DENT/ONL build system does not include those modules in the output DENT/ONL image now, it must manually copy those KO (prestera_sw.ko, prestera_pci.ko) to the DENT/ONL image and manually start it using insmod.  
+
+When the Switchdev driver is configured as a built-in driver into the kernel, the driver cannot be used to load a firmware image from the rootfs to the firmware CPU. The reason for this is that during the kernel startup, the Switchdev driver starts before the rootfs FS is mounted. As the firmware is loaded from the rootfs, the Switchdev kernel driver is revised to compile as **kernel modules**. Provided that the DENT/ONL build system does not include those modules in the output DENT/ONL image now, it must manually copy those KO (prestera_sw.ko, prestera_pci.ko) to the DENT/ONL image and manually start it using insmod.  
 These are the Switchdev driver locations in the DENT/ONL build after compilation: 
 ```
 (find . -name "prestera_*.ko" 2>/dev/null): 
