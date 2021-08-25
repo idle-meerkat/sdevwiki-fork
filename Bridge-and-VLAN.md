@@ -2,15 +2,15 @@ Linux bridge is a way to connect two ethernet segments together in a protocol in
 The Linux bridge code implements a subset of the ANSI/IEEE 802.1d standard. [1]. The original Linux bridging was first done in Linux 2.2, then rewritten by Lennert Buytenhek. The code for bridging has been integrated into 2.4 and 2.6 kernel series.  
 
 Linux Bridge supports the following bridges types, defined by 1EEE 802.1Q standard:  
-- VLAN Unaware Bridge : Bridge that does not recognize VLAN Tagged Packets. This is the default.
-- VLAN Aware Bridge : Bridge that recognizes packets with the following tags: **VLAN Tag and Insert** or **Remove Tag Headers**.
+- VLAN-Unaware Bridge : Bridge that does not recognize VLAN Tagged Packets. This is the default.
+- VLAN-Aware Bridge : Bridge that recognizes packets with the following tags: **VLAN Tag and Insert** or **Remove Tag Headers**.
 
 ## Bridge Device Configuration
-* Create a Bridge (By default linux bridge is VLAN unaware):  
+* Create a Bridge (By default linux bridge is VLAN-unaware):  
 `$ ip link add name br0 type bridge`
 * Delete a Bridge:  
   `$ip link del dev br0`
-* Make a Bridge VLAN Aware:  
+* Make a BridgeVLAN-Aware:  
 `$ ip link set dev br0 type bridge vlan_filtering 1`
 
 A Linux bridge forwards packets based on FDB data.  
@@ -38,8 +38,8 @@ Entries with `offload` flag are externally learned entries (hardware FDB)
 `$ ip link set dev sw0p1 master br`  
 * Removing a net device port from the bridge   
 `$ ip link set dev sw0p1 nomaster`  
-## VLAN Aware Configuration  
-* Adding 2 ports (sw0p1 and sw0p2) to a VLAN aware bridge  
+## VLAN-Aware Configuration  
+* Adding 2 ports (sw0p1 and sw0p2) to a VLAN-aware bridge  
 `$ ip link set dev br0 type bridge vlan_filtering 1`  
 `$ ip link set dev sw0p1 master br0`  
 `$ ip link set dev sw0p2 master br0`  
@@ -61,7 +61,7 @@ Output:
 `sw1p5          1 Egress Untagged 20 PVID`  
 
 
-## VLAN Unaware Configurations  
+## VLAN-Unaware Configurations  
 Multiple VLAN-unaware bridges can be created. This can be used, for example, to separate FDBs:  
 `$ ip link add name br1 type bridge`  
 `$ ip link add name br2 type bridge`  
