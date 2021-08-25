@@ -27,7 +27,7 @@ The port Maximum Transmission Unit (MTU) can be set using the following command:
 
 **NOTES:** 
 * The driver supports up to three different MTU settings.
-* Only odd numbers are supported for Maximum Receive Unit (MRU) configuration on the port. This is in keeping with the requirement that MTU is changed together with MTU.
+* Only odd numbers are supported for Maximum Receive Unit (MRU) configuration on the port. This is in keeping with the requirement that MTU is changed together with MRU.
 
 
 ### Port MAC Address  
