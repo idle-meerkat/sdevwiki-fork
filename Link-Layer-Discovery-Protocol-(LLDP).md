@@ -59,7 +59,7 @@ By default, the LLDP agent enables LLDP protocol on all available physical inter
 
 ### Agent Configuration
 
-* To limit the LLDP agent on specific port(s):  
+* To limit the LLDP agent to specific port(s):  
 `lldpcli configure system interface pattern sw*`  
 
 * To enable/disable LLDP on a specific interface:  
