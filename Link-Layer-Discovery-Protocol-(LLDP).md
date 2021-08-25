@@ -68,7 +68,7 @@ By default, the LLDP agent enables LLDP protocol on all available physical inter
 * To query LLDP statistics on port:  
 `lldpcli show statistics ports sw1p1`  
 
-* To query TLV information from switch about connected neighbor:  
+* To query TLV information from the switch about a connected neighbor:  
 `lldpcli show neighbors`    
 
 **NOTE**: Detailed instructions how to configure the agent can be found on lldpd manual page at https://vincentbernat.github.io/lldpd/usage.html.  
