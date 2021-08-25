@@ -60,7 +60,7 @@ To configure a VLAN on the LAG interface, run the following command:
 To configure bridge port attributes for a LAG, run the following command:  
 `$ bridge link set dev [bond1] learning off flood off`  
 
-## Add IP address to a LAG
+## Add an IP Address to a LAG
 To configure an IP address for a LAG, run the following command:  
 `$ ip addr add [192.168.1.2/24] dev [bond1]`  
 
