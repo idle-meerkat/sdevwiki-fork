@@ -6,13 +6,13 @@ The following image shows how port isolation is implemented.
 ![Port Isolation Overview](images/port_isolation_overview.png)
 
 ## Linux Support
-This capability is supported by Linux kernels since 4.18. The support is provides on the port level (that is, not per port and VLAN). Isolation is always applied on netdev switch ports.
+Port isolation is supported by Linux kernels version 4.18, or higher. The support is provided on the port level (that is, not per port and VLAN). Isolation is always applied on netdev switch ports.
 
 Linux Command:
 
 `bridge link set dev DEV [isolated {on|off}]`
 
-This setting is available through (rt) netlink, and it has no equivalent in ioctl/brctl
+This setting is available through (rt) netlink, and it has no equivalent in ioctl/brctl.
 
 ### SwitchDev Driver
 
