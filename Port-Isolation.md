@@ -37,7 +37,7 @@ Isolating a single bridge port has no effect until at least one other port of th
 ```
 # bridge link set dev sw1p2 isolated on 
 ```
-Now the bridge ports sw1p1 and sw1p2 are unable to send or receive any packet to or from each other. However, these interfaces can still communicate normally with any other unisolated port of the bridge. 
+Now the bridge ports sw1p1 and sw1p2 are unable to send or receive any packet to or from each other. However, these interfaces can still communicate normally with any other unisolated port on the bridge. 
 
 ## NOTES: 
 * If there are multiple VLANs on an isolated bridge port, all are affected.
