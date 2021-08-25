@@ -42,11 +42,11 @@ In order to set MTU on the LAG interface, run the following command:
 ## Speed and Auto-Negotiation Setting on a LAG Interface  
 The speed and auto-negotiation setting are not supported for bond interface.  
 In order to configure the speed or auto-negotiation, complete the following actions:  
-* Disable LAG interface (ip link set [bond1] down)
-* Disable LAG members(ip link set [sw1pX] down)
+* Disable LAG interface (`ip link set [bond1] down`)
+* Disable LAG members (`ip link set [sw1pX] down`)
 * Configure speed or auto-negotiation for every LAG member
-* Enable LAG members(ip link set [sw1pX] up)
-* Enable LAG interface (ip link set [bond1] up)
+* Enable LAG members (`ip link set [sw1pX] up`)
+* Enable LAG interface (`ip link set [bond1] up`)
 
 ## Adding a LAG Interface to a Bridge  
 To add a LAG interface to a bridge, run the following command:  
