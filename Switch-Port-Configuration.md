@@ -214,7 +214,7 @@ In order to advertise some modes, you need to prepare the mask using “OR” op
 For example:  
 `ethtool -s sw1p1 advertise 0x80000`  
 
-If auto negotiation is enabled, the Prestera driver should verify inbound advertising modes and print an error message whether some unsupported mode has occurred. If auto-negotiation is disabled, the driver just ignores the advertising mode setting.    
+If auto negotiation is enabled, the Prestera driver should verify inbound advertising modes and print an error message whether some unsupported mode has occurred. If auto-negotiation is disabled, the driver ignores the advertising mode setting.    
 
 The configuration of auto-negotiation mechanism is different for low and high speed ports:   
 * For low-speed ports, the auto-negotiation parameters should be taken (or applied) from (to) PHY directly.  The user has a full control of auto-negotiation configuration on the port.  
