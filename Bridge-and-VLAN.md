@@ -39,7 +39,7 @@ Entries with `offload` flag are externally learned entries (hardware FDB)
 * Removing a net device port from the bridge   
 `$ ip link set dev sw0p1 nomaster`  
 ## VLAN Aware Configuration  
-* Adding 2 ports sw0p1 and sw0p2 to a VLAN aware bridge  
+* Adding 2 ports (sw0p1 and sw0p2) to a VLAN aware bridge  
 `$ ip link set dev br0 type bridge vlan_filtering 1`  
 `$ ip link set dev sw0p1 master br0`  
 `$ ip link set dev sw0p2 master br0`  
@@ -47,7 +47,7 @@ Entries with `offload` flag are externally learned entries (hardware FDB)
 `$ bridge vlan show dev sw0p1` 
 `port         vlan ids` 
 `sw0p1         1     PVID Egress Untagged`  
-* Add a port to VLAN  
+* Add a port to a VLAN  
 `$ bridge vlan add vid 20 dev sw0p1`  
 `$ bridge vlan show dev sw0p1`  
 Output:  
