@@ -239,7 +239,7 @@ Use one of the following commands to review port hardware statistics:
 `Ifconfig sw1pX`  
 `ethtool –S sw1pX`  
 
-The `ip –s link show` and `ifconfig` commands display basic hardware statistics in rtnl_link_stats64 linux format.  
+The `ip –s link show` and `ifconfig` commands display basic hardware statistics in rtnl_link_stats64 linux format, as shown in the following example: 
 ```
 7: sw1p1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
     link/ether 00:00:00:00:00:01 brd ff:ff:ff:ff:ff:ff
@@ -248,7 +248,7 @@ The `ip –s link show` and `ifconfig` commands display basic hardware statistic
     TX: bytes  packets  errors  dropped carrier collsns 
     3056       40       0       0       0       0
 ```
-The `ethtool` command displays detailed port hardware counters. 
+The `ethtool` command displays detailed port hardware counters, as shown in the following example: 
 ```
 amzgo-host# ethtool -S sw1p1
 NIC statistics:
