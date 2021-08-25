@@ -101,8 +101,7 @@ The table shows the mandatory TLV information.
 |System Capabilities TLV	 | System capabilities such as: bridge, router|
 |Management Address TLV | IP of management interface|
 
-**NOTE**: Advertising IEEE 802.1/ IEEE 802.3 Organizationally Specific TLVs is not supported by the agent. This type of advertising can only be done via static custom TLVs.
-
 ## NOTES
-* LLDP is supported on physical interfaces only, does not matter if port is part of bridge or lag.
+* Advertising IEEE 802.1/ IEEE 802.3 Organizationally Specific TLVs is not supported by the agent. This type of advertising can only be done via static custom TLVs.
+* LLDP is supported on physical interfaces only. It does not matter if the port is part of a bridge or LAG.
 * LLDPd does not support advertising of IEEE 802.3/802.1 TLV information automatically. To advertise the information (static only), apply manual LLDPd custom TLV configuration.
