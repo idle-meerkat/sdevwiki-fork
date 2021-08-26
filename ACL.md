@@ -87,7 +87,7 @@ For example, to delete all rules with a given priority, use the following comman
 `$ tc filter del dev sw1p1 root prio 1`  
 
 If there are multiple rules in qdisc with the same priority, then the specific rule can be deleted by handle qdisc-id.  
-For example, to delete rule with priority 1 and handle 0x2:  
+For example, to delete the rule with priority 1 and handle 0x2:  
 `$ sudo tc filter del dev sw1p1 root prio 1 handle 0x2 flower`  
 
 **NOTE**: Use `tc filter show dev sw1p1 root` command to determine which handle to use.  
