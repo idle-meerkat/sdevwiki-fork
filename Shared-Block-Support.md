@@ -15,7 +15,7 @@ Example output:
 `qdisc clsact ffff: dev sw1p2 parent ffff:fff1 ingress_block 1`  
 `qdisc clsact ffff: dev sw1p3 parent ffff:fff1 ingress_block 1`  
 
-There is no limitation in number of qdiscs that can share the same block.  
+The number of qdiscs that can share the same block is not limited.  
 Once the qdisc block is shared, you can no longer manipulate the filters using the qdisc handle. Instead, use the block index as a handle:  
 `$ sudo tc filter add block 1 protocol ip pref 20 flower dst_ip 192.168.0.0/16 action drop`  
 
