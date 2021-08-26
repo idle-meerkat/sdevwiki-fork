@@ -118,8 +118,8 @@ action police rate 1mibps burst 2096 conform-exceed drop
 ```
 It is possible also to change default TC in the example above.
 
-## Limitations
-These are the limitations on policing of dynamic traps:
+## NOTES
+The following are several additional notes on policing of dynamic traps:
 * The following parameters the `policer` action are supported: `rate` and `burst` and `conform-exceed`.
 * Specifying `rate` as a percentage is not supported.
 * Specifying cell size for the `burst` option is not supported.  
@@ -155,7 +155,7 @@ sudo tc qdisc add dev sw1p1 ingress_block 1 clsact
 sudo tc qdisc add dev sw1p2 ingress_block 1 clsact
 sudo tc filter add block 1 ingress flower skip_sw src_mac 00:B5:4D:B1:32:24 action police rate 1mibps burst 6000 conform-exceed drop
 ```
-## Limitations
+## NOTES
 * When ports in an ingress_block belong to different Packet Processor (PP), the expected rate is doubled (applicable for AlleyCatC3x PPs).
 * TC configuration is not applied for data path policing.
 
