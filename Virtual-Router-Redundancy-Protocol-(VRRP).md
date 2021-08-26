@@ -44,10 +44,10 @@ Example configuration of keepalived:
 
 Where:   
 `interface <interface name>`		# interface to bind  
-`virtual_router_id <id>`	# id of Virtual Router   
-`priority <prio>`			# priority of current instance  
+`virtual_router_id <id>`	# ID of the virtual router   
+`priority <prio>`			# priority of the current instance  
 `version <ver>`				# version of VRRP protocol  
-`advert_int <interval>`		# VRRP Advert interval  
+`advert_int <interval>`		# VRRP advertising interval  
 `use_vmac`				# Use VRRP Virtual MAC  
 `virtual_ipaddress {VIP}`		# Virtual IP addresses  
 
