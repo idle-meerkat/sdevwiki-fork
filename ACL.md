@@ -129,7 +129,9 @@ The following list of ACL rules (TC flower matches) are supported:
 * vlan_id  
 
 The following ACL actions (TC flower actions) are supported:
-* drop (shot word also can be used to specify drop action)
-* pass (ok word also can be used to specify pass action)
+* drop 
+* shot (same operation as drop)
+* pass 
+* ok (same operation as passn)
 * trap
 
