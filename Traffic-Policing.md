@@ -80,11 +80,11 @@ sudo tc qd add dev sw1p26 clsact
 sudo tc filter add dev sw1p26 ingress flower skip_sw src_mac 00:B5:4D:B1:32:22 action trap \
 action police rate 1mibps burst 2096 conform-exceed drop
 ```
-**NOTE** Rule and police of the packet are bound to one port only (sw1p26 in this example). To bind the rule and the policer to multiple ports, use the shared block feature of the `tc` tool. See ACL documentation for more details on configuring a shared block.
+**NOTE:** Rule and police of the packet are bound to one port only (sw1p26 in this example). To bind the rule and the policer to multiple ports, use the shared block feature of the `tc` tool. See ACL documentation for more details on configuring a shared block.
 
 ## Set the TC of a Trapped Packet
 
-To configure the TC of a user-defined trap, use the `hw_tc` option of tc flower filter. You can use this option together with the `police` action. If this option is not specified, TC = 3 is used as a default value for all ACL traps.
+To configure the TC of a user-defined trap, use the `hw_tc` option of the TC flower filter. You can use this option together with the `police` action. If this option is not specified, TC = 3 is used as a default value for all ACL traps.
 ```
 tc ... action trap hw_tc TCID …
 ```
