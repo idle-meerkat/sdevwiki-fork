@@ -10,7 +10,7 @@ Access Control Lists (ACL) enable you to apply policies on traffic flows by sett
 ![ACL Overview](images/acl_overview.png)
 
 ## Linux Support
-Linux Traffic Control (TC) flower filter enables configurating queueing disciplines (qdiscs) and chains. To ease configuration and avoid duplication, use shared blocks to bind multiple ports to the same list of rules.  To maintain flexibility in rule creation, and ensure efficient hardware resource utilization, use chain templates, including multi-chain support (with ‘goto’ action).
+Linux Traffic Control (TC) flower filter enables configuring queuing disciplines (qdiscs) and chains. To ease configuration and avoid duplication, use shared blocks to bind multiple ports to the same list of rules.  To maintain flexibility in rule creation, and ensure efficient hardware resource utilization, use chain templates, including multi-chain support (with ‘goto’ action).
 
 The following figure shows TC queueing disciplines (qdiscs) and filter rules.
 ![TC qdisc(s) and TC Filter](images/tc_qdisc_tc_filter.png)
