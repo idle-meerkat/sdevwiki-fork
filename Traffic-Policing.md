@@ -33,7 +33,7 @@ where `<PROFILE>` is the number value:
 * 0 – disable
 * 1 – enable first profile. In this case, enable the profile specified in the table above. Only one profile is supported.
 
-**NOTE**: Applying the changes requires a system restart.
+**NOTE:**: Applying the changes requires a system restart.
 
 If an incorrect number is provided, the Switchdev driver fails to start, and prints an error message in the kernel log.
 
@@ -71,7 +71,7 @@ where,
 
 To specify in IEC units, replace the SI prefix (k-, m-, g-, t-) with the IEC prefix (ki-, mi-, gi- and ti-) respectively.
 
-**NOTE**: The `police` action requires the `rate` and `burst` parameters. Other parameters are ignored.
+**NOTE:**: The `police` action requires the `rate` and `burst` parameters. Other parameters are ignored.
 Packets which exceed the configured bandwidth limit are dropped, regardless of the `conform-exceed` policer parameter setting defined.
 
 For example, to trap the packet that matches SMAC 00:B5:4D:B1:32:22 of the packet, set the rate limit to 1024K bytes-per-second, and burst to 2096 bytes, enter the following commands:
@@ -105,7 +105,7 @@ sudo tc qdisc add dev sw1p1 ingress_block 1 clsact
 sudo tc qdisc add dev sw1p2 ingress_block 1 clsact
 sudo tc filter add block 1 ingress flower skip_sw src_mac 00:B5:4D:B1:32:24 action trap action police rate 1mibps burst 6000 conform-exceed drop
 ```
-**NOTE** You can also use `hw_tc` for the example above.
+**NOTE:** You can also use `hw_tc` for the example above.
 
 ## Precedence over Static Trap Limits
 
@@ -145,7 +145,7 @@ action police rate 100mbps burst 64000 conform-exceed drop
 
 You can set the maximum policing rate to the same rate as for dynamic rules, but the actual rate is limited by the capabilities of the physical port. 
 
-**NOTE**: SCT limitation for data path policing is not supported.
+**NOTE:**: SCT limitation for data path policing is not supported.
 
 ## Assigning A Policer to Multiple Ports
 
