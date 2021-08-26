@@ -126,7 +126,8 @@ The following list of ACL rules (TC flower matches) are supported:
 * src_ip PREFIX (protocol ip)
 * dst_port {NUMBER | MIN_VALUE-MAX_VALUE} (ip_proto tcp|udp)
 * src_port {NUMBER | MIN_VALUE-MAX_VALUE} (ip_proto tcp|udp)
-* vlan_id
+* vlan_id  
+
 The following ACL actions (TC flower actions) are supported:
 * drop (shot word also can be used to specify drop action)
 * pass (ok word also can be used to specify pass action)
