@@ -20,9 +20,9 @@ The following image shows two redundant VRRP-enabled routers sharing the same L2
 ![VRRP Network Topology](images/vrrp_network_topology.jpg)  
 
 ## Virtual IP and Virtual MAC
-A virtual router must use 00-00-5E-00-01-XX as its MAC address. The last byte of the address (XX) is the Virtual Router IDentifier (VRID), which is different for each virtual router in the network. This address is used by only one physical router at a time, and it will reply with this MAC address when an ARP request is sent for the virtual router's IP address.  
+A virtual router must use 00-00-5E-00-01-XX as its MAC address. The last byte of the address (XX) is the Virtual Router IDentifier (VRID), which is different for each virtual router in the network. This address is used by only one physical router at a time, and it replies with this MAC address when an ARP request is sent for the virtual router's IP address.  
 Physical routers within the virtual router must communicate within themselves using packets with multicast IP address 224.0.0.18 and IP protocol number 112.  
-Routers have a priority of between 1 and 254 and the router with the highest priority will become the master. The default priority is 100. [7]  
+Routers have a priority of between 1 and 254 and the router with the highest priority becomes the master. The default priority is 100. [7]  
 
 ## Keepalived Configuration  
 Example configuration of keepalived:  
