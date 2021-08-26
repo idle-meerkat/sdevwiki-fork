@@ -161,7 +161,7 @@ sudo tc filter add block 1 ingress flower skip_sw src_mac 00:B5:4D:B1:32:24 acti
 
 # Debugging CPU Code Counters
 
-For development, or debugging purposes, it is important to be able to see the number of incoming packets coming per CPU packet code. This also allows us to track and refine the static profile setting. This feature should not be released to production.
+For development, or debugging purposes, it is important to be able to see the number of incoming packets coming per CPU packet code. This enables you to track and refine the static profile setting. This feature should not be released to production.
 
 ## Enabling Debug CPU Code Counter
 
