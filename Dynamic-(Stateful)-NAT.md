@@ -35,7 +35,7 @@ Add default gateway on the switch to route packets via public interface.
 # add default gateway via public interface 
 ip route add default via 91.245.77.1 
 ```
-Configure connection tracking on private port: 
+Configure connection tracking on a private port: 
 ```
 tc qdisc add dev sw1p2 clsact 
 tc filter add dev sw1p2 ingress proto ip pref 2 flower ct_state -trk \ 
@@ -51,7 +51,7 @@ tc filter add dev sw1p1 ingress prio 5 proto ip flower \
 ```
 **NOTES:** 
 * Since the NAT configuration is done using regular ACL rules, it takes resources from regular ACL memory. 
-* Egress CT flower filter on a public port should be the same as CT flower filter on a private port. If a CT rule exists on multiple private port, those flower matches should be reflected on the egress public port. 
+* Egress CT flower filter on a public port should be the same as CT flower filter on a private port. If a CT rule exists on multiple private ports, those flower matches should be reflected on the egress public port. 
 
 ### Private to Private Flow 
 
