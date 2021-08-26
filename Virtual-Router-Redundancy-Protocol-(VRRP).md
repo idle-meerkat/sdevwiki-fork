@@ -1,5 +1,5 @@
 # Introduction: Linux MAC VLAN Interface  
-The MAC VLAN can be thought of as a reverse VLAN under Linux. Instead of taking a single interface on the OS side of a network interface and mapping it to multiple virtual networks on the Network side of the interface (one to many), a MAC VLAN takes a single Network interface and creates multiple virtual ones with different MAC addresses (many to one).
+The MAC VLAN can be thought of as a reverse VLAN under Linux. Instead of taking a single interface on the OS side of a network interface and mapping it to multiple virtual networks on the Network side of the interface (one-to-many), a MAC VLAN takes a single network interface and creates multiple virtual ones with different MAC addresses (many-to-one).
 
 The `macvlan` Rx handler re-injects packets with destination MAC addresses as the MAC VLANs to the Rx path so that they are picked up by the IPvX protocol handlers, and undergo an L3 lookup. Note that the driver prevents the MAC VLANs from being enslaved to other devices, to ensure that the packets are picked up by the protocol handler and not by another Rx handler. 
 
