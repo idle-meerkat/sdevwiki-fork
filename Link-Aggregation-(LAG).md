@@ -39,11 +39,11 @@ In order to set MTU on the LAG interface, run the following command:
 ## Speed and Auto-Negotiation Setting on a LAG Interface  
 The speed and auto-negotiation setting are not supported for bond interface.  
 In order to configure the speed or auto-negotiation, complete the following actions:  
-* Disable LAG interface (`ip link set [bond1] down`)
-* Disable LAG members (`ip link set [sw1pX] down`)
-* Configure speed or auto-negotiation for every LAG member
-* Enable LAG members (`ip link set [sw1pX] up`)
-* Enable LAG interface (`ip link set [bond1] up`)
+1. Disable LAG interface (`ip link set [bond1] down`)
+1. Disable LAG members (`ip link set [sw1pX] down`)
+1. Configure speed or auto-negotiation for every LAG member
+1. Enable LAG members (`ip link set [sw1pX] up`)
+1. Enable LAG interface (`ip link set [bond1] up`)
 
 ## Adding a LAG Interface to a Bridge  
 To add a LAG interface to a bridge, run the following command:  
@@ -71,7 +71,7 @@ To set a bond interface as a part of virtual router, run the following command:
 * Only the bond configuration mechanism is supported.
 * Only LACP 802.3ad operational mode is supported.
 * The switchport sw1pX must have admin down state in order to add it to LAG (Linux limitation)
-* Enslaving a port to the LAG device that already has an upper device is not supported.
+* Binding a port to the LAG device that already has an upper device is not supported.
 * Changing speed/auto-negotiation on a LAG interface is not supported. The speed should be manually changed on all members. (Linux limitation)
 * LAG ACL is not supported.
 * Changing the MTU of a port which is part of LAG affects (rewrites) the LAG MTU setting for this port.
