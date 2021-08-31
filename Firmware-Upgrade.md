@@ -21,8 +21,8 @@ At this point the HOST image is updated and you can proceed to the next stage.
 ## Boot from PCIe  
 From the HOST CPU Linux CLI:
 1. Modify the boot vector - boot from PCIe:  
-The Switchdev Platforms include a CPLD that controls the BOOT vector of the Coprocessor (FW_CPU).  
-If the Coprocessor NAND FLASH is empty, use the following procedure to upload the NAND Flash, and repeat the process for all boards.  
+The platform includes a CPLD that controls the BOOT vector of the coprocessor (FW_CPU).  
+If the coprocessor NAND FLASH is empty, use the following procedure to upload the NAND Flash, and repeat the process for all boards.  
 **DNI:**  
 `i2cset -y 2 0x41 0x11 0x2c`  
 **ACCTON:**  
