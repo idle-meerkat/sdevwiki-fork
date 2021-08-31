@@ -5,7 +5,7 @@ This section describes how to configure Link Layer Discovery Protocol (LLDP) on 
 ## Open-LLDP
 This section describes how to configure LLDP protocol using an Open-LLDP agent.  
 ### Default Behavior
-By default, the LLDP agent does not enable LLDP protocol on switchDev interfaces on the system. This configuration should be done manually (e.g. enable protocol, configure TLVs etc). After restarting the agent, the configuration is preserved, the LLDP agent configuration is stored automatically in /var/lib/lldpad/lldpad.conf file.  
+By default, the LLDP agent does not enable LLDP protocol on Switchdev interfaces on the system. This configuration should be done manually (e.g. enable protocol, configure TLVs etc). After restarting the agent, the configuration is preserved, the LLDP agent configuration is stored automatically in /var/lib/lldpad/lldpad.conf file.  
 
 ### Agent Configuration
 * To enable LLDP (receive & transmit TLV information) on a specific port, use the following command:  
@@ -31,7 +31,7 @@ By default, the LLDP agent does not enable LLDP protocol on switchDev interfaces
 `lldptool -t -n -V portID -i <SW-PORT>`   
 
 ### Configure Mandatory TLV  
-Once the LLDP protocol is enabled on a switchDev port, the mandatory TLV information is enabled automatically. The mandatory TLV cannot be disabled by user.  
+Once the LLDP protocol is enabled on a Switchdev port, the mandatory TLV information is enabled automatically. The mandatory TLV cannot be disabled by user.  
 
 ### Configure Optional TLV  
 The following table describes the TLV names (including mandatory) that can be used by the agent to configure required TLV values:
@@ -55,7 +55,7 @@ MTU	|	Maximum Frame Size TLV
 This section describes how to configure the LLDP protocol using an LLDPd agent.
 
 ### Default Behavior
-By default, the LLDP agent enables LLDP protocol on all available physical interfaces. To limit the agent to listen only on switchDev interfaces, you need to provide a configuration file.
+By default, the LLDP agent enables LLDP protocol on all available physical interfaces. To limit the agent to listen only on Switchdev interfaces, you need to provide a configuration file.
 
 ### Agent Configuration
 
