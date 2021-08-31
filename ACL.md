@@ -82,7 +82,7 @@ See [Supported Actions, Keys and Rules](#supported-actions-keys-and-rules) for t
 **NOTE**: some TC command keys support different naming (alias) for some attributes. For example, `pref` Key can be used as `prio`.
 
 ### Delete ACL Rules
-A TC flower rule (ACL rule) is deleted based on delete criteria provided by user.  
+To delete a TC flower rule (ACL rule), you need to delete criteria.  
 For example, to delete all rules with a given priority, use the following command:  
 `$ tc filter del dev sw1p1 root prio 1`  
 
