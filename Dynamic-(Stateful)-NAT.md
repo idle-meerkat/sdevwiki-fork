@@ -1,3 +1,5 @@
+Dynamic NAT maps private IP addresses to public addresses.
+
 ## <a id="dynamic"></a>Dynamic (Stateful) NAT Configuration
 The configuration of stateful NAT is done by using `tc` iproute2 tool and the `tc-ct` action. The action is used in combination with `flower` filter rule and ingress qdisc to do the dynamic NAT entry offloading. The user guide for stateful NAT is described in tc-flower and tc-ct man pages. 
 
