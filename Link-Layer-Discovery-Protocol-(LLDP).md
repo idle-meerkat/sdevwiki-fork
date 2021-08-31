@@ -31,7 +31,7 @@ By default, the LLDP agent does not enable LLDP protocol on Switchdev interfaces
 `lldptool -t -n -V portID -i <SW-PORT>`   
 
 ### Configure Mandatory TLV  
-Once the LLDP protocol is enabled on a Switchdev port, the mandatory TLV information is enabled automatically. The mandatory TLV cannot be disabled by user.  
+Once the LLDP protocol is enabled on a Switchdev port, the mandatory TLV information is enabled automatically.   
 
 ### Configure Optional TLV  
 The following table describes the TLV names (including mandatory) that can be used by the agent to configure required TLV values:
