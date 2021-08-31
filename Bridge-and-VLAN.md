@@ -3,7 +3,7 @@ The Linux bridge code implements a subset of the ANSI/IEEE 802.1d standard. [1].
 
 Linux Bridge supports the following bridges types, defined by 1EEE 802.1Q standard:  
 - VLAN-Unaware Bridge : Bridge that does not recognize VLAN Tagged Packets. This is the default.
-- VLAN-Aware Bridge : Bridge that recognizes packets with the following tags: **VLAN Tag and Insert** or **Remove Tag Headers**.
+- VLAN-Aware Bridge : Bridge that recognizes packets with with one or more VLAN tags and a port can be configured as tagged or untagged member of a VLAN.
 
 ## Bridge Device Configuration
 * Create a Bridge (By default linux bridge is VLAN-unaware):  
