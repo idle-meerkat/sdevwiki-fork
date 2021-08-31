@@ -14,8 +14,5 @@ To set the kernel routing subsystem to exclude next-hops with link down from its
 Setting `net.ipv4.conf.default.ignore_routes_with_linkdown=1` in the **sysctl** configuration files will make this option the default for all netdevices on the system.  
 
 ## Multi-path Hash Policy  
-Setting **sysctl** to `net.ipv4.fib_multipath_hash_policy` controls which hash policy to use for multipath routes. These are the possible values:  
-* 0 - (Layer 3) means only the source and destination IP addresses are used.  
-* 1 - (Layer 4) 5-tuple is used: the source and destination IP addresses, the source and destination ports, and the IP protocol. 
-
-**Important**: This setting is ignored by the Switchdev driver. L4 (5 tuple) hash is always used. 
+Setting **sysctl** to `net.ipv4.fib_multipath_hash_policy` controls which hash policy to use for multipath routes.  
+This setting is ignored by the Switchdev driver. L4 (5 tuple) hash is always used. 
