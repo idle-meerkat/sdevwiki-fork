@@ -14,7 +14,7 @@ Linux Command:
 
 This setting is available through (rt) netlink, and it has no equivalent in ioctl/brctl.
 
-### SwitchDev Driver
+### Switchdev Driver
 
 High-level requirements:
 * New bridge port attribute of type ‘isolated’
