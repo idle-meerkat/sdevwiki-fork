@@ -1,3 +1,5 @@
+Static NAT provides a permanent mapping between a private IP address and a single public address.
+
 ## <a id="static"></a>Static (Stateless) NAT Configuration
 
 To configure stateless Network Address Translation (NAT), use the `tc` iproute2 tool, with the `tc-nat` action. The action is used in combination with the `flower` filter rule and ingress qdisc to do static NAT entry offloading.
