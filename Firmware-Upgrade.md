@@ -7,7 +7,7 @@ These stages are described below.
 
 ## Fetch the Latest HOST Image  
 1.	Connect to the HOST CPU, in our example this is an ARMADA-7K device.  
-2.	Fetch the required flash image from the server:  
+2.	Fetch the required flash image from the serverm as shown in the following example:  
 **DNI:**  
 `tftp 10.5.116.4 -m binary -c get /tftpboot/switchdev/shared/mrvl_val/tn4810m-prestera-fw-flash-image-v1.0.img`  
 `tftp 10.5.116.4 -m binary -c get /tftpboot/switchdev/shared/mrvl_val/tn48m-prestera-fw-flash-image-v1.0.img`   
