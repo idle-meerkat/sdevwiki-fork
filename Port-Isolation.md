@@ -12,7 +12,7 @@ Linux Command:
 
 `bridge link set dev DEV [isolated {on|off}]`
 
-This setting is available through (rt) netlink, and it has no equivalent in ioctl/brctl.
+
 
 Following are examples of the linux command above.  
 
@@ -27,6 +27,6 @@ Isolating a single bridge port has no effect until at least one other port of th
 Now the bridge ports sw1p1 and sw1p2 are unable to send or receive any packet to or from each other. However, these interfaces can still communicate normally with any other unisolated port on the bridge. 
 
 ## NOTES: 
-* If there are multiple VLANs on an isolated bridge port, all are affected.
-* The bridge's self interface (bridge0 in this example) can not isolate itself (even with the correct syntax: appending the self keyword when the device is the bridge name itself).
-* All newer advanced features are available through the (rt)netlink ??with the ip link and bridge commands have no equivalent through the older ioctl API, so brctl can't be used for this. 
+* Port isolation is done on the port level, affecting all traffic between isolated ports regardless of their VLAN membership.
+* The bridge's self-interface is not subject to port isolation.
+* This setting is available through (rt) netlink, and it has no equivalent in ioctl/brctl. 
