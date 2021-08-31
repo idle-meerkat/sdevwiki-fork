@@ -43,6 +43,5 @@ Entries marked with offload flag are programmed to the PP.
 ## NOTES
 * Only IPv4 is supported.
 * Linux Kernel forwarding MUST be enabled.
-* Multicast routing is not supported.
-* TODO add limitation from https://jirail.marvell.com/browse/SWITCHDEV-718 and https://jirail.marvell.com/browse/SWITCHDEV-753
+* Multicast routing is not supported.  
 * At least one switch port should be added (enslaved) to the bridge before assigning the IP address on the bridge. Otherwise the router interface for the  bridge is not created.
