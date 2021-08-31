@@ -14,21 +14,6 @@ Linux Command:
 
 This setting is available through (rt) netlink, and it has no equivalent in ioctl/brctl.
 
-### Switchdev Driver
-
-High-level requirements:
-* New bridge port attribute of type ‘isolated’
-* Ability to enable/disable port isolation on bridge physical port member
-
-CPSS APIs for reference:
-* cpssDxChBrgSrcIdPortDefaultSrcIdSet
-* cpssDxChBrgSrcIdGroupPortAdd
-* cpssDxChBrgSrcIdGroupPortDelete
-
-## Bridge Port Isolation
-
-Isolated ports cannot communicate between each other, but they can still communicate with unisolated ports.
-
 To isolate a bridge port, enter the following command: 
 ```
 $ bridge link set dev sw1p1 isolated on 
