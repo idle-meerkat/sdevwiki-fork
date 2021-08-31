@@ -155,10 +155,6 @@ sudo tc qdisc add dev sw1p1 ingress_block 1 clsact
 sudo tc qdisc add dev sw1p2 ingress_block 1 clsact
 sudo tc filter add block 1 ingress flower skip_sw src_mac 00:B5:4D:B1:32:24 action police rate 1mibps burst 6000 conform-exceed drop
 ```
-## NOTES
-* When ports in an ingress_block belong to different Packet Processor (PP), the expected rate is doubled (applicable for AlleyCatC3x PPs).
-* TC configuration is not applied for data path policing.
-
 # Debugging CPU Code Counters
 
 For development, or debugging purposes, it is important to be able to see the number of incoming packets coming per CPU packet code. This enables you to track and refine the static profile setting. This feature should not be released to production.
