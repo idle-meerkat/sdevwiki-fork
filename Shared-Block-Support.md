@@ -1,7 +1,7 @@
 
 TC shared blocks is a feature that enables binding several ports to the same list of filter rules.  
 
-Consider a case when you have 2 netdevices, you create ingress qdisc on both. Now if you want to add an identical set of filter rules to both, you need to add them twice. One port for each qdisc. That is of course doable, but when the filters are offloaded to TCAM with a limited number of entries, the duplication may become a scale issue. Sharing of blocks aims to resolve that.  
+Consider a case when you have 2 netdevices, you create ingress qdisc on both. Now if you want to add an identical set of filter rules to both, you need to add them twice. One port for each qdisc. That is of course doable, but when the filters are offloaded to the hardware with a limited number of entries, the duplication may become a scale issue. Sharing of blocks aims to resolve that.  
 
 To share blocks, you need to request the share from the kernel at the qdisc creation stage:  
 `$ sudo tc qdisc add dev sw1p2 ingress_block 1 clsact`  
