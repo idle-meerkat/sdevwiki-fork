@@ -23,7 +23,7 @@ To offload Linux ACL configuration to netdevs, which represent Marvell switch po
 ### Create/Add ACL Rules  
 Before configuring match rules on switch ports, you must first create the queuing disciplines (qdiscs) to which the flower classifier is attached. In order to prepare for the addition of flower rules, either add the `ingress` qdisc, or `clsact` qdisc to the port, using the following TC command:  
 `$ sudo tc qdisc add dev DEV-NAME {ingress|clsact}`  
-Where `DEV-NAME` is the switchDev interface name, e.g.: sw1p1.  
+Where `DEV-NAME` is the Switchdev interface name, e.g.: sw1p1.  
 
 * To create ingress queuing disciplines (qdiscs):  
 `$ sudo tc qdisc add dev sw1p1 ingress`  
@@ -95,7 +95,7 @@ For example, to delete the rule with priority 1 and handle 0x2:
 To delete all rules from a specific qdisk, use the following command:  
 `$ sudo tc filter del dev sw1p1 root`  
 
-If an ACL is not going to be used anymore on the switchdev interface, use the following command to destroy the qdisc with all rules attached to it:
+If an ACL is not going to be used anymore on the Switchdev interface, use the following command to destroy the qdisc with all rules attached to it:
 `$ sudo tc qdisc del dev sw1p1 parent ffff:`  
 
 ## <a id="acl-actions"></a>Supported Actions, Keys and Rules
@@ -105,7 +105,7 @@ If an ACL is not going to be used anymore on the switchdev interface, use the fo
 * trap
 * pass
 ### ACL supported keys [3]
-* Ingress interfaces (only switchdev interface)
+* Ingress interfaces (only Switchdev interface)
 * Protocol (ethertype)
 * src_mac
 * dst_mac
