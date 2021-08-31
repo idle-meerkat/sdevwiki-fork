@@ -60,7 +60,7 @@ This adds a rule with priority (`pref`) 10, matching and dropping every IP packe
 
 To add the rule to kernel, e.g. filter CPU traffic, use the `skip_hw` key instead.  
 
-TC rules (filters) are put by order of priority (`pref`). If the priority is omitted, the TC will generate priority automatically based on flower rule/actions provided by user. For rules with the same priority, but different match/action value, the rule is added to the end of all rules with this priority. The rule with lowest `pref` number (high priority) is executed first.  
+TC rules (filters) are put by order of priority (`pref`). If the priority is omitted, the TC will generate priority automatically based on flower rule/actions. For rules with the same priority, but different match/action value, the rule is added to the end of all rules with this priority. The rule with lowest `pref` number (high priority) is executed first.  
 
 Similar commands can be used to pass the packet or trap the packet to CPU. For example:  
 * To add a pass rule with a different source IP address:  
