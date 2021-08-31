@@ -14,6 +14,8 @@ Linux Command:
 
 This setting is available through (rt) netlink, and it has no equivalent in ioctl/brctl.
 
+Following are examples of the linux command above.  
+
 To isolate a bridge port, enter the following command: 
 ```
 $ bridge link set dev sw1p1 isolated on 
