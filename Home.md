@@ -7,5 +7,5 @@ The following figure shows the different layers involved in these two methods:
 ![Traffic Handling](images/traffic_handling.png)
 To ease the integration of PP drivers into the Linux Kernel, an infrastructure was built into the Kernel, called Switchdev. This layer, along with Linux NetDev modules, acts a basis for interaction between the upper Linux modules and the underlying PP driver that implements the Switchdev / NetDev operations & notifies them of various hardware events.
 
-The following image shows the Switch driver in the kernel:
+The following image shows the Switchdev driver in the kernel:
 ![Switch Driver in the Kernel](images/linux_in-kernel_switchdev.JPG)
