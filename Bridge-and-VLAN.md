@@ -78,8 +78,8 @@ To set learning and flooding attributes:
 `$ bridge link set dev DEV learning {on/off} flood {on/off}`  
 
 ## Static and Sticky FDB Entries
-Recently, a new entry type “sticky” was introduced in Linux bridge. In Linux, a static FDB can be roamed to a different port via learning. Sticky FDB entries cannot be moved. 
-Because of the current infrastructure of the Switchdev FDB notification chain, there is no indication which type of entry was added. Thus, all entries are treated as static.  Once the first upstream patch is published, a request with changes to Switchdev fdb notification the chain will add support for the entry type.
+In Linux, an FDB entry can be moved to a different port via learning. Sticky FDB entries do not change its port due to learning. 
+Initially, all entries are treated as static.  Once the first upstream patch is published, a request with changes to Switchdev fdb notification the chain will add support for the entry type.
 
 * To add a static FDB entry:  
 `$ bridge fdb add ADDR dev DEV master static [vlan VID]`  
