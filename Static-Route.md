@@ -1,4 +1,4 @@
-When an IP address in assigned to a switchDev interface or its master bridge - a routing interface is created.  
+When an IP address in assigned to a Switchdev interface or its master bridge - a routing interface is created.  
 For each address and its broadcast and network addresses, traps are configured in PP to make sure that appropriate packets are delivered to the kernel.  
 For example:  
 `$ sudo ip addr add 192.168.1.1/24 sw1p1`  
