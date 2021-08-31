@@ -44,7 +44,7 @@ To get the current profile number, which was loaded by the switched driver (e.g.
 cat /sys/module/prestera_sw/parameters/trap_policer_profile
 ```
 # Policing of Dynamic Traps
-You can configure the device to trap certain packets to the CPU port (switchdev port). This is done by the `tc` tool using the `trap` flower action. The default rate limit and TC of the trap is determined by the static profile which equals 4000 pps per TC. By default, the TC assigned to the trap is 3.
+You can configure the device to trap certain packets to the CPU port (Switchdev port). This is done by the `tc` tool using the `trap` flower action. The default rate limit and TC of the trap is determined by the static profile which equals 4000 pps per TC. By default, the TC assigned to the trap is 3.
 
 This feature enables you to set the rate limit and TC of a trapped packet by the ACL according to user-specific values.
 
