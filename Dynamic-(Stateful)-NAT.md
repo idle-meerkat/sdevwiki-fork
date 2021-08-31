@@ -13,7 +13,7 @@ The following figure shows dynamic NAT setup:
 ![Dynamic NAT Setup](images/dynamic_nat_setup.png)
 
 **NOTE:** This scenario also covers the case of only one private host. 
-Configuration of private host connected to the switch device (in this case on one private): 
+Configuration of private host connected to the switch device (in this case on one private host): 
 ```
 # private host: IP/default gateway 
 ip addr add dev eth0 192.168.0.2/24 
