@@ -1,5 +1,5 @@
 Linux bridge is a way to connect two ethernet segments together in a protocol independent way. Packets are forwarded based on the ethernet address, rather than the IP address (like a router). Since forwarding is done at Layer 2, all protocols can go transparently through a bridge.  
-The Linux bridge code implements a subset of the ANSI/IEEE 802.1d standard. [1]. The original Linux bridging was first done in Linux 2.2, then rewritten by Lennert Buytenhek. The code for bridging has been integrated into 2.4 and 2.6 kernel series.  
+The Linux bridge code implements a subset of the ANSI/IEEE 802.1d standard. [1]. Bridge adn VLAN is supported on Linux kernels 2.4.x and 2.6.x.  
 
 Linux Bridge supports the following bridges types, defined by 1EEE 802.1Q standard:  
 - VLAN-Unaware Bridge : Bridge that does not recognize VLAN Tagged Packets. This is the default.
