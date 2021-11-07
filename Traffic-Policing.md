@@ -23,7 +23,7 @@ The rate limiting (packet per second) and Traffic Class queue (TC) features of s
 
 # Policing of Static Traps
 
-Static packet traps are configured upon Switchdev driver initialization. The list of packet traps, their rate limit and TC is defined in the **Default Configuable Profile** table above.
+Static packet traps are configured upon Switchdev driver initialization. The list of packet traps, their rate limit and TC is defined in the **Default Configurable Profile** table above.
 
 You can disable the entire static profile, or select the desired profile during Switchdev driver initialization. To select or disable a static trap profile, use the Switchdev kernel module parameter, provided for  the `prestera_sw` driver.
 ```
